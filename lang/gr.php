@@ -1,0 +1,153 @@
+<?php
+/*
+	*	
+	* Carpass.gr 
+	* version 1
+	* (c) 2019 Carpass.gr 
+	*
+*/
+
+// ------------------ NAVBAR Index.php -------------------
+$lng['navbar']['home'] = 'ΑΡΧΙΚΗ';
+$lng['navbar']['login'] = 'Συνδεθείτε';
+$lng['navbar']['logout'] = 'Αποσύνδεση';
+$lng['navbar']['price'] = 'τιμή';
+$lng['navbar']['register'] = 'Κανω ΕΓΓΡΑΦΗ';
+$lng['navbar']['add_vehicle_km'] = 'Προσθέστε το χιλιομετρικό όχημα';
+$lng['navbar']['my_account'] = 'Ο λογαριασμός μου';
+$lng['navbar']['contact'] = 'Επικοινωνία';
+$lng['navbar']['password_recovery'] = 'ΑΝΑΚΤΗΣΗ ΚΩΔΙΚΟΥ';
+
+// ------------------ add vehicle -------------------
+
+$lng['general']['Plate_Number'] = 'Αριθμός πινακίδας';
+$lng['general']['Vin'] = 'Αριθμό πλαισίου';
+$lng['general']['Make'] = 'Μάρκα';
+$lng['general']['Model'] = 'Μοντέλο';
+$lng['general']['Build_Year'] = 'Έτος κατασκευής';
+$lng['general']['KM'] = 'Χιλιόμετρα';
+$lng['general']['date'] = 'ημερομηνία';
+$lng['general']['print_page'] = 'Τυπώνω';
+$lng['general']['Crashed ?'] = 'Συρρίκνωσες;';
+$lng['general']['Status'] = 'Κατάσταση';
+$lng['general']['Yes'] = 'Ναί';
+$lng['general']['No'] = 'Οχι';
+$lng['general']['Front'] = 'Εμπρός';
+$lng['general']['Back'] = 'Πίσω';
+$lng['general']['Left'] = 'Αριστερά';
+$lng['general']['Right'] = 'σωστά';
+$lng['general']['Total_Loss'] = 'Ολική απώλεια';
+$lng['general']['submit'] = 'υποβάλλουν';
+$lng['general']['Reset'] = 'Επαναφορά';
+$lng['general']['Request_New'] = 'Αίτηση Νέα';
+$lng['general']['Request_make_model'] = 'Μπορείτε να μας ζητήσετε τη νέα μάρκα ή μοντέλο αν δεν υπάρχει.'
+$lng['general']['search'] = 'Ψάξιμο';
+$lng['general']['download'] = 'Κατεβάστε';
+
+
+
+// -------------------------- LOGIN -----------------------
+
+$lng['login']['User'] = 'Χρήστης';
+$lng['login']['Delaer'] = 'Εμπορος';
+$lng['login']['login'] = 'Σύνδεση';
+$lng['login']['logout'] = 'Αποσύνδεση';
+$lng['login']['Email'] = 'Email';
+$lng['login']['password'] = 'Κωδικός πρόσβασης';
+$lng['login']['forgot_pass'] = 'Ξεχάσατε τον κωδικό σας;';
+$lng['login']['click_here'] = 'Κάντε κλικ εδώ για να το επαναφέρετε!';
+
+
+// -------------------------- LOGOUT -----------------------
+$lng['logout']['logout'] = 'Αποσύνδεση';
+$lng['logout']['loggedout'] = 'Έχετε αποσυνδεθεί!';
+
+// --------------------------User REGISTER -----------------------
+$lng['users']['register'] = 'Κανω ΕΓΓΡΑΦΗ';
+$lng['users']['User'] = 'Χρήστης';
+$lng['users']['Delaer'] = 'Εμπορος';
+$lng['users']['Fullname'] = 'Πλήρες όνομα';
+$lng['users']['password'] = 'Κωδικός πρόσβασης';
+$lng['users']['Address'] = 'Διεύθυνση';
+$lng['users']['Email'] = 'E-mail';
+$lng['users']['Phone_number'] = 'Τηλεφωνικό νούμερο';
+$lng['users']['Username'] = 'Όνομα χρήστη';
+$lng['users']['Company'] = 'Εταιρία';
+$lng['users']['Website'] = 'Δικτυακός τόπος';
+
+
+$lng['listings']['recommend_this'] = 'Share';
+
+
+
+// ------------------- USER Profile-----------------
+
+$lng['useraccount']['Profile'] = 'Profile';
+$lng['useraccount']['Fullname'] = 'Πλήρες όνομα';
+$lng['useraccount']['Address'] = 'Διεύθυνση';
+$lng['useraccount']['Phone_Number'] = 'Τηλεφωνικό νούμερο';
+$lng['useraccount']['email'] = 'Email';
+$lng['useraccount']['Current_Password'] = 'Ο τρέχων κωδικός πρόσβασης';
+$lng['useraccount']['New_password'] = 'νέος κωδικός πρόσβασης';
+$lng['useraccount']['Confirm_New_Password'] = 'Επιβεβαιώστε τον καινούριο σας κωδικό';
+$lng['useraccount']['change_password'] = 'Άλλαξε κωδικό';
+$lng['useraccount']['Update'] = 'Εκσυγχρονίζω'
+$lng['useraccount']['Cancel'] = 'Ματαίωση'
+
+
+// ------------------- CONTACT -----------------
+$lng['contact']['name'] = 'Ονομα';
+$lng['contact']['Phone Number'] = 'Τηλεφωνικό νούμερο';
+$lng['contact']['email'] = 'Email';
+$lng['contact']['Enter_Your_Massage'] = 'Εισάγετε το Μασάζ σας';
+$lng['contact']['message_sent'] = 'Το μήνυμά σας εστάλη!';
+$lng['contact']['Submit'] = 'υποβάλλουν';
+
+
+// -------------------------- PASSWORD RECOVERY -------------------
+$lng['password_recovery']['email'] = 'Παρακαλώ εισάγετε το email σας';
+$lng['password_recovery']['new_password'] = 'νέος κωδικός πρόσβασης';
+$lng['password_recovery']['Reset_password'] = 'Επαναφέρετε τον κωδικό πρόσβασης';
+$lng['password_recovery']['repeat_new_password'] = 'Επαναλάβετε τον νέο κωδικό πρόσβασης';
+$lng['password_recovery']['invalid_key'] = 'Το κλειδί δεν είναι έγκυρο ή έχει λήξει!';
+
+$lng['password_recovery']['email_missing'] = 'Παρακαλώ συμπληρώστε το email σας!';
+$lng['password_recovery']['invalid_email'] = 'Ακυρη διεύθυνση ηλεκτρονικού ταχυδρομείου';
+$lng['password_recovery']['email_inexistent'] = 'Δεν υπάρχει χρήστης που έχει εγγραφεί με αυτό το μήνυμα ηλεκτρονικού ταχυδρομείου';
+
+
+// -------------------------- Payment-------------------
+
+$lng['Payment']['Thank_you'] = 'Ευχαριστούμε για την εγγραφή του οχήματός σας. Αν θέλετε να δείτε όλη την αναφορά αυτού του οχήματος, κάντε κλικ στο Δημιουργία αναφοράς.';
+$lng['Payment']['Paypal'] = 'Paypal';
+$lng['Payment']['Copun'] = 'Κουπόνι';
+$lng['Payment']['after'] = 'Στη συνέχεια, θα λάβετε πλήρεις πληροφορίες σχετικά με το όχημα KM.';
+$lng['Payment']['Close'] = 'Κοντά';
+$lng['Payment']['Copun_code'] = 'Κωδικός κουπονιού';
+$lng['Payment']['Submit'] = 'υποβάλλουν';
+
+
+// -------------------------- PDF-------------------
+$lng['Pdf']['Download_pdf'] = 'Λήψη ως PDF';
+$lng['Pdf']['Close'] = 'Κλείστε αυτό το παράθυρο';
+$lng['Pdf']['Print'] = 'Τυπώνω';
+$lng['Pdf']['Tellerrapport'] = 'Έκθεση χιλιομέτρων';
+$lng['Pdf']['License_Plate'] = 'Πινακίδα κυκλοφορίας';
+$lng['Pdf']['Vin'] = 'Αριθμό πλαισίου';
+$lng['Pdf']['Make_Model'] = 'Μάρκα / Μοντέλο';
+$lng['Pdf']['Year_Build'] = 'Έτος κατασκευής'
+$lng['Pdf']['Current_km_reading'] = 'Τυπώνω'
+$lng['Pdf']['Print'] = 'Τρέχουσα ανάγνωση KM'
+$lng['Pdf']['Car_Crashed'] = 'Το αυτοκίνητο συνετρίβη'
+$lng['Pdf']['No-Judgement'] = 'Δεν υπάρχει κρίση'
+$lng['Pdf']['Logical'] = 'Λογικός'
+$lng['Pdf']['Not_Logical'] = 'δεν είναι λογικό'
+$lng['Pdf']['KM_records'] = 'Εγγραφές χιλιομέτρων'
+$lng['Pdf']['KM'] = 'Απόσταση σε μίλια'
+$lng['Pdf']['add_date'] = 'Προσθήκη ημερομηνίας'
+$lng['Pdf']['Explamation'] = 'Explanation'
+$lng['Pdf']['registration_text'] = 'Η εγγραφή του αυτοκινήτου KM στην Ελλάδα είναι από το 2019, δεν μπορούμε να ΑΠΟΦΑΣΙΣΗ για το χιλιόμετρο πριν από αυτό το έτος.
+Βλέπετε στην έκθεση Logical, Not Logical, No JUDGMENT ότι σημαίνει:'
+$lng['Pdf']['1'] = '1 - Λογική σημαίνει ότι το KM είναι λογικό, όπως έχουμε καταχωρίσει από το Carpass.'
+$lng['Pdf']['2'] = '2 - Δεν είναι λογικό, Αυτό σημαίνει ότι το χιλιόμετρο αλλάζει μετά την εγγραφή από το Carpass.'
+$lng['Pdf']['3'] = '3 - Δεν υπάρχει κρίση, που σημαίνει ότι δεν έχουμε κανένα στοιχείο αυτού του οχήματος, που είναι η πρώτη εγγραφή από το Carpass.'
