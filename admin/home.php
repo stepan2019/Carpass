@@ -4,6 +4,13 @@
         header("location:index.php");
     }
     include "../setting/config.php";
+
+//    include "../setting/languages.php";
+//
+//    $defaultLanguage = $language->getDefault()[0];
+//
+//    include "lang/".$defaultLanguage.'.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -34,6 +41,15 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-sage.css">
+
+    <script type="text/javascript" src="../libs/jQuery/jquery.js"></script>
+    <script type="text/javascript" src="../libs/nicEdit/nicEdit.min.js"></script>
+    <script type="text/javascript" src="../js/common.min.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="../libs/jQuery/plugins/powertip/jquery.powertip.min.js"></script>
+    <link rel="stylesheet" href="../libs/jQuery/plugins/powertip/css/jquery.powertip.min.css"/>
 </head>
 <body style="background-color: #ece4b7;">
     <nav class="navbar navbar-toggleable-md mb-4 top-bar navbar-static-top sps sps--abv">
@@ -64,7 +80,7 @@
                     <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Language<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a class="nav-link" href="home.php?query=add_language">Add Language</a></li>
-                            <li><a class="nav-link" href="home.php?query=view_language">View Languages</a></li>
+                            <li><a class="nav-link" href="home.php?query=languages">View Languages</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Pages<span class="caret"></span></a>

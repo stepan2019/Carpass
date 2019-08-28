@@ -1,24 +1,39 @@
 <?php
 
+include 'db_connect.php';
+
 class Car
 {
-    public $server = "localhost";
-    public $username = "root";
-    public $password = "";
-    public $dbname = "carpasgr_car";
+
     public $connectdb;
 
     function __construct()
     {
-        $this->connectdb = new mysqli($this->server, $this->username, $this->password, $this->dbname);
-        if ($this->connectdb->connect_error) {
-            die("connection failed");
-        }
-        if (!$this->connectdb->set_charset("utf8")) {
-            // printf("Error loading character set utf8: %s\n", $mysqli->error);
-        } else {
-            // printf("Current character set: %s\n", $mysqli->character_set_name());
-        }
+        $db = new Db();
+        $this->connectdb = $db;
+    }
+
+    public function getDefaultLanguage()
+    {
+        $query = "select * from languages where `default` = 1";
+        $result = $this->connectdb->query($query);
+        return $result;
+    }
+
+    public function getLanguage($id)
+    {
+        $query = "select * from languages where id='$id'";
+        $result = $this->connectdb->query($query);
+        return $result;
+
+    }
+
+    public function getLanguages()
+    {
+        $query = "select * from languages order by `order_no`";
+        $result = $this->connectdb->query($query);
+        return $result;
+
     }
 
     // register
@@ -987,4 +1002,4 @@ class Car
     }
 }
 
-$config = new Car;
+$config = new Car();

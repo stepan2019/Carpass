@@ -22,14 +22,15 @@ if (isset($_POST['register'])) {
     $mail->isSendmail();
 
 //    $mail->setFrom('from@example.com', 'Carpass');
-
-    $mail->addReplyTo($_POST['email'], $_POST['name']);
+    $mail->addAddress($_POST['email'], $_POST['name']);
+    $mail->addReplyTo($_POST['email'], 'Carpass');
 
     $mail->Subject = 'PHPMailer sendmail test';
 
     $mail->msgHTML(file_get_contents('../phpmailer/contents.html'), dirname(__FILE__));
     $mail->AltBody = 'This is a plain-text message body';
     $mail->addAttachment('images/phpmailer_mini.png');
+//    print_r($mail);exit;
 
 //send the message, check for errors
     if (!$mail->send()) {
@@ -37,7 +38,7 @@ if (isset($_POST['register'])) {
     } else {
         echo "Message sent!";
     }
-
+    exit();
     $result = $config->register_dealer($name, $address, $email, $phone, $company, $website, $password);
     if ($result) {
         header("location:/user/login.php?type=login_dealer");

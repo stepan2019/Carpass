@@ -40,7 +40,7 @@ $lng['general']['Total_Loss'] = 'Total Loss';
 $lng['general']['submit'] = 'Submit';
 $lng['general']['Reset'] = 'Reset';
 $lng['general']['Request_New'] = 'Request New';
-$lng['general']['Request_make_model'] = 'You can request to us the new make or model if there doesnt exist.'
+$lng['general']['Request_make_model'] = 'You can request to us the new make or model if there doesnt exist.';
 $lng['general']['search'] = 'Search';
 $lng['general']['download'] = 'Download';
 
@@ -91,8 +91,8 @@ $lng['useraccount']['Current_Password'] = 'Current Password';
 $lng['useraccount']['New_password'] = 'New Password';
 $lng['useraccount']['Confirm_New_Password'] = 'Confirm New Password';
 $lng['useraccount']['change_password'] = 'Change Password';
-$lng['useraccount']['Update'] = 'Update'
-$lng['useraccount']['Cancel'] = 'Cancel'
+$lng['useraccount']['Update'] = 'Update';
+$lng['useraccount']['Cancel'] = 'Cancel';
 
 
 // ------------------- CONTACT -----------------
@@ -135,19 +135,19 @@ $lng['Pdf']['Tellerrapport'] = 'Tellerrapport';
 $lng['Pdf']['License_Plate'] = 'Licens Plate';
 $lng['Pdf']['Vin'] = 'Vin';
 $lng['Pdf']['Make_Model'] = 'Make / Model';
-$lng['Pdf']['Year_Build'] = 'Year Build'
-$lng['Pdf']['Current_km_reading'] = 'Print'
-$lng['Pdf']['Print'] = 'Current KM Reading'
-$lng['Pdf']['Car_Crashed'] = 'Car Crashed'
-$lng['Pdf']['No-Judgement'] = 'No Judgement'
-$lng['Pdf']['Logical'] = 'Logical'
-$lng['Pdf']['Not_Logical'] = 'Not Logical'
-$lng['Pdf']['KM_records'] = 'KM Records'
-$lng['Pdf']['KM'] = 'KM'
-$lng['Pdf']['add_date'] = 'Add Date'
-$lng['Pdf']['Explamation'] = 'Explanation'
+$lng['Pdf']['Year_Build'] = 'Year Build';
+$lng['Pdf']['Current_km_reading'] = 'Print';
+$lng['Pdf']['Print'] = 'Current KM Reading';
+$lng['Pdf']['Car_Crashed'] = 'Car Crashed';
+$lng['Pdf']['No-Judgement'] = 'No Judgement';
+$lng['Pdf']['Logical'] = 'Logical';
+$lng['Pdf']['Not_Logical'] = 'Not Logical';
+$lng['Pdf']['KM_records'] = 'KM Records';
+$lng['Pdf']['KM'] = 'KM';
+$lng['Pdf']['add_date'] = 'Add Date';
+$lng['Pdf']['Explamation'] = 'Explanation';
 $lng['Pdf']['registration_text'] = 'Registration of the car KM in Greece is From 2019, we cannot JUDGEMENT about the Km before this year.
-You see in the report Logical, Not Logical, No JUDGEMENT that means:'
-$lng['Pdf']['1'] = '1 - Logical that means the KM is Logical as we have Registered by Carpass.'
-$lng['Pdf']['2'] = '2 - Not Logical, That means the km is change after registration by Carpass.'
-$lng['Pdf']['3'] = '3 - No Judgment, that mean we have no any data of this vehicle, that is first Registration by Carpass.'
+You see in the report Logical, Not Logical, No JUDGEMENT that means:';
+$lng['Pdf']['1'] = '1 - Logical that means the KM is Logical as we have Registered by Carpass.';
+$lng['Pdf']['2'] = '2 - Not Logical, That means the km is change after registration by Carpass.';
+$lng['Pdf']['3'] = '3 - No Judgment, that mean we have no any data of this vehicle, that is first Registration by Carpass.';
