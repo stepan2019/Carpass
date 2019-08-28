@@ -173,8 +173,7 @@ class categories {
 		from ".TABLE_CATEGORIES." 
 		LEFT JOIN ".TABLE_CATEGORIES."_lang on ".TABLE_CATEGORIES.".`id` = ".TABLE_CATEGORIES."_lang.`id`
 		LEFT JOIN ".TABLE_SLUGS." on ".TABLE_CATEGORIES.".`id` = ".TABLE_SLUGS.".`object_id` 
-		where `lang_id`='$crt_lang' and `active`=1 and ".TABLE_SLUGS.".`type`='category' $group_regexp $parent_str order by `order_no`");	
-
+		where `lang_id`='$crt_lang' and `active`=1 and ".TABLE_SLUGS.".`type`='category' $group_regexp $parent_str order by `order_no`");
 		$no = count($result);
 		$parents_array = array();
 		for($i=0; $i<$no; $i++) { 

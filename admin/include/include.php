@@ -18,7 +18,7 @@ require_once($config_abs_path.'/include/tables.php');
 require_once($config_abs_path.'/include/form.php');
 if(mysqli_installed())
 	require_once($config_abs_path.'/classes/mysqli.php');
-else 
+else
 	require_once($config_abs_path.'/classes/mysql.php');
 require_once($config_abs_path.'/include/cache.php');
 require_once($config_abs_path.'/classes/languages.php');
@@ -45,10 +45,9 @@ if($db->error!='') { header("Location: $config_live_site/offline.php"); exit(0);
 $crt_lang = '';
 $crt_lang = languages::getCurrent();
 
-// set main domain 
+// set main domain
 setMainDomain();
 global $main_domain;
-
 // get base cached objects: modules and settings
 common::getBaseCachedObjects();
 

@@ -327,8 +327,8 @@ class common {
 		$lang_name = "";
 		if(in_array($object, $lang_dep_objects) ) $lang_name = $crt_lang;
 
-		if($result = $lc_cache->readCache($object, $lang_name, $param))
-			return $result;
+//		if($result = $lc_cache->readCache($object, $lang_name, $param))
+//			return $result;
 
 		// get the object directly from database
 		global $config_abs_path;
@@ -347,7 +347,6 @@ class common {
 				$result['mobile_settings'] = settings::getMobileSettings();
 				$result['mail_settings'] = settings::getMailSettings();
 				$result['invoice_settings'] = settings::getInvoiceSettings();
-
 				break;
 
 			case "base_meta_info":

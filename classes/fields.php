@@ -147,8 +147,8 @@ class fields {
 
 		if($set)  $where_str .= " and ( `fieldset` REGEXP '\[\[:<:\]\]$set\[\[:>:\]\]'  or `fieldset` = 0 ) ";
 		else if($type=="advanced") $where_str .= " and `fieldset` = 0 ";
-
 		$array=$db->fetchAssocList("select * from `".$this->table."` LEFT JOIN `".$this->table."_lang` on `".$this->table."`.`id` = `".$this->table."_lang`.`id` where `lang_id` = '$crt_lang' and `active` = 1".$where_str." order by `order_no`");
+
 		$i=0;
 		$arr=array();
 		$this->multi_depending = '';

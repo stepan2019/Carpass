@@ -16,7 +16,6 @@ $smarty = new Smarty;
 $smarty = common($smarty);
 $smarty->assign("tab","settings");
 $smarty->assign("lng",$lng);
-
 $lang = new languages();
 $languages = $lang->getLanguages();
 $smarty->assign("array_languages", $languages);

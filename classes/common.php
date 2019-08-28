@@ -327,12 +327,11 @@ class common {
 		$lang_name = "";
 		if(in_array($object, $lang_dep_objects) ) $lang_name = $crt_lang;
 
-		if($result = $lc_cache->readCache($object, $lang_name, $param))
-			return $result;
+//		if($result = $lc_cache->readCache($object, $lang_name, $param))
+//			return $result;
 
 		// get the object directly from database
 		global $config_abs_path;
-
 		switch($object) {
 
 			case "base_settings":
@@ -600,9 +599,8 @@ class common {
 	// gets some common settings values
 	// ran before the template engine initializes
 	static function getBaseCachedObjects() {
-
 		global $modules_array, $appearance_settings, $ads_settings, $settings, $seo_settings, $mobile_settings, $mail_settings, $invoice_settings;
-		
+
 		$result = common::getCachedObject("base_settings");
 		$modules_array = $result['modules'];
 		$settings = $result['settings'];

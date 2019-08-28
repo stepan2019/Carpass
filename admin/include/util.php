@@ -131,7 +131,6 @@ function common($smarty, $page="") {
 
 	global $modules_array;
 	$smarty->assign("modules_array",$modules_array);
-
 	global $seo;
 	$seo = new seo();
 	$seo->init($smarty);

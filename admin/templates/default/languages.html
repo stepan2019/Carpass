@@ -40,7 +40,7 @@
 	</td>
 	<td>
 
-		<a href="edit_language.php?id={$v.id}"><img src="{$template_path}images/edit.png" class="" title="{$lng.general.edit}" alt=""></a>
+		<a href="home.php?query=edit_language&id={$v.id}"><img src="{$template_path}images/edit.png" class="" title="{$lng.general.edit}" alt=""></a>
 
 		<a href="javascript:;" onclick="{if $demo}alert('{$lng.general.errors.demo}');{else}{if $v.default}alert('{$lng.languages.errors.cannot_delete_default_lang}');{else}onDeleteLanguage('{$lng.languages.confirm_delete|addslashes}', '{$v.id}');{/if}{/if}">
 		<img src="{$template_path}images/delete.png" class="" title="{$lng.general.delete}" alt=""></a>
@@ -67,4 +67,3 @@
 </form>
 </div> {* p30 *}
 
-{include file="footer.html"}

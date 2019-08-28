@@ -47,7 +47,7 @@ if(isset($_POST['Submit'])) {
 		$language = $lang_config->getTmp();
 		$error = $lang_config->getError();
 	} else { 
-		header("Location: languages.php");
+		header("Location: home.php?query=languages");
 		exit(0);
 	}
 }

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2019-08-28 14:00:27
+<?php /* Smarty version 3.1.24, created on 2019-08-28 19:49:50
          compiled from "E:/workspace/carpass/admin/templates/default/languages.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:2138036975d6688fb1f42f0_96847004%%*/
+/*%%SmartyHeaderCode:2731536415d66dadede8cf1_28666280%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dfd52dc77f55619e22c9a092fe16c5e63a256bca' => 
     array (
       0 => 'E:/workspace/carpass/admin/templates/default/languages.html',
-      1 => 1567000820,
+      1 => 1567021784,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2138036975d6688fb1f42f0_96847004',
+  'nocache_hash' => '2731536415d66dadede8cf1_28666280',
   'variables' => 
   array (
     'template_path' => 0,
@@ -26,13 +26,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5d6688fb336ee3_91737298',
+  'unifunc' => 'content_5d66dadeea6778_26144254',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5d6688fb336ee3_91737298')) {
-function content_5d6688fb336ee3_91737298 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5d66dadeea6778_26144254')) {
+function content_5d66dadeea6778_26144254 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2138036975d6688fb1f42f0_96847004';
+$_smarty_tpl->properties['nocache_hash'] = '2731536415d66dadede8cf1_28666280';
 ?>
 
 <div class="p30">
@@ -113,7 +113,7 @@ images/down-off.png">
 	</td>
 	<td>
 
-		<a href="edit_language.php?id=<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
+		<a href="home.php?query=edit_language&id=<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
 "><img src="<?php echo $_smarty_tpl->tpl_vars['template_path']->value;?>
 images/edit.png" class="" title="<?php echo $_smarty_tpl->tpl_vars['lng']->value['general']['edit'];?>
 " alt=""></a>
@@ -174,9 +174,6 @@ $_smarty_tpl->tpl_vars['v'] = $foreach_v_Sav;
 </table>
 </form>
 </div> 
-
-<?php echo $_smarty_tpl->getSubTemplate ("footer.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
-?>
 
 <?php }
 }

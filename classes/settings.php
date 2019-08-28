@@ -19,7 +19,6 @@ class settings {
 		global $db;
 		global $crt_lang;
 		$array=$db->fetchAssoc("select * from ".TABLE_SETTINGS.", ".TABLE_SETTINGS."_lang where `lang_id`='$crt_lang'");
-
 		foreach ($array as $key=>$value) {
 			$array[$key] = cleanStr($value);
 		}

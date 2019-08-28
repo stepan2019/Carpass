@@ -593,7 +593,6 @@ class depending_fields_config {
 
 		global $db;
 		global $config_table_prefix;
-
 		$array_cpy = $db->fetchAssocList("select * from ".TABLE_DEPENDING_FIELDS."_lang where `lang_id` = '$default'");
 
 		foreach ($array_cpy as $res) {
@@ -609,7 +608,6 @@ class depending_fields_config {
 				if($key!='lang_id') $sql.=", `$key` = '".addslashes($value)."'";
 
 			}
-
 			$res = $db->query($sql);
 
 		}
@@ -625,6 +623,7 @@ class depending_fields_config {
 					foreach($array_tab as $at) {
 						$exists = $db->fetchRow("select count(*) from ".$config_table_prefix."$table where id = '".$at['id']."' and `lang_id`='$lang_id'");
 						if($exists) continue;
+
 						$sql = "insert into ".$config_table_prefix.$table." set `lang_id` = '$lang_id'";
 						foreach($at as $key=>$value) {
 							if($key!='lang_id') $sql.=", `$key` = '".addslashes($value)."'";

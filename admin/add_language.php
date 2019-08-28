@@ -22,7 +22,6 @@ $smarty->assign("lng",$lng);
 
 global $array_maps;
 $smarty->assign("array_maps",$array_maps);
-
 $error='';
 if(isset($_POST['Submit'])) {
 
@@ -34,7 +33,7 @@ if(isset($_POST['Submit'])) {
     } else {
         $error = $lang->getError();
         if(!$error) {
-            header("Location: languages.php");
+            header("Location: home.php?query=languages");
             exit(0);
         }
     }

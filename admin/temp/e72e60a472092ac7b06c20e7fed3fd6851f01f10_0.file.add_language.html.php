@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2019-08-27 18:48:24
+<?php /* Smarty version 3.1.24, created on 2019-08-28 15:56:54
          compiled from "E:/workspace/carpass/admin/templates/default/add_language.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:4055940445d657af8babda1_97083480%%*/
+/*%%SmartyHeaderCode:8306152945d66a4462c6827_13074306%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e72e60a472092ac7b06c20e7fed3fd6851f01f10' => 
     array (
       0 => 'E:/workspace/carpass/admin/templates/default/add_language.html',
-      1 => 1566931701,
+      1 => 1567007810,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '4055940445d657af8babda1_97083480',
+  'nocache_hash' => '8306152945d66a4462c6827_13074306',
   'variables' => 
   array (
     'id' => 0,
@@ -28,14 +28,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5d657af8c4c084_18051664',
+  'unifunc' => 'content_5d66a44636f467_50288061',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5d657af8c4c084_18051664')) {
-function content_5d657af8c4c084_18051664 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5d66a44636f467_50288061')) {
+function content_5d66a44636f467_50288061 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once 'E:/workspace/carpass/libs/plugins/modifier.capitalize.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '4055940445d657af8babda1_97083480';
+$_smarty_tpl->properties['nocache_hash'] = '8306152945d66a4462c6827_13074306';
 echo $_smarty_tpl->getSubTemplate ("data/fancybox.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -182,10 +182,6 @@ $(document).ready(function() {
 });
 <?php echo '</script'; ?>
 >
-
-
-<?php echo $_smarty_tpl->getSubTemplate ("footer.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
-?>
 
 <?php }
 }

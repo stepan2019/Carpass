@@ -2,10 +2,10 @@
 	$config_db_server='localhost';
 	$config_db_server_username='root';
 	$config_db_server_password='';
-	$config_db_database='oxy_db';
+	$config_db_database='carpasgr_car';
 	$config_db_charset='utf8';
 	$config_db_collation='utf8_general_ci';
-	$config_table_prefix='class_';
+	$config_table_prefix='';
 	$config_live_site='http://127.0.0.60';
 	$config_abs_path='E:\workspace\carpass';
 	$config_demo=0;

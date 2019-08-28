@@ -784,7 +784,6 @@ class Smarty extends Smarty_Internal_TemplateBase
         if (isset($_SERVER['SCRIPT_NAME'])) {
             Smarty::$global_tpl_vars['SCRIPT_NAME'] = new Smarty_Variable($_SERVER['SCRIPT_NAME']);
         }
-
         // Check if we're running on windows
         Smarty::$_IS_WINDOWS = strtoupper(substr(PHP_OS, 0, 3)) === 'WIN';
 

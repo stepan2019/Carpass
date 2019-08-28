@@ -110,7 +110,8 @@
     </nav>
 
     <div class="container" style="margin-top: 150px;">
-        <?php 
+        <?php
+            ini_set('display_errors', '1');
             $homepage = "dashboard";
             if(isset($_GET['query'])) {
                 $homepage = $_GET['query'];
