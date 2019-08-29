@@ -36,6 +36,21 @@ class Car
 
     }
 
+    public function getEnableLanguages()
+    {
+        $query = "select * from languages where `enabled`=1 order by `order_no`";
+        $result = $this->connectdb->query($query);
+        return $result;
+
+    }
+    public function getEnableLanguagesWithoutDefault()
+    {
+        $query = "select * from languages where `enabled`=1 and `default` <> 1 order by `order_no`";
+        $result = $this->connectdb->query($query);
+        return $result;
+
+    }
+
     // register
     public function register_user($name, $address, $email, $phone, $password)
     {

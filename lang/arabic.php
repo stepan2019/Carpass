@@ -12,6 +12,7 @@ $lng['navbar']['home'] = 'الصفحية الرئیسیة';
 $lng['navbar']['login'] = 'تسجيل الدخول';
 $lng['navbar']['logout'] = 'خروج';
 $lng['navbar']['price'] = 'السعر';
+$lng['navbar']['information'] = 'السعرمعلومات';
 $lng['navbar']['register'] = 'تسجیل';
 $lng['navbar']['add_vehicle_km'] = 'تسجیل کم السیارة';
 $lng['navbar']['my_account'] = 'حسابي';

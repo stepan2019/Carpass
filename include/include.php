@@ -6,7 +6,7 @@
 	* (c) 2017 OxyClassifieds.com (office@oxyclassifieds.com).
 	*
 */
-
+//require_once "../include/include.php";
 $path=dirname(__FILE__);
 if(!file_exists($path.'/../config.php')) { header("Location: install/"); exit(0); }
 require_once($path.'/../config.php');

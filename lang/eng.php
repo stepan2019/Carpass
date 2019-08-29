@@ -11,6 +11,7 @@
 $lng['navbar']['home'] = 'Home';
 $lng['navbar']['login'] = 'Sign In';
 $lng['navbar']['logout'] = 'Sign Out';
+$lng['navbar']['information'] = 'Information';
 $lng['navbar']['price'] = 'price';
 $lng['navbar']['register'] = 'Register';
 $lng['navbar']['add_vehicle_km'] = 'Add Vehicle Km';

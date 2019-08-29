@@ -1,19 +1,22 @@
 <?php
+
 include "../setting/config.php";
+
+include "../include/include.php";
+
+global $lng;
 
 session_start();
 
 if (!@$_SESSION['user']) {
     header("location:/user/login.php");
 }
-
 $result = $config->getVehicleList();
 $dbdata = array();
 
 while ($row = $result->fetch_assoc()) {
     $dbdata[] = $row;
 }
-
 $email = @$_SESSION['user'];
 $type = @$_SESSION['type'];
 $result = $config->getAddress($email, $type);
@@ -158,7 +161,7 @@ if (isset($_POST['add_car'])) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="<?php echo $crt_lang_code;?>">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -184,6 +187,10 @@ if (isset($_POST['add_car'])) {
             max-width: 1450px;
         }
     </style>
+    <script>
+        exdate=new Date();
+        exdate.setDate(exdate.getDate() + 365);
+    </script>
 </head>
 <body>
 
@@ -197,15 +204,16 @@ include "../template/header.php";
             <div class="row col-md-12">
                 <div class="col-md-1"></div>
                 <div class="col-md-5 text-left mt-1">
-                    <label class="control-label">Plate Number</label>
+                    <label class="control-label"><?php echo $lng['general']['Plate_Number']; ?></label>
                     <div class="agileits-main only-plate">
                         <!--<i class="fas fa-list-ol"></i>-->
                         <input type="text" required="" pattern="[a-zA-Z]{3}-[0-9]{3,4}" name="plate" id="car_plate"
-                               onkeyup="this.value = this.value.toUpperCase();">
+                               style="background-image: url(/images/Greece-number.png);color:black;background-size: cover;text-align:center;"
+                               onkeyup="this.value = this.value.toUpperCase();" placeholder="XIE-7209">
                     </div>
                 </div>
                 <div class="col-md-5 text-left mt-1">
-                    <label class="control-label">VIN</label>
+                    <label class="control-label"><?php echo $lng['general']['Vin']; ?></label>
                     <div class="agileits-main">
                         <i class="fas fa-barcode"></i>
                         <input type="text" required="" name="vin" id="car_vin"
