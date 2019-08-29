@@ -16,13 +16,13 @@
             $_SESSION['user'] = $email;
             $_SESSION['type'] = "user";
             if(isset($goTo) && $goTo == "goVehicle"){
-                $URL="https://test.com.www.carpass.gr/vehicle/add.php";
+                $URL="https://www.test.com.carpass.gr/vehicle/add.php";
                 echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
             }else if(isset($goTo) && $goTo == "goRequest"){
-                $URL="https://test.com.www.carpass.gr/vehicle/history.php";
+                $URL="https://www.test.com.carpass.gr/vehicle/history.php";
                 echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
             }else{
-               $URL="https://test.com.www.carpass.gr/vehicle/add.php";
+               $URL="https://www.test.com.carpass.gr/vehicle/add.php";
                 echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
             }
         } else {
