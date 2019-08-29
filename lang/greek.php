@@ -12,6 +12,7 @@ $lng['navbar']['home'] = 'ΑΡΧΙΚΗ';
 $lng['navbar']['login'] = 'Συνδεθείτε';
 $lng['navbar']['logout'] = 'Αποσύνδεση';
 $lng['navbar']['price'] = 'τιμή';
+$lng['navbar']['information'] = 'πληροφορίες';
 $lng['navbar']['register'] = 'Κανω ΕΓΓΡΑΦΗ';
 $lng['navbar']['add_vehicle_km'] = 'Προσθέστε το χιλιομετρικό όχημα';
 $lng['navbar']['my_account'] = 'Ο λογαριασμός μου';
@@ -40,7 +41,7 @@ $lng['general']['Total_Loss'] = 'Ολική απώλεια';
 $lng['general']['submit'] = 'υποβάλλουν';
 $lng['general']['Reset'] = 'Επαναφορά';
 $lng['general']['Request_New'] = 'Αίτηση Νέα';
-$lng['general']['Request_make_model'] = 'Μπορείτε να μας ζητήσετε τη νέα μάρκα ή μοντέλο αν δεν υπάρχει.'
+$lng['general']['Request_make_model'] = 'Μπορείτε να μας ζητήσετε τη νέα μάρκα ή μοντέλο αν δεν υπάρχει.';
 $lng['general']['search'] = 'Ψάξιμο';
 $lng['general']['download'] = 'Κατεβάστε';
 
@@ -91,8 +92,8 @@ $lng['useraccount']['Current_Password'] = 'Ο τρέχων κωδικός πρό
 $lng['useraccount']['New_password'] = 'νέος κωδικός πρόσβασης';
 $lng['useraccount']['Confirm_New_Password'] = 'Επιβεβαιώστε τον καινούριο σας κωδικό';
 $lng['useraccount']['change_password'] = 'Άλλαξε κωδικό';
-$lng['useraccount']['Update'] = 'Εκσυγχρονίζω'
-$lng['useraccount']['Cancel'] = 'Ματαίωση'
+$lng['useraccount']['Update'] = 'Εκσυγχρονίζω';
+$lng['useraccount']['Cancel'] = 'Ματαίωση';
 
 
 // ------------------- CONTACT -----------------
@@ -135,19 +136,19 @@ $lng['Pdf']['Tellerrapport'] = 'Έκθεση χιλιομέτρων';
 $lng['Pdf']['License_Plate'] = 'Πινακίδα κυκλοφορίας';
 $lng['Pdf']['Vin'] = 'Αριθμό πλαισίου';
 $lng['Pdf']['Make_Model'] = 'Μάρκα / Μοντέλο';
-$lng['Pdf']['Year_Build'] = 'Έτος κατασκευής'
-$lng['Pdf']['Current_km_reading'] = 'Τυπώνω'
-$lng['Pdf']['Print'] = 'Τρέχουσα ανάγνωση KM'
-$lng['Pdf']['Car_Crashed'] = 'Το αυτοκίνητο συνετρίβη'
-$lng['Pdf']['No-Judgement'] = 'Δεν υπάρχει κρίση'
-$lng['Pdf']['Logical'] = 'Λογικός'
-$lng['Pdf']['Not_Logical'] = 'δεν είναι λογικό'
-$lng['Pdf']['KM_records'] = 'Εγγραφές χιλιομέτρων'
-$lng['Pdf']['KM'] = 'Απόσταση σε μίλια'
-$lng['Pdf']['add_date'] = 'Προσθήκη ημερομηνίας'
-$lng['Pdf']['Explamation'] = 'Explanation'
+$lng['Pdf']['Year_Build'] = 'Έτος κατασκευής';
+$lng['Pdf']['Current_km_reading'] = 'Τυπώνω';
+$lng['Pdf']['Print'] = 'Τρέχουσα ανάγνωση KM';
+$lng['Pdf']['Car_Crashed'] = 'Το αυτοκίνητο συνετρίβη';
+$lng['Pdf']['No-Judgement'] = 'Δεν υπάρχει κρίση';
+$lng['Pdf']['Logical'] = 'Λογικός';
+$lng['Pdf']['Not_Logical'] = 'δεν είναι λογικό';
+$lng['Pdf']['KM_records'] = 'Εγγραφές χιλιομέτρων';
+$lng['Pdf']['KM'] = 'Απόσταση σε μίλια';
+$lng['Pdf']['add_date'] = 'Προσθήκη ημερομηνίας';
+$lng['Pdf']['Explamation'] = 'Explanation';
 $lng['Pdf']['registration_text'] = 'Η εγγραφή του αυτοκινήτου KM στην Ελλάδα είναι από το 2019, δεν μπορούμε να ΑΠΟΦΑΣΙΣΗ για το χιλιόμετρο πριν από αυτό το έτος.
-Βλέπετε στην έκθεση Logical, Not Logical, No JUDGMENT ότι σημαίνει:'
-$lng['Pdf']['1'] = '1 - Λογική σημαίνει ότι το KM είναι λογικό, όπως έχουμε καταχωρίσει από το Carpass.'
-$lng['Pdf']['2'] = '2 - Δεν είναι λογικό, Αυτό σημαίνει ότι το χιλιόμετρο αλλάζει μετά την εγγραφή από το Carpass.'
-$lng['Pdf']['3'] = '3 - Δεν υπάρχει κρίση, που σημαίνει ότι δεν έχουμε κανένα στοιχείο αυτού του οχήματος, που είναι η πρώτη εγγραφή από το Carpass.'
+Βλέπετε στην έκθεση Logical, Not Logical, No JUDGMENT ότι σημαίνει:';
+$lng['Pdf']['1'] = '1 - Λογική σημαίνει ότι το KM είναι λογικό, όπως έχουμε καταχωρίσει από το Carpass.';
+$lng['Pdf']['2'] = '2 - Δεν είναι λογικό, Αυτό σημαίνει ότι το χιλιόμετρο αλλάζει μετά την εγγραφή από το Carpass.';
+$lng['Pdf']['3'] = '3 - Δεν υπάρχει κρίση, που σημαίνει ότι δεν έχουμε κανένα στοιχείο αυτού του οχήματος, που είναι η πρώτη εγγραφή από το Carpass.';

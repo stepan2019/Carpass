@@ -8,11 +8,12 @@
     vertical-align: top;
     position:fixed;
     left:85%;
+    top:20px;
 }
 
 .languagepicker:hover {
     /* don't forget the 1px border */
-    height: 81px;
+    height: auto;
 }
 
 .languagepicker a{
