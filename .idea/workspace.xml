@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7db2e5a1-777a-4b65-b71a-e2d1ad3c3c2f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.htaccess1" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carpasgr_car.sql" beforeDir="false" afterPath="$PROJECT_DIR$/carpasgr_car.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirement/login-carpass.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirement/login-carpass.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/forgot.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/forgot.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/login_dealer.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/login_dealer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/login_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/login_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle/payments.php" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle/payments.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -291,16 +297,15 @@
       <updated>1566747747053</updated>
       <workItem from="1566747748192" duration="26583000" />
       <workItem from="1566811467238" duration="6290000" />
-      <workItem from="1566867398608" duration="77794000" />
+      <workItem from="1566867398608" duration="78051000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110667000" />
+    <option name="totallyTimeSpent" value="110924000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15884861" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
