@@ -1,6 +1,10 @@
 <?php
 
 include "include/include.php";
+
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+
+include $root . "/setting/config.php";
 // include "setting/config.php";
 
 // session_start();
