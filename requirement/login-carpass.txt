@@ -2,13 +2,13 @@ CP and ftp:
 
 carpasgr
 9WKuL=XZ^CKS
-https://www.carpass.gr:2083
+https://test.com.www.carpass.gr:2083
 ----------------------
 
 admin login:
 Ario
 fouad68
-https://www.carpass.gr/admin/
+https://test.com.www.carpass.gr/admin/
 
 user loin:
 ovreuropa@gmail.com

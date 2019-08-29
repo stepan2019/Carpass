@@ -1,6 +1,8 @@
 <?php
 
-include "setting/config.php";
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+
+//include $root . "/setting/config.php";
 
 //echo @$_SESSION['user'];exit;
 $result = $config->getAboutContent();
@@ -84,7 +86,7 @@ global $crt_lang_code;
                             <li><img src="/images/languages/<?php echo $row['image']; ?>"/><?php echo $row['name']; ?>
                             </li>
                         </a>
-                    <?php
+                        <?php
                     } ?>
                     <?php
                 }
