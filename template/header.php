@@ -5,6 +5,7 @@ $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 //include $root . "/setting/config.php";
 
 //echo @$_SESSION['user'];exit;
+global $text_direction;
 $result = $config->getAboutContent();
 $about = $result->fetch_assoc();
 
@@ -27,8 +28,15 @@ $enableLanguages2 = $config->getEnableLanguages();
 global $crt_lang_code;
 
 ?>
-<link href="/template/css/style.css" rel="stylesheet">
-
+<?php
+if ($text_direction == 'rtl') {
+    ?>
+    <link href="/template/css/style-rtl.css" rel="stylesheet">
+    <?php
+} else {
+    ?>
+    <link href="/template/css/style.css" rel="stylesheet">
+<?php } ?>
 <nav class="navbar navbar-toggleable-md mb-4 top-bar navbar-static-top sps sps--abv">
 
     <div class="container">
