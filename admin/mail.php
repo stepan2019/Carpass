@@ -43,7 +43,6 @@ if (isset($_POST['Update'])) {
     else $info = $lng['mailto']['sending_message_failed'];
 
     if(!$sent)	$extra_info = $mail->getSendError()."<br/>".$mail->getDebugMessage();
-    exit($extra_info);
 }
 ?>
 

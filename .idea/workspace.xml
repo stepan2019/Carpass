@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7db2e5a1-777a-4b65-b71a-e2d1ad3c3c2f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/about.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/add_language1.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/information.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/information.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/mail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view_language.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/last.php" beforeDir="false" afterPath="$PROJECT_DIR$/last.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setting/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/setting/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/template/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/template/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/info.php" beforeDir="false" afterPath="$PROJECT_DIR$/template/info.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/price.php" beforeDir="false" afterPath="$PROJECT_DIR$/template/price.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle/add.php" afterDir="false" />
-    </list>
+    <list default="true" id="7db2e5a1-777a-4b65-b71a-e2d1ad3c3c2f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/mail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+            <state relative-caret-position="410">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
             </state>
           </provider>
         </entry>
@@ -223,18 +208,18 @@
       <workItem from="1566811467238" duration="6290000" />
       <workItem from="1566867398608" duration="84269000" />
       <workItem from="1567090847638" duration="2108000" />
-      <workItem from="1567126039737" duration="18670000" />
+      <workItem from="1567126039737" duration="19494000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137920000" />
+    <option name="totallyTimeSpent" value="138744000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16204691" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16204691" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -247,7 +232,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -605,8 +590,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/mail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+        <state relative-caret-position="410">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
         </state>
       </provider>
     </entry>
