@@ -89,7 +89,7 @@
                             <li><a class="nav-link" href="home.php?query=about">Price Content</a></li>
 							<li><a class="nav-link" href="home.php?query=content">Content</a></li>
 							<li><a class="nav-link" href="home.php?query=footer">Footer</a></li>
-							<li><a class="nav-link" href="home.php?query=mail">E-mail option</a></li>
+							<li><a class="nav-link" href="home.php?query=mails_settings">E-mail option</a></li>
 							<li><a class="nav-link" href="home.php?query=send-mail">Send news mail</a></li>
                             <li><a class="nav-link" href="home.php?query=information">Information</a></li>
                         </ul>

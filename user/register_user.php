@@ -1,29 +1,63 @@
-<?php 
-    $response = "";
+<?php
 
-    if(isset($_POST['register'])) {
-        $name = $_POST['name'];
-        $address = $_POST['address'];
-        $email = $_POST['email'];
-        $phone = $_POST['phone'];
-        $password = md5($_POST['password']);
+$response = "";
 
-        $result = $config->register_user($name, $address, $email, $phone, $password);
-        if($result)	{
-            header("location:/user/login.php?type=login_user");
-        } else {
-            $response = "Sorry, is failed to register";
-        }
+require_once "../include/include.php";
+require_once '../classes/validator.php';
+require_once '../classes/mails.php';
+require_once '../classes/settings.php';
+require_once $config_abs_path . "/classes/mail_templates.php";
+
+if (isset($_POST['register'])) {
+    $name = $_POST['name'];
+    $address = $_POST['address'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $password = md5($_POST['password']);
+
+//    $result = $config->register_user($name, $address, $email, $phone, $password);
+//    if ($result) {
+//        header("location:/user/login.php?type=login_user");
+//    } else {
+//        $response = "Sorry, is failed to register";
+//    }
+    // send user activation mail
+    global $config_live_site;
+    global $mail_setting;
+    // add activation code to db record
+    $activation_code = generate_random();
+
+    $res_act = $db->query("update " . TABLE_USERS . " set activation='$activation_code' where `email` = '$email'");
+    $account = urlencode($_POST['email']);
+    if (!$mail_setting['html_mails'])
+        $act_link = $config_live_site . '/activate_account.php?account=' . $account . '&activation=' . $activation_code;
+    else {
+        $lnk = $config_live_site . '/activate_account.php?account=' . $account . '&amp;activation=' . $activation_code;
+        $act_link = '<a href="' . $lnk . '">' . $lnk . '</a>';
     }
+
+    $mail2send = new mails();
+    $mail2send->init($_POST['email'], $_POST['name']);
+
+// regular user or moderator
+    $mail_template = "registration";
+
+    $array_subject["name"] = $_POST["name"];
+    $array_message["name"] = $_POST["name"];
+
+    $is_sendMail = $mail2send->composeAndSend($mail_template, $array_message, $array_subject);
+    print_r($is_sendMail);exit;
+}
 ?>
 
 <style>
-    @media(max-width:1023px){
-        .swiper-container{
-            height:150vh !important;
+    @media (max-width: 1023px) {
+        .swiper-container {
+            height: 150vh !important;
         }
-        .btn_register{
-            margin-left:-50px;
+
+        .btn_register {
+            margin-left: -50px;
         }
     }
 </style>
@@ -68,8 +102,9 @@
             </div>
         </div>
         <div class="text-center submit mt-5">
-            <input type="submit" class="btn btn-primary submit-fs btn-custom btn_register" value="Register" name="register">
-            <?php if($response != "") { ?>
+            <input type="submit" class="btn btn-primary submit-fs btn-custom btn_register" value="Register"
+                   name="register">
+            <?php if ($response != "") { ?>
                 <p><label class="control-label mt-3"><?php echo $response; ?></label></p>
             <?php } ?>
         </div>
