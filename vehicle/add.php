@@ -179,6 +179,7 @@ if (isset($_POST['add_car'])) {
     <link href="../css/nivo-lightbox.css" rel="stylesheet">
     <link href="../css/nivo_themes/default/default.css" rel="stylesheet">
 
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
           integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
@@ -190,6 +191,7 @@ if (isset($_POST['add_car'])) {
     <script>
         exdate=new Date();
         exdate.setDate(exdate.getDate() + 365);
+
     </script>
 </head>
 <body>
@@ -208,7 +210,7 @@ include "../template/header.php";
                     <div class="agileits-main only-plate">
                         <!--<i class="fas fa-list-ol"></i>-->
                         <input type="text" required="" pattern="[a-zA-Z]{3}-[0-9]{3,4}" name="plate" id="car_plate"
-                               style="background-image: url(/images/Greece-number.png);color:black;background-size: cover;text-align:center;"
+                               style="background-image: url(/images/Greece-number.png);color:black;background-size: cover;text-align:center;" maxlength="8" data-mask=""
                                onkeyup="this.value = this.value.toUpperCase();" placeholder="XIE-7209">
                     </div>
                 </div>
@@ -226,7 +228,7 @@ include "../template/header.php";
             <div class="row col-md-12">
                 <div class="col-md-1"></div>
                 <div class="col-md-3 text-left mt-4">
-                    <label class="control-label">Make</label>
+                    <label class="control-label"><?php echo $lng['general']['Make'];?></label>
                     <div class="agileits-main">
                         <i class="far fa-building"></i>
                         <select name="make" required="" id="add_car_make">
@@ -249,7 +251,7 @@ include "../template/header.php";
                     <?php } ?>
                 </div>
                 <div class="col-md-4 text-left mt-4">
-                    <label class="control-label">Model</label>
+                    <label class="control-label"><?php echo $lng['general']['Model'];?></label>
                     <div class="agileits-main">
                         <i class="fas fa-cogs"></i>
                         <select name="model" required="" id="add_car_model">
@@ -261,7 +263,7 @@ include "../template/header.php";
                     <?php } ?>
                 </div>
                 <div class="col-md-3 text-left mt-4">
-                    <label class="control-label">Build Year</label>
+                    <label class="control-label"><?php echo $lng['general']['Build_Year'];?></label>
                     <div class="agileits-main">
                         <i class="far fa-clock"></i>
                         <select name="year" required="" id="car_year">
@@ -281,14 +283,14 @@ include "../template/header.php";
                 <div class="col-md-1"></div>
                 <div class="col-md-1"></div>
                 <div class="col-md-5 text-left mt-4">
-                    <label class="control-label">KM</label>
+                    <label class="control-label"><?php echo $lng['general']['KM'];?></label>
                     <div class="agileits-main">
                         <i class="fas fa-running"></i>
                         <input type="number" name="km" step="any" required="" id="car_km">
                     </div>
                 </div>
                 <div class="col-md-5 text-left mt-4">
-                    <label class="control-label">Date</label>
+                    <label class="control-label"><?php echo $lng['general']['date'];?></label>
                     <div class="agileits-main">
                         <i class="far fa-calendar-alt"></i>
                         <input type="date" value="<?php echo date('Y-m-d'); ?>" disabled>
@@ -300,13 +302,13 @@ include "../template/header.php";
             <div class="row col-md-12">
                 <div class="col-md-1"></div>
                 <div class="col-md-3 text-left mt-4">
-                    <label class="control-label">Crashed ?</label>
+                    <label class="control-label"><?php echo $lng['general']['Crashed ?'];?></label>
                     <div class="agileits-main">
                         <i class="fas fa-car-crash"></i>
                         <select name="crash" required="" id="car_crash">
-                            <option disabled selected>Status</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option disabled selected><?php echo $lng['general']['Status'];?></option>
+                            <option value="yes"><?php echo $lng['general']['Yes'];?></option>
+                            <option value="no"><?php echo $lng['general']['No'];?></option>
                         </select>
                     </div>
                     <?php if ($resCrash != "") { ?>
@@ -318,26 +320,26 @@ include "../template/header.php";
             <div class="row col-md-12 car_status">
                 <div class="col-md-1"></div>
                 <div class="col-md-1 text-left check-border">
-                    <input type="checkbox" name="front" value="yes"> Front
+                    <input type="checkbox" name="front" value="yes"> <?php echo $lng['general']['Front'];?>
                 </div>
                 <div class="col-md-1 text-left check-border">
-                    <input type="checkbox" name="back" value="yes"> Back
+                    <input type="checkbox" name="back" value="yes"> <?php echo $lng['general']['Back'];?>
                 </div>
                 <div class="col-md-1 text-left check-border">
-                    <input type="checkbox" name="lefty" value="yes"> Left
+                    <input type="checkbox" name="lefty" value="yes"> <?php echo $lng['general']['Left'];?>
                 </div>
                 <div class="col-md-1 text-left check-border">
-                    <input type="checkbox" name="righty" value="yes"> Right
+                    <input type="checkbox" name="righty" value="yes"> <?php echo $lng['general']['Right'];?>
                 </div>
                 <div class="col-md-2 text-left check-border">
-                    <input type="checkbox" name="total" value="yes"> Total Loss
+                    <input type="checkbox" name="total" value="yes"> <?php echo $lng['general']['Total_Loss'];?>
                 </div>
                 <div class="col-md-1"></div>
             </div>
 
             <div class="text-center submit mt-5">
-                <button type="submit" class="btn btn-primary submit-fs btn-custom" name="add_car">Submit</button>
-                <button type="reset" class="btn btn-primary submit-fs btn-custom">Reset</button>
+                <button type="submit" class="btn btn-primary submit-fs btn-custom" name="add_car"><?php echo $lng['general']['submit'];?></button>
+                <button type="reset" class="btn btn-primary submit-fs btn-custom"><?php echo $lng['general']['Reset'];?></button>
                 <?php if ($response != "") { ?>
                     <p><label class="control-label mt-3"><?php echo $response; ?></label></p>
                 <?php } ?>
@@ -347,11 +349,10 @@ include "../template/header.php";
         <hr>
 
         <div class="extra-field">
-            <div class="text-center text-black mb-4">You can request to us the new make or model if there doesn't
-                exist.
+            <div class="text-center text-black mb-4"><?php echo $lng['general']['Request_make_model'];?>
             </div>
             <div class="text-center">
-                <a href="../template/contact.php" class="btn btn-primary submit-fs btn-custom">Request New</a>
+                <a href="../template/contact.php" class="btn btn-primary submit-fs btn-custom"><?php echo $lng['general']['Request_New'];?></a>
             </div>
         </div>
     </div>
@@ -383,9 +384,17 @@ include "../template/footer.php";
 <script src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/scrollPosStyler.js"></script>
+<script type="text/javascript" src="../js/jquery.mask.js"></script>
 
 <script type="text/javascript">
+
     $(document).ready(function () {
+        $('#car_plate').mask('AAA-YYYY', {'translation': {
+                A: {pattern: /[A-Za-z]/},
+                Y: {pattern: /[0-9]/}
+            }
+        });
+
         var dbArrayPlateDate = [];
 
         var dbJsonData = '<?php echo json_encode($dbdata); ?>';

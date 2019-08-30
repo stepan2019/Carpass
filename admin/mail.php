@@ -3,7 +3,17 @@ $response = "";
 
 $result = $config->getEmailSetting();
 $currentData = $result->fetch_assoc();
+require_once "include/include.php";
+require_once '../classes/validator.php';
+require_once '../classes/config/settings_config.php';
+require_once '../classes/mails.php';
+require_once '../classes/settings.php';
 
+global $db;
+global $lng;
+
+$errors_str='';
+$successful = 0;
 if (isset($_POST['Update'])) {
     $html_email = (isset($_POST['html_email'])) ? $_POST['html_email'] : 0;
     $smtp_auth = $_POST['smtp_auth'];
@@ -23,6 +33,17 @@ if (isset($_POST['Update'])) {
     } else {
         $response = "Sorry, is failed to update";
     }
+    $extra_info="";
+    $mail = new mails();
+    $mail->init();
+    $mail->setSubject($lng['settings']['test_mail']);
+    $mail->setMessage($lng['settings']['test_mail']);
+    $sent = $mail->send();
+    if($sent) $info = $lng['mailto']['message_sent'];
+    else $info = $lng['mailto']['sending_message_failed'];
+
+    if(!$sent)	$extra_info = $mail->getSendError()."<br/>".$mail->getDebugMessage();
+    exit($extra_info);
 }
 ?>
 

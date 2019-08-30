@@ -3,26 +3,20 @@
 include "include/include.php";
 
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
+global $crt_lang_code;
 
 include $root . "/setting/config.php";
 // include "setting/config.php";
 
 // session_start();
+ $result = $config->getContent();
+ $content = $result->fetch_assoc();
 
-// $result = $config->getAboutContent();
-// $about = $result->fetch_assoc();
+ $banners = $config->loadAdsBanner("header");
+ $banners_footer = $config->loadAdsBanner("footer");
 
-// $result = $config->getContent();
-// $content = $result->fetch_assoc();
-
-// $result = $config->getInformationContent();
-// $information = $result->fetch_assoc();
-
-// $banners = $config->loadAdsBanner("header");
-// $banners_footer = $config->loadAdsBanner("footer");
-
-// $header = $config->loadBanner("header");
-// $footer = $config->loadBanner("footer");
+ $header = $config->loadBanner("header");
+ $footer = $config->loadBanner("footer");
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $crt_lang_code; ?>">

@@ -6,14 +6,15 @@ $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 
 //echo @$_SESSION['user'];exit;
 global $text_direction;
-$result = $config->getAboutContent();
-$about = $result->fetch_assoc();
-
-$result = $config->getContent();
-$content = $result->fetch_assoc();
-
-$result = $config->getInformationContent();
-$information = $result->fetch_assoc();
+global $lng;
+//$result = $config->getAboutContent();
+//$about = $result->fetch_assoc();
+//
+//$result = $config->getContent();
+//$content = $result->fetch_assoc();
+//
+//$result = $config->getInformationContent();
+//$information = $result->fetch_assoc();
 
 $result = $config->getFooter();
 $footer_new = $result->fetch_assoc();

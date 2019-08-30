@@ -43,6 +43,7 @@ class Car
         return $result;
 
     }
+
     public function getEnableLanguagesWithoutDefault()
     {
         $query = "select * from languages where `enabled`=1 and `default` <> 1 order by `order_no`";
@@ -756,9 +757,15 @@ class Car
 
 // about content
     public
-    function add_about_content($content, $content2)
+    function add_about_content($content, $content2, $lang_id)
     {
-        $query = "insert into about(content, content2) values('$content', '$content2')";
+        $getcontent = $this->getAboutContentByCode($lang_id);
+
+        $query = "insert into about(content, content2, lang_id) values('$content', '$content2', '$lang_id')";
+        if($getcontent->num_rows){
+            $query = "update about set `content` = '$content', `content2` = '$content2', `lang_id` = '$lang_id' where `lang_id`= '$lang_id'";
+        }
+
         $result = $this->connectdb->query($query);
         return $result;
     }
@@ -767,6 +774,14 @@ class Car
     function getAboutContent()
     {
         $query = "select * from about order by id DESC LIMIT 1";
+        $result = $this->connectdb->query($query);
+        return $result;
+    }
+
+    public
+    function getAboutContentByCode($lang_id)
+    {
+        $query = "select * from about where lang_id='" . $lang_id . "'  order by id DESC LIMIT 1";
         $result = $this->connectdb->query($query);
         return $result;
     }
@@ -824,9 +839,15 @@ class Car
 
 // information content
     public
-    function add_information_content($content)
+    function add_information_content($content, $lang_id)
     {
-        $query = "insert into information(content) values('$content')";
+        $getcontent = $this->getInformationContentByCode($lang_id);
+
+        $query = "insert into information(content, lang_id) values('$content', '$lang_id')";
+        if($getcontent->num_rows){
+            $query = "update information set `content` = '$content', `lang_id` = '$lang_id' where `lang_id`= '$lang_id'";
+        }
+
         $result = $this->connectdb->query($query);
         return $result;
     }
@@ -835,6 +856,15 @@ class Car
     function getInformationContent()
     {
         $query = "select * from information order by id DESC LIMIT 1";
+        $result = $this->connectdb->query($query);
+        return $result;
+    }
+
+    public
+    function getInformationContentByCode($lang_id)
+    {
+        $query = "select * from information where lang_id='" . $lang_id . "' order by id DESC LIMIT 1";
+//        exit($query);
         $result = $this->connectdb->query($query);
         return $result;
     }
