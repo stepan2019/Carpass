@@ -4,9 +4,11 @@ class Db
 {
 
     private $server = "localhost";
-    private $username = "root";
-    private $password = "";
-    private $dbname = "carpasgr_car";
+
+    private $username = "carpasgr_km";
+
+    private $password = "^9}Vk&M.C~^t";
+    private $dbname = "carpasgr_km_test";
     private $connect_db;
 
     function __construct()
