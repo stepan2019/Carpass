@@ -8,6 +8,10 @@ require_once '../classes/mails.php';
 require_once '../classes/settings.php';
 require_once $config_abs_path . "/classes/mail_templates.php";
 
+global $mail_setting;
+$setting = new settings();
+$mail_setting =$setting->getMailSettings();
+
 if (isset($_POST['register'])) {
     $name = $_POST['name'];
     $address = $_POST['address'];
@@ -15,38 +19,37 @@ if (isset($_POST['register'])) {
     $phone = $_POST['phone'];
     $password = md5($_POST['password']);
 
-//    $result = $config->register_user($name, $address, $email, $phone, $password);
-//    if ($result) {
-//        header("location:/user/login.php?type=login_user");
-//    } else {
-//        $response = "Sorry, is failed to register";
-//    }
-    // send user activation mail
-    global $config_live_site;
-    global $mail_setting;
-    // add activation code to db record
-    $activation_code = generate_random();
+    $result = $config->register_user($name, $address, $email, $phone, $password);
+    if ($result) {
+        global $config_live_site;
+        // add activation code to db record
+        $activation_code = generate_random();
 
-    $res_act = $db->query("update " . TABLE_USERS . " set activation='$activation_code' where `email` = '$email'");
-    $account = urlencode($_POST['email']);
-    if (!$mail_setting['html_mails'])
-        $act_link = $config_live_site . '/activate_account.php?account=' . $account . '&activation=' . $activation_code;
-    else {
-        $lnk = $config_live_site . '/activate_account.php?account=' . $account . '&amp;activation=' . $activation_code;
-        $act_link = '<a href="' . $lnk . '">' . $lnk . '</a>';
+        $res_act = $db->query("update " . TABLE_USERS . " set activation='$activation_code' where `email` = '$email'");
+        $account = urlencode($_POST['email']);
+        if (!$mail_setting['html_mails'])
+            $act_link = $config_live_site . '/activate_account.php?account=' . $account . '&activation=' . $activation_code;
+        else {
+            $lnk = $config_live_site . '/activate_account.php?account=' . $account . '&amp;activation=' . $activation_code;
+            $act_link = '<a href="' . $lnk . '">' . $lnk . '</a>';
+        }
+
+        $mail2send = new mails();
+        $mail2send->init($_POST['email'], $_POST['name']);
+        $mail2send->setSubject(cleanStr('<p>Thank you for registration on carpass</p>'));
+        $msg = nl2br(cleanStr('<div><p>After activation you can ADD your vehicle,</p><p> please click on this link to activate your account. </p><p>Then link to activate</p>
+                <p>' . $act_link . '</p></div>')) . '';
+        $mail2send->setMessage($msg);
+        $is_sendMail = $mail2send->send();
+        if ($is_sendMail) {
+            header("location:/user/login.php?type=login_user");
+        } else {
+            $response = "Sorry, is failed to send activation mail";
+        }
+    } else {
+        $response = "Sorry, is failed to register";
     }
 
-    $mail2send = new mails();
-    $mail2send->init($_POST['email'], $_POST['name']);
-
-// regular user or moderator
-    $mail_template = "registration";
-
-    $array_subject["name"] = $_POST["name"];
-    $array_message["name"] = $_POST["name"];
-
-    $is_sendMail = $mail2send->composeAndSend($mail_template, $array_message, $array_subject);
-    print_r($is_sendMail);exit;
 }
 ?>
 

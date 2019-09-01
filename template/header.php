@@ -15,8 +15,9 @@ global $lng;
 //
 //$result = $config->getInformationContent();
 //$information = $result->fetch_assoc();
+global $crt_lang_code;
 
-$result = $config->getFooter();
+$result = $config->getFooterByCode($crt_lang_code);
 $footer_new = $result->fetch_assoc();
 
 $banners = $config->loadAdsBanner("header");
@@ -26,7 +27,6 @@ $header = $config->loadBanner("header");
 $footer = $config->loadBanner("footer");
 $enableLanguages1 = $config->getEnableLanguages();
 $enableLanguages2 = $config->getEnableLanguages();
-global $crt_lang_code;
 
 ?>
 <?php

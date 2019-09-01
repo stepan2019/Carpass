@@ -6,6 +6,15 @@
     if(@$_SESSION['user']) {
         $email = @$_SESSION['user'];
     }
+    include "../include/include.php";
+
+    global $lng;
+    global $crt_lang_code;
+    if (isset($_GET['lang_id'])) {
+        $lang_id = $_GET['lang_id'];
+    } else {
+        $lang_id = $crt_lang_code;
+    }
 
     $result = $config->getInformationContent();
     $information = $result->fetch_assoc();
@@ -67,6 +76,10 @@
         	
         }
     </style>
+    <script>
+        exdate = new Date();
+        exdate.setDate(exdate.getDate() + 365);
+    </script>
 </head>
 <body>
     <?php

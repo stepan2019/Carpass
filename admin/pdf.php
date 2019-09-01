@@ -5,7 +5,6 @@
     // }
     
 	include "../setting/config.php";
-var_dump($_GET);exit;
 	if(isset($_GET['query'])) {
 		$plate = $_GET['query'];
 

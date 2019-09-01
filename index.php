@@ -9,7 +9,7 @@ include $root . "/setting/config.php";
 // include "setting/config.php";
 
 // session_start();
- $result = $config->getContent();
+ $result = $config->getContentByCode($crt_lang_code);
  $content = $result->fetch_assoc();
 
  $banners = $config->loadAdsBanner("header");
