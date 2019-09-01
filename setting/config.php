@@ -835,6 +835,12 @@ class Car
         $result = $this->connectdb->query($query);
         return $result;
     }
+    function getFooterByCode($lang_id)
+    {
+        $query = "select * from footer where `lang_id`='$lang_id' order by id DESC LIMIT 1";
+        $result = $this->connectdb->query($query);
+        return $result;
+    }
 
     public
     function add_footer($content1, $content2)
