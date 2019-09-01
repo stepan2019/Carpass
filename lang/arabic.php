@@ -8,11 +8,11 @@
 */
 
 // ------------------ NAVBAR Index.php -------------------
-$lng['navbar']['home'] = 'الصفحية الرئیسیة';
+$lng['navbar']['home'] = 'الرئیسیة';
 $lng['navbar']['login'] = 'تسجيل الدخول';
 $lng['navbar']['logout'] = 'خروج';
 $lng['navbar']['price'] = 'السعر';
-$lng['navbar']['information'] = 'السعرمعلومات';
+$lng['navbar']['information'] = 'معلومات';
 $lng['navbar']['register'] = 'تسجیل';
 $lng['navbar']['add_vehicle_km'] = 'تسجیل کم السیارة';
 $lng['navbar']['my_account'] = 'حسابي';
@@ -152,3 +152,14 @@ $lng['Pdf']['registration_text'] = '
 $lng['Pdf']['1'] = '1 - المنطقي يعني أن الكيلومتر منطقي كما سجلنا في كم السيارة.';
 $lng['Pdf']['2'] = '2 - غير منطقي ، وهذا يعني أن كم هو تغيير بعد التسجيل بواسطة سيارة كم.';
 $lng['Pdf']['3'] = '3 - لا حكم ، وهذا يعني أنه ليس لدينا أي بيانات لهذه السيارة ، وهذا هو التسجيل الأول بواسطة السيارة كم.';
+
+// ------------------- Footer -----------------
+$lng['footer']['home'] = 'الڕئیسیة';
+$lng['footer']['Information'] = 'معلومات';
+$lng['footer']['Add-vehicle-km'] = 'تسجیل کم سیارة';
+$lng['footer']['Price'] = 'السعر';
+$lng['footer']['Privacy-Policy'] = 'الشروط';
+$lng['footer']['Term-and-Service'] = 'مصطلح والخدمة';
+$lng['footer']['Contact'] = 'اتصال';
+$lng['footer']['Address'] = 'عنوان';
+$lng['footer']['Phone'] = 'هاتف';

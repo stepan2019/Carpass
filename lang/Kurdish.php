@@ -11,9 +11,10 @@
 $lng['navbar']['home'] = 'دەستپێک';
 $lng['navbar']['login'] = 'چونەژورەوە';
 $lng['navbar']['logout'] = 'چونەدەرەوە';
+$lng['navbar']['information'] = 'زانیاری';
 $lng['navbar']['price'] = 'نرخ';
 $lng['navbar']['register'] = 'خۆتۆمارکردن';
-$lng['navbar']['add_vehicle_km'] = 'کیلۆمەتری ئۆتۆمۆبیلەکەت داخڵ بکە';
+$lng['navbar']['add_vehicle_km'] = 'کیلۆمەتریت داخڵ بکە';
 $lng['navbar']['my_account'] = 'حسابەکەم';
 $lng['navbar']['contact'] = 'پەیوەندی';
 $lng['navbar']['password_recovery'] = 'وشە نهێنیەکەت وەرگرەوە';
@@ -150,3 +151,14 @@ $lng['Pdf']['registration_text'] = 'تۆمار کردنی کیلۆمەتری ئ�
 $lng['Pdf']['1'] = 'لۆجیک واتە ئەو کم لەسەر ڕیپۆرتەکە هەیە تەواوەو لای کار کم تۆمار کراوە';
 $lng['Pdf']['2'] = 'لۆجیک نیە واتە ئەو کم لای کار ک تۆمار کراوە زیاترە وەک لەوەی دەیبینیت';
 $lng['Pdf']['3'] = 'ناتوانین بڕیار بدەین واتە ئەم ئۆتۆمبیلە یەکەم جارە تۆمار کراوە و مێژوەکەی لای ئێمە زانراو نیە';
+
+// ------------------- Footer -----------------
+$lng['footer']['home'] = 'دەستپێک';
+$lng['footer']['Information'] = 'زانیاری';
+$lng['footer']['Add-vehicle-km'] = 'تۆمارکەڵکە';
+$lng['footer']['Price'] = 'نرخ';
+$lng['footer']['Privacy-Policy'] = 'مەرجەکان';
+$lng['footer']['Term-and-Service'] = 'خزمەتکاریەکان';
+$lng['footer']['Contact'] = 'پەیوەندی';
+$lng['footer']['Address'] = 'عنوان';
+$lng['footer']['Phone'] = 'تەلەفۆن';

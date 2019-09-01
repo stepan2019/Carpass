@@ -152,3 +152,18 @@ You see in the report Logical, Not Logical, No JUDGEMENT that means:';
 $lng['Pdf']['1'] = '1 - Logical that means the KM is Logical as we have Registered by Carpass.';
 $lng['Pdf']['2'] = '2 - Not Logical, That means the km is change after registration by Carpass.';
 $lng['Pdf']['3'] = '3 - No Judgment, that mean we have no any data of this vehicle, that is first Registration by Carpass.';
+
+// ------------------- Footer -----------------
+$lng['footer']['home'] = 'Home';
+$lng['footer']['Information'] = 'information';
+$lng['footer']['Add-vehicle-km'] = 'Add Vehicle Km';
+$lng['footer']['Price'] = 'Price';
+$lng['footer']['Privacy-Policy'] = 'Privacy Policy';
+$lng['footer']['Term-and-Service'] = 'Term and Service';
+$lng['footer']['Contact'] = 'Contact';
+$lng['footer']['Address'] = 'Address';
+$lng['footer']['Phone'] = 'Phone';
+
+
+
+

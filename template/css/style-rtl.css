@@ -1,8 +1,19 @@
+
+@font-face { font-family: 'DroidKufi-Regular'; src: url('https://www.carpass.gr/css/font/DroidKufi-Regular.ttf') format('truetype'); font-style: normal;font-weight: 400;}
+@import url('http://fonts.googleapis.com/earlyaccess/droidarabickufi.css');
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
+@import url('http://fonts.googleapis.com/css?family=Squada+One');
+body  {
+
+font-family: 'DroidKufi-Regular', Droid Arabic Kufi,sans-serif;
+direction: rtl;
+}
 .navbar{
     direction: rtl;
+	font-family: 'DroidKufi-Regular', Droid Arabic Kufi,sans-serif;
 }
 .languagepicker {
-    background-color: #FFF;
+    background-color: #fe7500;
     display: inline-block;
     padding: 0;
     height: 40px;
@@ -20,14 +31,15 @@
 }
 
 .languagepicker a{
-    color: #000;
+    color: #fff;
     text-decoration: none;
+	font-family: 'DroidKufi-Regular', Droid Arabic Kufi,sans-serif;
 }
 
 .languagepicker li {
     display: block;
-    padding: 0px 20px;
-    line-height: 40px;
+    padding: 0px 10px;
+    line-height: 30px;
     border-top: 1px solid #EEE;
 }
 
@@ -36,8 +48,9 @@
 }
 
 .languagepicker a:first-child li {
-    border: none;
-    background: #FFF !important;
+      border: solid;
+    background: #3374ae!important;
+	border-radius: 5px;
 }
 
 .languagepicker li img {

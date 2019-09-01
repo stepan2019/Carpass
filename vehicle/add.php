@@ -208,9 +208,9 @@ include "../template/header.php";
                 <div class="col-md-5 text-left mt-1">
                     <label class="control-label"><?php echo $lng['general']['Plate_Number']; ?></label>
                     <div class="agileits-main only-plate">
-                        <!--<i class="fas fa-list-ol"></i>-->
+					    <!--<i class="fas fa-list-ol"></i>-->
                         <input type="text" required="" pattern="[a-zA-Z]{3}-[0-9]{3,4}" name="plate" id="car_plate"
-                               style="background-image: url(/images/Greece-number.png);color:black;background-size: cover;text-align:center;" maxlength="8" data-mask=""
+						       style="background-image: url(/images/Greece-number.png);color:black;background-size: cover;text-align:center;" maxlength="8" data-mask=""
                                onkeyup="this.value = this.value.toUpperCase();" placeholder="KPT-9083">
                     </div>
                 </div>

@@ -14,7 +14,7 @@ $lng['navbar']['logout'] = 'Αποσύνδεση';
 $lng['navbar']['price'] = 'τιμή';
 $lng['navbar']['information'] = 'πληροφορίες';
 $lng['navbar']['register'] = 'Κανω ΕΓΓΡΑΦΗ';
-$lng['navbar']['add_vehicle_km'] = 'Προσθέστε το χιλιομετρικό όχημα';
+$lng['navbar']['add_vehicle_km'] = 'Προσθέστε Km';
 $lng['navbar']['my_account'] = 'Ο λογαριασμός μου';
 $lng['navbar']['contact'] = 'Επικοινωνία';
 $lng['navbar']['password_recovery'] = 'ΑΝΑΚΤΗΣΗ ΚΩΔΙΚΟΥ';
@@ -152,3 +152,14 @@ $lng['Pdf']['registration_text'] = 'Η εγγραφή του αυτοκινήτ�
 $lng['Pdf']['1'] = '1 - Λογική σημαίνει ότι το KM είναι λογικό, όπως έχουμε καταχωρίσει από το Carpass.';
 $lng['Pdf']['2'] = '2 - Δεν είναι λογικό, Αυτό σημαίνει ότι το χιλιόμετρο αλλάζει μετά την εγγραφή από το Carpass.';
 $lng['Pdf']['3'] = '3 - Δεν υπάρχει κρίση, που σημαίνει ότι δεν έχουμε κανένα στοιχείο αυτού του οχήματος, που είναι η πρώτη εγγραφή από το Carpass.';
+
+// ------------------- Footer -----------------
+$lng['footer']['home'] = 'ΑΡΧΙΚΗ';
+$lng['footer']['Information'] = 'πληροφορίες';
+$lng['footer']['Add-vehicle-km'] = 'Προσθέστε Km';
+$lng['footer']['Price'] = 'Τιμή';
+$lng['footer']['Privacy-Policy'] = 'Πολιτική Απορρήτου';
+$lng['footer']['Term-and-Service'] = 'Όρος και Υπηρεσία';
+$lng['footer']['Contact'] = 'Επικοινωνία';
+$lng['footer']['Address'] = 'Διεύθυνση';
+$lng['footer']['Phone'] = 'Τηλέφωνο';
