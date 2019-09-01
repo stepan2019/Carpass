@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2019-08-30 17:04:52
+<?php /* Smarty version 3.1.24, created on 2019-09-01 11:06:33
          compiled from "E:/workspace/carpass/admin/templates/default/mails_settings.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:17301474985d6957346d5aa3_88479909%%*/
+/*%%SmartyHeaderCode:8093433755d6ba6390dae16_63478899%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd4d954be8990228220a9d1af8981d4d95949a041' => 
     array (
       0 => 'E:/workspace/carpass/admin/templates/default/mails_settings.html',
-      1 => 1567184685,
+      1 => 1567335773,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '17301474985d6957346d5aa3_88479909',
+  'nocache_hash' => '8093433755d6ba6390dae16_63478899',
   'variables' => 
   array (
     'error' => 0,
@@ -27,19 +27,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5d6957346e8811_78986350',
+  'unifunc' => 'content_5d6ba6391101f6_33758193',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5d6957346e8811_78986350')) {
-function content_5d6957346e8811_78986350 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5d6ba6391101f6_33758193')) {
+function content_5d6ba6391101f6_33758193 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '17301474985d6957346d5aa3_88479909';
+$_smarty_tpl->properties['nocache_hash'] = '8093433755d6ba6390dae16_63478899';
 ?>
 <div class="p30">
-	<form name="settings" method="post" action="mails_settings.php" enctype="multipart/form-data">
-
+	<form name="settings" method="post" action="home.php?query=mails_settings" enctype="multipart/form-data">
 		<div class="form_container">
-
 			<?php if ($_smarty_tpl->tpl_vars['error']->value != '') {?><div class="error"><?php echo $_smarty_tpl->tpl_vars['error']->value;?>
 </div><?php }?>
 			<?php if ($_smarty_tpl->tpl_vars['successful']->value) {?><div class="info"><?php echo $_smarty_tpl->tpl_vars['lng']->value['settings']['settings_saved'];?>

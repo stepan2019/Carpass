@@ -1,5 +1,5 @@
 <div class="p30">
-	<form name="settings" method="post" action="mails_settings.php" enctype="multipart/form-data">
+	<form name="settings" method="post" action="home.php?query=mails_settings" enctype="multipart/form-data">
 		<div class="form_container">
 			{if $error != ""}<div class="error">{$error}</div>{/if}
 			{if $successful}<div class="info">{$lng.settings.settings_saved}</div>{/if}

@@ -2,11 +2,11 @@
 
 	$config_db_server='localhost';
 
-	$config_db_server_username='carpasgr_km';
+	$config_db_server_username='root';
 
-	$config_db_server_password='^9}Vk&M.C~^t';
+	$config_db_server_password='';
 
-	$config_db_database='carpasgr_km_test';
+	$config_db_database='carpasgr_car';
 
 	$config_db_charset='utf8';
 
@@ -14,9 +14,9 @@
 
 	$config_table_prefix='';
 
-	$config_live_site='https://test.com.carpass.gr/';
+	$config_live_site='https://127.0.0.60/';
 
-	$config_abs_path='/home/carpasgr/test';
+	$config_abs_path='E:\workspace\carpass';
 
 	$config_demo=0;
 
