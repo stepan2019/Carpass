@@ -811,6 +811,13 @@ class Car
         $result = $this->connectdb->query($query);
         return $result;
     }
+    public
+    function getContent($lang_id)
+    {
+        $query = "select * from content where `lang_id`='$lang_id' order by id DESC LIMIT 1";
+        $result = $this->connectdb->query($query);
+        return $result;
+    }
 
     public
     function add_content($content1, $content2)
