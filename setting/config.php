@@ -762,7 +762,7 @@ class Car
         $getcontent = $this->getAboutContentByCode($lang_id);
 
         $query = "insert into about(content, content2, lang_id) values('$content', '$content2', '$lang_id')";
-        if($getcontent->num_rows){
+        if ($getcontent->num_rows) {
             $query = "update about set `content` = '$content', `content2` = '$content2', `lang_id` = '$lang_id' where `lang_id`= '$lang_id'";
         }
 
@@ -811,6 +811,7 @@ class Car
         $result = $this->connectdb->query($query);
         return $result;
     }
+
     public
     function getContentByCode($lang_id)
     {
@@ -820,9 +821,15 @@ class Car
     }
 
     public
-    function add_content($content1, $content2)
+    function add_content($content1, $content2, $lang_id)
     {
-        $query = "insert into content(content1, content2) values('$content1', '$content2')";
+        $getcontent = $this->getContentByCode($lang_id);
+
+        $query = "insert into content(content, content2, lang_id) values('$content1', '$content2', '$lang_id')";
+        if ($getcontent->num_rows) {
+            $query = "update content set `content` = '$content1', `content2` = '$content2', `lang_id` = '$lang_id' where `lang_id`= '$lang_id'";
+        }
+
         $result = $this->connectdb->query($query);
         return $result;
     }
@@ -835,6 +842,7 @@ class Car
         $result = $this->connectdb->query($query);
         return $result;
     }
+
     function getFooterByCode($lang_id)
     {
         $query = "select * from footer where `lang_id`='$lang_id' order by id DESC LIMIT 1";
@@ -843,9 +851,15 @@ class Car
     }
 
     public
-    function add_footer($content1, $content2)
+    function add_footer($content1, $content2, $lang_id)
     {
-        $query = "insert into footer(content1, content2) values('$content1', '$content2')";
+        $getcontent = $this->getFooterByCode($lang_id);
+
+        $query = "insert into footer(content, content2, lang_id) values('$content1', '$content2', '$lang_id')";
+        if ($getcontent->num_rows) {
+            $query = "update footer set `content` = '$content1', `content2` = '$content2', `lang_id` = '$lang_id' where `lang_id`= '$lang_id'";
+        }
+
         $result = $this->connectdb->query($query);
         return $result;
     }
@@ -857,7 +871,7 @@ class Car
         $getcontent = $this->getInformationContentByCode($lang_id);
 
         $query = "insert into information(content, lang_id) values('$content', '$lang_id')";
-        if($getcontent->num_rows){
+        if ($getcontent->num_rows) {
             $query = "update information set `content` = '$content', `lang_id` = '$lang_id' where `lang_id`= '$lang_id'";
         }
 
