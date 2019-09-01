@@ -761,9 +761,9 @@ class Car
     {
         $getcontent = $this->getAboutContentByCode($lang_id);
 
-        $query = "insert into about(content, content2, lang_id) values('$content', '$content2', '$lang_id')";
+        $query = "insert into about(content, lang_id) values('$content', '$content2', '$lang_id')";
         if ($getcontent->num_rows) {
-            $query = "update about set `content` = '$content', `content2` = '$content2', `lang_id` = '$lang_id' where `lang_id`= '$lang_id'";
+            $query = "update about set `content` = '$content', `lang_id` = '$lang_id' where `lang_id`= '$lang_id'";
         }
 
         $result = $this->connectdb->query($query);
@@ -825,9 +825,9 @@ class Car
     {
         $getcontent = $this->getContentByCode($lang_id);
 
-        $query = "insert into content(content, content2, lang_id) values('$content1', '$content2', '$lang_id')";
+        $query = "insert into content(content1, content2, lang_id) values('$content1', '$content2', '$lang_id')";
         if ($getcontent->num_rows) {
-            $query = "update content set `content` = '$content1', `content2` = '$content2', `lang_id` = '$lang_id' where `lang_id`= '$lang_id'";
+            $query = "update content set `content1` = '$content1', `content2` = '$content2', `lang_id` = '$lang_id' where `lang_id`= '$lang_id'";
         }
 
         $result = $this->connectdb->query($query);
@@ -855,9 +855,9 @@ class Car
     {
         $getcontent = $this->getFooterByCode($lang_id);
 
-        $query = "insert into footer(content, content2, lang_id) values('$content1', '$content2', '$lang_id')";
+        $query = "insert into footer(content1, content2, lang_id) values('$content1', '$content2', '$lang_id')";
         if ($getcontent->num_rows) {
-            $query = "update footer set `content` = '$content1', `content2` = '$content2', `lang_id` = '$lang_id' where `lang_id`= '$lang_id'";
+            $query = "update footer set `content1` = '$content1', `content2` = '$content2', `lang_id` = '$lang_id' where `lang_id`= '$lang_id'";
         }
 
         $result = $this->connectdb->query($query);
@@ -874,7 +874,6 @@ class Car
         if ($getcontent->num_rows) {
             $query = "update information set `content` = '$content', `lang_id` = '$lang_id' where `lang_id`= '$lang_id'";
         }
-
         $result = $this->connectdb->query($query);
         return $result;
     }
@@ -898,9 +897,9 @@ class Car
 
 // image upload
     public
-    function imageUpload($fileName, $bannerText, $position, $width, $height)
+    function imageUpload($fileName, $bannerText, $position, $width, $height, $lang_id)
     {
-        $query = "INSERT into images (file_name, uploaded_on, title, position, width, height) VALUES ('" . $fileName . "', NOW(), '" . $bannerText . "', '" . $position . "', '" . $width . "', '" . $height . "')";
+        $query = "INSERT into images (file_name, uploaded_on, title, position, width, height, lang_id) VALUES ('" . $fileName . "', NOW(), '" . $bannerText . "', '" . $position . "', '" . $width . "', '" . $height . "', '" . $lang_id . "')";
         $result = $this->connectdb->query($query);
         return $result;
     }
@@ -910,6 +909,13 @@ class Car
     function loadBanner($position)
     {
         $query = "select * from images where position = '$position' order by uploaded_on DESC LIMIT 1";
+        $result = $this->connectdb->query($query);
+        return $result;
+    }
+    public
+    function loadBannerByCode($position, $lang_id)
+    {
+        $query = "select * from images where position = '$position' and `lang_id`='$lang_id' order by uploaded_on DESC LIMIT 1";
         $result = $this->connectdb->query($query);
         return $result;
     }
@@ -940,12 +946,18 @@ class Car
         $result = $this->connectdb->query($query);
         return $result;
     }
+    function getHomescreenByIdAndCode($id, $lang_id)
+    {
+        $query = "select * from images where `lang_id`='$lang_id' id = '$id'";
+        $result = $this->connectdb->query($query);
+        return $result;
+    }
 
 // update homescreen
     public
-    function updateHomescreen($id, $file_name, $title, $position, $width, $height)
+    function updateHomescreen($id, $file_name, $title, $position, $width, $height, $lang_id)
     {
-        $query = "update images set file_name = '$file_name', title = '$title', position = '$position', width = '$width', height = '$height', uploaded_on = NOW() where id = '$id'";
+        $query = "update images set file_name = '$file_name', title = '$title', position = '$position', width = '$width', height = '$height',lang_id = '$lang_id', uploaded_on = NOW() where id = '$id'";
         $result = $this->connectdb->query($query);
         return $result;
     }

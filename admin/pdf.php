@@ -5,6 +5,7 @@
     // }
     
 	include "../setting/config.php";
+
 	if(isset($_GET['query'])) {
 		$plate = $_GET['query'];
 

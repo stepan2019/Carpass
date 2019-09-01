@@ -48,6 +48,7 @@
 
 <?php
 if (isset($_POST['view_history'])) {
+
     if (isset($_POST['plate'])) {
         $plate = $_POST['plate'];
 
@@ -292,9 +293,7 @@ if (isset($_POST['view_history'])) {
                 alert("please select plate number");
                 return;
             }
-            // var link = "https://www.car-km.com/admin/pdf.php?query=" + plate;
-            // window.open(link, '_blank');
-            var link = "https://www.car-km.com/admin/pdf.php";
+            var link = "/admin/pdf.php?query=" + plate;
             window.open(link, "tttt", {'query': plate});
 
 

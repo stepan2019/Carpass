@@ -14,8 +14,8 @@ include $root . "/setting/config.php";
  $banners = $config->loadAdsBanner("header");
  $banners_footer = $config->loadAdsBanner("footer");
 
- $header = $config->loadBanner("header");
- $footer = $config->loadBanner("footer");
+ $header = $config->loadBannerByCode("header", $crt_lang_code);
+ $footer = $config->loadBannerByCode("footer", $crt_lang_code);
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $crt_lang_code; ?>">

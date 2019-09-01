@@ -42,7 +42,6 @@ x:-o-prefocus,   input.input_img {
      margin-top: 1px !important;
 }
 
-select { vertical-align: middle; border: 1px solid #e7e7e7; color: #999; height: 29px; line-height: 29px; background: #fff; padding-top: 3px; }
 select.mselect { height: auto !important; }
 select.mselect:hover { height: auto !important; }
 

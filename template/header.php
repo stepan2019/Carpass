@@ -23,8 +23,6 @@ $footer_new = $result->fetch_assoc();
 $banners = $config->loadAdsBanner("header");
 $banners_footer = $config->loadAdsBanner("footer");
 
-$header = $config->loadBanner("header");
-$footer = $config->loadBanner("footer");
 $enableLanguages1 = $config->getEnableLanguages();
 $enableLanguages2 = $config->getEnableLanguages();
 
