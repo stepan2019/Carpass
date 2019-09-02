@@ -45,8 +45,8 @@ if(isset($_POST['Test'])){
 	$extra_info="";
 	$mail = new mails();
 	$mail->init();
-	$mail->setSubject('sdfsdfsdfsdf');
-	$mail->setMessage('1313566466331332646666');
+	$mail->setSubject('Carpass Email');
+	$mail->setMessage('That is the test mail');
 	$sent = $mail->send();
 	if($sent) $info = $lng['mailto']['message_sent'];
 	else $info = $lng['mailto']['sending_message_failed'];
