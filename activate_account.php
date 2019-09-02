@@ -26,6 +26,5 @@ if ($comResult->num_rows) {
     $info = "Invalid Activation Code";
 }
 echo $info;
-header("location:/user/login.php");
 
 
