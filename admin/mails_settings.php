@@ -62,6 +62,7 @@ if (isset($_POST['Test'])) {
     $mail->Subject = 'test';
     $mail->Body = 'Test mail';
     $mail->AddAddress('eric9178vadim@gmail.com');
+    print_r($mail->send());exit;
     if (!$mail->Send()) {
         $response = "Mail isn't sent.";
         return $response;
