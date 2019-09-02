@@ -40,7 +40,6 @@ if (!isset($_POST['Submit']) || $errors_str == '') {
 
 $info = '';
 if (isset($_POST['Test'])) {
-    include "../phpmailer/PHPMailerAutoload.php";
     $result = '';
 
 
