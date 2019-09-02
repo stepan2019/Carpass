@@ -43,7 +43,7 @@ if (isset($_POST['register'])) {
         if ($is_sendMail) {
             header("location:/user/login.php?type=login_user");
         } else {
-            $response = "Sorry, is failed to send activation mail";
+            $response = $mail2send->send_error;
         }
     } else {
         $response = "Sorry, is failed to register";
