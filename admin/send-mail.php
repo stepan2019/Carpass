@@ -22,6 +22,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body){
     $mail->Subject = $subject;
     $mail->Body = $body;
     $mail->AddAddress($to);
+    exit($mail->send());
     if(!$mail->Send()){
         exit('sdfsdf');
         $error = "Mail isn't sent.";
