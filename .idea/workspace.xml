@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7db2e5a1-777a-4b65-b71a-e2d1ad3c3c2f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/admin/send-mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/send-mail.php" afterDir="false" />
-    </list>
+    <list default="true" id="7db2e5a1-777a-4b65-b71a-e2d1ad3c3c2f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +142,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="825" />
     <option name="y" value="111" />
     <option name="width" value="974" />
@@ -224,16 +222,15 @@
       <workItem from="1567090847638" duration="2108000" />
       <workItem from="1567126039737" duration="27512000" />
       <workItem from="1567333458192" duration="18048000" />
-      <workItem from="1567427904614" duration="5088000" />
+      <workItem from="1567427904614" duration="5341000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169898000" />
+    <option name="totallyTimeSpent" value="170151000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1652452" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
