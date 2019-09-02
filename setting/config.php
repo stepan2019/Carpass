@@ -625,9 +625,13 @@ class Car
 
 // price
     public
-    function add_price($download_price)
+    function add_price($download_price, $download_tax)
     {
-        $query = "insert into price(price) values('$download_price')";
+        $getresult = $this->getPrice();
+        $query = "insert into price(price, tax) values('$download_price','$download_tax')";
+        if($getresult->num_rows){
+            $query = "update price set `price` = '$download_price',`tax` = '$download_tax'";
+        }
         $result = $this->connectdb->query($query);
         return $result;
     }
