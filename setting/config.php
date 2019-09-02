@@ -68,7 +68,7 @@ class Car
     }
     public function setActivation($email, $activationCode)
     {
-        $query = "update user set `activate` = 1 where `email`='$email' and `activation`='$activationCode'";
+        $query = "update user set `active` = 1 where `email`='$email' and `activation`='$activationCode'";
         $result = $this->connectdb->query($query);
         return $result;
     }
