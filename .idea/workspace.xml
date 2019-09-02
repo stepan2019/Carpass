@@ -34,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phpmailer/class.phpmailer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="1212" column="31" selection-start-line="1212" selection-start-column="31" selection-end-line="1212" selection-end-column="31" />
+            <state relative-caret-position="168">
+              <caret line="1234" column="13" lean-forward="true" selection-start-line="1234" selection-start-column="13" selection-end-line="1234" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -61,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/mails_settings.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+            <state relative-caret-position="132">
+              <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -207,8 +207,8 @@
         <option value="$PROJECT_DIR$/user/login.php" />
         <option value="$PROJECT_DIR$/classes/mails.php" />
         <option value="$PROJECT_DIR$/phpmailer/PHPMailerAutoload.php" />
-        <option value="$PROJECT_DIR$/admin/mails_settings.php" />
         <option value="$PROJECT_DIR$/phpmailer/class.phpmailer.php" />
+        <option value="$PROJECT_DIR$/admin/mails_settings.php" />
       </list>
     </option>
   </component>
@@ -292,12 +292,12 @@
       <workItem from="1567090847638" duration="2108000" />
       <workItem from="1567126039737" duration="27512000" />
       <workItem from="1567333458192" duration="18048000" />
-      <workItem from="1567427904614" duration="15089000" />
+      <workItem from="1567427904614" duration="15939000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179899000" />
+    <option name="totallyTimeSpent" value="180749000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -675,17 +675,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/mails_settings.php">
+    <entry file="file://$PROJECT_DIR$/phpmailer/class.phpmailer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+        <state relative-caret-position="168">
+          <caret line="1234" column="13" lean-forward="true" selection-start-line="1234" selection-start-column="13" selection-end-line="1234" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phpmailer/class.phpmailer.php">
+    <entry file="file://$PROJECT_DIR$/admin/mails_settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="1212" column="31" selection-start-line="1212" selection-start-column="31" selection-end-line="1212" selection-end-column="31" />
+        <state relative-caret-position="132">
+          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
         </state>
       </provider>
     </entry>
