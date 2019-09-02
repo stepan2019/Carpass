@@ -765,7 +765,7 @@ class Car
     {
         $getcontent = $this->getAboutContentByCode($lang_id);
 
-        $query = "insert into about(content,content2 lang_id) values('$content', '$content2', '$lang_id')";
+        $query = "insert into about(content,content2, lang_id) values('$content', '$content2', '$lang_id')";
         if ($getcontent->num_rows) {
             $query = "update about set `content` = '$content',`content2` = '$content2', `lang_id` = '$lang_id' where `lang_id`= '$lang_id'";
         }
