@@ -7,10 +7,10 @@
 	*
 */
 require_once "include/include.php";
-require_once '../classes/validator.php';
-require_once '../classes/config/settings_config.php';
-require_once '../classes/mails.php';
-require_once '../classes/settings.php';
+//require_once '../classes/validator.php';
+//require_once '../classes/config/settings_config.php';
+//require_once '../classes/mails.php';
+//require_once '../classes/settings.php';
 
 global $db;
 global $lng;
@@ -40,6 +40,7 @@ if (!isset($_POST['Submit']) || $errors_str == '') {
 
 $info = '';
 if (isset($_POST['Test'])) {
+    include "../phpmailer/PHPMailerAutoload.php";
     $result = '';
 
 

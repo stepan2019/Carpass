@@ -1210,7 +1210,6 @@ class PHPMailer
     {
         try {
             if (!$this->preSend()) {
-                exit('sdfsdf');
                 return false;
             }
             return $this->postSend();
