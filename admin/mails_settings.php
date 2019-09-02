@@ -48,7 +48,7 @@ if(isset($_POST['Test'])){
 	$mail->setSubject('Carpass Email');
 	$mail->setMessage('That is the mail for mail option');
 	$sent = $mail->send();
-	print_r($sent);exit;
+	exit($mail->send_error);
 	if($sent) $info = $lng['mailto']['message_sent'];
 	else $info = $lng['mailto']['sending_message_failed'];
 
