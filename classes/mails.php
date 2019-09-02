@@ -138,7 +138,7 @@ class mails {
 
 		if(strtoupper(substr(PHP_OS,0,3)) == 'WIN') $newLine="\r\n";
 		else $newLine="\n";
-		print_r($mail_settings);exit;
+		print_r(settings);exit;
 		try {
 			//Recipients
 			if($mail_settings['send_using_admin_email']==1) {
