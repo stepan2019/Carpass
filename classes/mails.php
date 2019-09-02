@@ -164,7 +164,6 @@ class mails {
 				$this->mail->Body = $this->html2plain($this->message,$newLine);
 			if($mail_settings["html_mails"])
 				$this->mail->AltBody = $this->html2plain($this->message,$newLine);
-			print_r($this->mail);exit;
 			$this->mail->send();
 		} catch (Exception $e)  {
 			$this->send_error = $this->mail->ErrorInfo;
