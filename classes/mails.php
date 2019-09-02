@@ -134,8 +134,7 @@ class mails {
 
 		global $lng;
 		global $appearance_settings, $settings, $mail_settings;
-		print_r($mail_settings);exit;
-		
+
 		if(strtoupper(substr(PHP_OS,0,3)) == 'WIN') $newLine="\r\n";
 		else $newLine="\n";
 
