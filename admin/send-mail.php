@@ -19,6 +19,7 @@ function smtpmailer($to, $from_name, $subject, $body)
     $msg = nl2br(cleanStr($body)) . '';
     $mail2send->setMessage($msg);
     $is_sendMail = $mail2send->send();
+    print_r($is_sendMail);exit;
     if (!$is_sendMail) {
         $response = "Sorry, is failed to register";
         exit;
