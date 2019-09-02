@@ -24,7 +24,6 @@ if (isset($_POST['register'])) {
         global $config_live_site;
         // add activation code to db record
         $activation_code = generate_random();
-
         $res_act = $db->query("update " . TABLE_USERS . " set activation='$activation_code' where `email` = '$email'");
         $account = urlencode($_POST['email']);
         if (!$mail_setting['html_mails'])
