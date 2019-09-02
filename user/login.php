@@ -4,7 +4,6 @@ session_start();
 if (!empty($_GET['query'])) {
     $go = $_GET['query'];
 }
-include "../include/include.php";
 
 global $lng;
 
@@ -13,6 +12,8 @@ if (@$_SESSION['user']) {
     exit(0);
 
 }
+
+include "../include/include.php";
 
 $result = $config->getInformationContent();
 $information = $result->fetch_assoc();

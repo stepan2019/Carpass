@@ -58,6 +58,7 @@ class mails {
 			}
 			else 
 				$this->mail->SMTPSecure = $mail_settings['encryption'];
+
 			$this->mail->Host = $mail_settings['smtp_server'];
 			$this->mail->Username = $mail_settings['username'];
 			$this->mail->Password = $mail_settings['password'];
@@ -163,6 +164,7 @@ class mails {
 				$this->mail->Body = $this->html2plain($this->message,$newLine);
 			if($mail_settings["html_mails"])
 				$this->mail->AltBody = $this->html2plain($this->message,$newLine);
+			print_r($this->mail);exit;
 			$this->mail->send();
 		} catch (Exception $e)  {
 			$this->send_error = $this->mail->ErrorInfo;
