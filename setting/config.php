@@ -60,6 +60,18 @@ class Car
         $result = $this->connectdb->query($query);
         return $result;
     }
+    public function compareActivationCode($email, $activationCode)
+    {
+        $query = "select * from user where `email`='$email' and `activation`='$activationCode'";
+        $result = $this->connectdb->query($query);
+        return $result;
+    }
+    public function setActivation($email, $activationCode)
+    {
+        $query = "update user set `activate` = 1 where `email`='$email' and `activation`='$activationCode'";
+        $result = $this->connectdb->query($query);
+        return $result;
+    }
 
     public function register_dealer($name, $address, $email, $phone, $company, $website, $password)
     {

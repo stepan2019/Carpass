@@ -36,7 +36,7 @@ if (isset($_POST['register'])) {
 
         $mail2send = new mails();
         $mail2send->init($_POST['email'], $_POST['name']);
-        $mail2send->setSubject(cleanStr('<p>Thank you for registration on carpass</p>'));
+        $mail2send->setSubject(cleanStr('Thank you for registration on carpass'));
         $msg = nl2br(cleanStr('<div><p>After activation you can ADD your vehicle,</p><p> please click on this link to activate your account. </p><p>Then link to activate</p>
                 <p>' . $act_link . '</p></div>')) . '';
         $mail2send->setMessage($msg);
