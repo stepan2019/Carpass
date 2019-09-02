@@ -138,16 +138,15 @@ class mails {
 
 		if(strtoupper(substr(PHP_OS,0,3)) == 'WIN') $newLine="\r\n";
 		else $newLine="\n";
-		print_r(settings);exit;
 		try {
 			//Recipients
-			if($mail_settings['send_using_admin_email']==1) {
-				$this->mail->setFrom($settings["admin_email"], $settings["admin_name"]);
-				$this->mail->addReplyTo($this->from, $this->from_name);
-			}
-			else {
+//			if($mail_settings['send_using_admin_email']==1) {
+//				$this->mail->setFrom($settings["admin_email"], $settings["admin_name"]);
+//				$this->mail->addReplyTo($this->from, $this->from_name);
+//			}
+//			else {
 				$this->mail->setFrom($this->from, $this->from_name);
-			}
+//			}
 			$this->mail->addAddress($this->to, $this->to_name);     // Add a recipient
 		
 			if($mail_settings["html_mails"]) {
