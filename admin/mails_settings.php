@@ -46,7 +46,7 @@ if(isset($_POST['Test'])){
 	$mail = new mails();
 	$mail->init();
 	$mail->setSubject('sdfsdfsdfsdf');
-	$mail->setMessage($lng['settings']['test_mail']);
+	$mail->setMessage('1313566466331332646666');
 	$sent = $mail->send();
 	if($sent) $info = $lng['mailto']['message_sent'];
 	else $info = $lng['mailto']['sending_message_failed'];
