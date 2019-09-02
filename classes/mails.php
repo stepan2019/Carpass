@@ -168,7 +168,6 @@ class mails {
 			$this->send_error = $this->mail->ErrorInfo;
 			//echo "Error: ".$this->send_error;
 		}
-		echo $this->send_error;exit;
 		if(!$this->send_error) return 1;
 		return 0;
 		
