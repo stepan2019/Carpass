@@ -74,7 +74,7 @@
                     while ($row = $languages->fetch_assoc()) {
                         ?>
                         <option value="<?php echo $row['code']; ?>"
-                                <?php if ($lang_id == $row['code']){ ?>selected<?php } ?>><?php echo $row['name']; ?></option>
+                                <?php if ($homescreen['lang_id'] == $row['code']){ ?>selected<?php } ?>><?php echo $row['name']; ?></option>
                     <?php } ?>
                 </select>
             </div>

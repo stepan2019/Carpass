@@ -23,6 +23,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body){
     $mail->Body = $body;
     $mail->AddAddress($to);
     if(!$mail->Send()){
+        exit('sdfsdf');
         $error = "Mail isn't sent.";
         return $error;
     }else{
@@ -63,7 +64,7 @@ if(isset($_POST['send_email'])) {
         
         <div class="row col-md-12">
             
-            <label class="control-label" style="font-size:30px">Title</labe
+            <label class="control-label" style="font-size:30px">Title</label>
             <div class="col-md-1"> </div>
             <div class="col-md-7 text-left mt-1">
                 <div class="agileits-main">

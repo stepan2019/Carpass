@@ -15,6 +15,7 @@
             <th class="text-center">Position</th>
             <th class="text-center">Filename</th>
             <th class="text-center">Size</th>
+            <th class="text-center">language</th>
             <th class="text-center">Action</th>
         </tr>
         </thead>
@@ -32,6 +33,7 @@
                     <td class="text-center"><?php echo $homescreen['file_name']; ?></td>
                     <td class="text-center"><?php echo $homescreen['width']; ?>
                         X <?php echo $homescreen['height']; ?></td>
+                    <td class="text-center"><?php echo $homescreen['lang_id']; ?></td>
 
                     <td class="text-center">
                         <a href="home.php?query=homescreenedit&id=<?php echo $homescreen['id']; ?>">
