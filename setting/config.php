@@ -629,7 +629,7 @@ class Car
     {
         $getresult = $this->getPrice();
         $query = "insert into price(price, tax) values('$download_price','$download_tax')";
-        if($getresult->num_rows){
+        if ($getresult->num_rows) {
             $query = "update price set `price` = '$download_price',`tax` = '$download_tax'";
         }
         $result = $this->connectdb->query($query);
@@ -765,9 +765,9 @@ class Car
     {
         $getcontent = $this->getAboutContentByCode($lang_id);
 
-        $query = "insert into about(content, lang_id) values('$content', '$content2', '$lang_id')";
+        $query = "insert into about(content,content2 lang_id) values('$content', '$content2', '$lang_id')";
         if ($getcontent->num_rows) {
-            $query = "update about set `content` = '$content', `lang_id` = '$lang_id' where `lang_id`= '$lang_id'";
+            $query = "update about set `content` = '$content',`content2` = '$content2', `lang_id` = '$lang_id' where `lang_id`= '$lang_id'";
         }
 
         $result = $this->connectdb->query($query);
@@ -916,6 +916,7 @@ class Car
         $result = $this->connectdb->query($query);
         return $result;
     }
+
     public
     function loadBannerByCode($position, $lang_id)
     {
@@ -950,6 +951,7 @@ class Car
         $result = $this->connectdb->query($query);
         return $result;
     }
+
     function getHomescreenByIdAndCode($id, $lang_id)
     {
         $query = "select * from images where `lang_id`='$lang_id' id = '$id'";
