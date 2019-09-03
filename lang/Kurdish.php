@@ -57,6 +57,7 @@ $lng['login']['Email'] = 'ئی مەیل';
 $lng['login']['password'] = 'وشەی نهێنی';
 $lng['login']['forgot_pass'] = 'وشەی هێنیت لەیاد کردوە؟';
 $lng['login']['click_here'] = 'کرتەی ئێرە بکە تا بیگۆڕیت!';
+$lng['login']['Select_type_to_login'] = 'Please select user type to login.';
 
 
 // -------------------------- LOGOUT -----------------------
@@ -64,6 +65,7 @@ $lng['logout']['logout'] = 'چونە دەرەوە';
 $lng['logout']['loggedout'] = 'تۆ چویتە دەرەوە';
 
 // --------------------------User REGISTER -----------------------
+$lng['users']['Select_type_to_register'] = 'Please select user type to register.';
 $lng['users']['register'] = 'خۆ تۆمارکردن';
 $lng['users']['User'] = 'بەکار هێنەر';
 $lng['users']['Delaer'] = 'پێشانگا';
@@ -97,9 +99,13 @@ $lng['useraccount']['Cancel'] = 'هەڵوەشاندنەوە';
 
 
 // ------------------- CONTACT -----------------
+$lng['contact']['Contact_us'] = 'Contact Us';
+$lng['contact']['fill_all_field'] = 'Please fill all fields and submit';
 $lng['contact']['name'] = 'ناو';
 $lng['contact']['Phone Number'] = 'ژمارەی تەلەفۆن';
 $lng['contact']['email'] = 'ئی مەیل';
+$lng['contact']['your_mail_address'] = 'Your Email address';
+$lng['contact']['never_share_mail'] = 'We will never share your email with anyone else.';
 $lng['contact']['Enter_Your_Massage'] = 'نامەکەت بنوسە';
 $lng['contact']['message_sent'] = 'نامەکەت نێردرا!';
 $lng['contact']['Submit'] = 'بینێرە';

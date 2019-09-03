@@ -57,6 +57,7 @@ $lng['login']['Email'] = 'البريد الإلكتروني';
 $lng['login']['password'] = 'كلمه السر';
 $lng['login']['forgot_pass'] = 'نسيت رقمك السري؟';
 $lng['login']['click_here'] = 'انقر هنا لإعادة ضبطها!';
+$lng['login']['Select_type_to_login'] = 'Please select user type to login.';
 
 
 // -------------------------- LOGOUT -----------------------
@@ -64,6 +65,7 @@ $lng['logout']['logout'] = 'خروج';
 $lng['logout']['loggedout'] = 'لقد تم تسجيل خروجك!';
 
 // --------------------------User REGISTER -----------------------
+$lng['users']['Select_type_to_register'] = 'Please select user type to register.';
 $lng['users']['register'] = 'تسجیل';
 $lng['users']['User'] = 'المستعمل';
 $lng['users']['Delaer'] = 'معرض السیارات';
@@ -97,10 +99,15 @@ $lng['useraccount']['Cancel'] = 'إلغاء';
 
 
 // ------------------- CONTACT -----------------
+$lng['contact']['Contact_us'] = 'Contact Us';
+$lng['contact']['fill_all_field'] = 'Please fill all fields and submit';
 $lng['contact']['name'] = 'اسم';
 $lng['contact']['Phone Number'] = 'رقم هاتف';
 $lng['contact']['email'] = 'البريد الإلكتروني';
 $lng['contact']['Enter_Your_Massage'] = 'أدخل التدليك الخاص بك';
+$lng['contact']['your_mail_address'] = 'Your Email address';
+$lng['contact']['never_share_mail'] = 'We will never share your email with anyone else.';
+$lng['contact']['Enter_Your_Massage'] = 'Enter Your Massage';
 $lng['contact']['message_sent'] = 'تم إرسال رسالتك!';
 $lng['contact']['Submit'] = 'خضع';
 

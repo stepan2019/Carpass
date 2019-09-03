@@ -57,6 +57,7 @@ $lng['login']['Email'] = 'Email';
 $lng['login']['password'] = 'Κωδικός πρόσβασης';
 $lng['login']['forgot_pass'] = 'Ξεχάσατε τον κωδικό σας;';
 $lng['login']['click_here'] = 'Κάντε κλικ εδώ για να το επαναφέρετε!';
+$lng['login']['Select_type_to_login'] = 'Please select user type to login.';
 
 
 // -------------------------- LOGOUT -----------------------
@@ -64,6 +65,7 @@ $lng['logout']['logout'] = 'Αποσύνδεση';
 $lng['logout']['loggedout'] = 'Έχετε αποσυνδεθεί!';
 
 // --------------------------User REGISTER -----------------------
+$lng['users']['Select_type_to_register'] = 'Please select user type to register.';
 $lng['users']['register'] = 'Κανω ΕΓΓΡΑΦΗ';
 $lng['users']['User'] = 'Χρήστης';
 $lng['users']['Delaer'] = 'Εμπορος';
@@ -97,11 +99,15 @@ $lng['useraccount']['Cancel'] = 'Ματαίωση';
 
 
 // ------------------- CONTACT -----------------
+$lng['contact']['Contact_us'] = 'Contact Us';
+$lng['contact']['fill_all_field'] = 'Please fill all fields and submit';
 $lng['contact']['name'] = 'Ονομα';
 $lng['contact']['Phone Number'] = 'Τηλεφωνικό νούμερο';
 $lng['contact']['email'] = 'Email';
 $lng['contact']['Enter_Your_Massage'] = 'Εισάγετε το Μασάζ σας';
 $lng['contact']['message_sent'] = 'Το μήνυμά σας εστάλη!';
+$lng['contact']['Enter_Your_Massage'] = 'Enter Your Massage';
+$lng['contact']['message_sent'] = 'Your message was sent!';
 $lng['contact']['Submit'] = 'υποβάλλουν';
 
 

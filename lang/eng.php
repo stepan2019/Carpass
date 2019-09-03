@@ -57,6 +57,7 @@ $lng['login']['Email'] = 'Email';
 $lng['login']['password'] = 'Password';
 $lng['login']['forgot_pass'] = 'Forgot your password?';
 $lng['login']['click_here'] = 'Click here to reset it!';
+$lng['login']['Select_type_to_login'] = 'Please select user type to login.';
 
 
 // -------------------------- LOGOUT -----------------------
@@ -64,6 +65,7 @@ $lng['logout']['logout'] = 'Sign Out';
 $lng['logout']['loggedout'] = 'You have been signed out!';
 
 // --------------------------User REGISTER -----------------------
+$lng['users']['Select_type_to_register'] = 'Please select user type to register.';
 $lng['users']['register'] = 'Register';
 $lng['users']['User'] = 'User';
 $lng['users']['Delaer'] = 'Dealer';
@@ -97,9 +99,13 @@ $lng['useraccount']['Cancel'] = 'Cancel';
 
 
 // ------------------- CONTACT -----------------
+$lng['contact']['Contact_us'] = 'Contact Us';
+$lng['contact']['fill_all_field'] = 'Please fill all fields and submit';
 $lng['contact']['name'] = 'Name';
 $lng['contact']['Phone Number'] = 'Phone Number';
 $lng['contact']['email'] = 'Email';
+$lng['contact']['your_mail_address'] = 'Your Email address';
+$lng['contact']['never_share_mail'] = 'We will never share your email with anyone else.';
 $lng['contact']['Enter_Your_Massage'] = 'Enter Your Massage';
 $lng['contact']['message_sent'] = 'Your message was sent!';
 $lng['contact']['Submit'] = 'Submit';

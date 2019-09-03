@@ -31,6 +31,11 @@ global $crt_lang_code;
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
           integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script>
+        exdate=new Date();
+        exdate.setDate(exdate.getDate() + 365);
+
+    </script>
 </head>
 <body>
 
@@ -46,15 +51,15 @@ include "../template/header.php";
             include $page . ".php";
         } else {
             ?>
-            <p class="type-title">Please select user type to register.</p><br>
+            <p class="type-title"><?php echo $lng['users']['Select_type_to_register'];?></p><br>
             <div class="type-user">
                 <div class="type-user1">
                     <a href="register.php?type=register_user" class="link-size typing-glow mr-5"><i
-                                class="far fa-user"></i>&nbsp;&nbsp;User</a>
+                                class="far fa-user"></i>&nbsp;&nbsp;<?php echo $lng['users']['User'];?></a>
                 </div>
                 <div class="type-user2">
                     <a href="register.php?type=register_dealer" class="link-size typing-glow ml-5"><i
-                                class="fas fa-car"></i>&nbsp;&nbsp;Dealer</a>
+                                class="fas fa-car"></i>&nbsp;&nbsp;<?php echo $lng['users']['Delaer'];?></a>
                 </div>
             </div>
         <?php } ?>

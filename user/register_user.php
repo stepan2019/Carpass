@@ -7,7 +7,7 @@ require_once '../classes/validator.php';
 require_once '../classes/mails.php';
 require_once '../classes/settings.php';
 require_once $config_abs_path . "/classes/mail_templates.php";
-
+global $lng;
 global $mail_setting;
 $setting = new settings();
 $mail_setting =$setting->getMailSettings();
@@ -68,35 +68,35 @@ if (isset($_POST['register'])) {
     <form method="post">
         <div class="row col-md-12">
             <div class="col-md-3 text-left mt-4">
-                <label class="control-label">Fullname</label>
+                <label class="control-label"><?php echo $lng['users']['Fullname'];?></label>
                 <div class="agileits-main">
                     <i class="fas fa-signature"></i>
                     <input type="text" placeholder="Mohammad Jamal" required="" name="name">
                 </div>
             </div>
             <div class="col-md-3 text-left mt-4">
-                <label class="control-label">Password</label>
+                <label class="control-label"><?php echo $lng['users']['password'];?></label>
                 <div class="agileits-main">
                     <i class="fas fa-unlock-alt"></i>
                     <input type="password" placeholder="ex:t7G*4lz" required="" name="password">
                 </div>
             </div>
             <div class="col-md-3 text-left mt-4">
-                <label class="control-label">Address</label>
+                <label class="control-label"><?php echo $lng['users']['Address'];?></label>
                 <div class="agileits-main">
                     <i class="fas fa-map-marker-alt"></i>
                     <input type="text" placeholder="Sulaymanyah/Iraq" required="" name="address">
                 </div>
             </div>
             <div class="col-md-3 text-left mt-4">
-                <label class="control-label">Email</label>
+                <label class="control-label"><?php echo $lng['users']['Email'];?></label>
                 <div class="agileits-main">
                     <i class="far fa-envelope"></i>
                     <input type="email" placeholder="mohammad@gmail.com" required="" name="email">
                 </div>
             </div>
             <div class="col-md-3 text-left mt-4">
-                <label class="control-label">Phone Number</label>
+                <label class="control-label"><?php echo $lng['users']['Phone_number'];?></label>
                 <div class="agileits-main">
                     <i class="fas fa-phone"></i>
                     <input type="tel" placeholder="07702247788" required="" name="phone">
@@ -104,7 +104,7 @@ if (isset($_POST['register'])) {
             </div>
         </div>
         <div class="text-center submit mt-5">
-            <input type="submit" class="btn btn-primary submit-fs btn-custom btn_register" value="Register"
+            <input type="submit" class="btn btn-primary submit-fs btn-custom btn_register" value="<?php echo $lng['users']['register'];?>"
                    name="register">
             <?php if ($response != "") { ?>
                 <p><label class="control-label mt-3"><?php echo $response; ?></label></p>

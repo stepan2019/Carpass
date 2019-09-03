@@ -41,6 +41,11 @@ $information = $result->fetch_assoc();
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
           integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script>
+        exdate=new Date();
+        exdate.setDate(exdate.getDate() + 365);
+
+    </script>
 </head>
 <body>
 
@@ -57,16 +62,16 @@ include "../template/header.php";
         } else {
             ?>
             <div class="type-title">
-                <p>Please select user type to login.</p><br>
+                <p><?php echo $lng['login']['Select_type_to_login']; ?></p><br>
             </div>
             <div>
                 <div class="type-user1">
                     <a href="login.php?type=login_user<?php if (isset($go)) echo "&go=" . $go; ?>"
-                       class="link-size typing-glow mr-5"><i class="far fa-user"></i>&nbsp;&nbsp;User</a>
+                       class="link-size typing-glow mr-5"><i class="far fa-user"></i>&nbsp;&nbsp;<?php echo $lng['login']['User']; ?></a>
                 </div>
                 <div class="type-user2">
                     <a href="login.php?type=login_dealer<?php if (isset($go)) echo "&go=" . $go; ?>"
-                       class="link-size typing-glow ml-5"><i class="fas fa-car"></i>&nbsp;&nbsp;Dealer</a>
+                       class="link-size typing-glow ml-5"><i class="fas fa-car"></i>&nbsp;&nbsp;<?php echo $lng['login']['Delaer']; ?></a>
                 </div>
             </div>
         <?php } ?>

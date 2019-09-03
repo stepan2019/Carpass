@@ -14,8 +14,6 @@ if (isset($_POST['add_price'])) {
     if ($is_success) {
         $result = $config->getPrice();
         $currentPrice = $result->fetch_assoc();
-        print_r($currentPrice);exit;
-        // header("location:home.php");
     } else {
         echo "<script>alert('Sorry ...');</script>";
     }
