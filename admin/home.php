@@ -92,6 +92,7 @@
 							<li><a class="nav-link" href="home.php?query=mails_settings">E-mail option</a></li>
 							<li><a class="nav-link" href="home.php?query=send-mail">Send news mail</a></li>
                             <li><a class="nav-link" href="home.php?query=information">Information</a></li>
+                            <li><a class="nav-link" href="home.php?query=backup">Backup</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Banners<span class="caret"></span></a>

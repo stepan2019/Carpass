@@ -92,7 +92,7 @@ if ($text_direction == 'rtl') {
                     if ($crt_lang == $row['id']) {
                         ?>
                         <a href="javascript:;"
-                           onclick="document.cookie='default_lang=<?php echo $row['id']; ?>; path=/; expires = '+exdate.toUTCString()+'; '; window.location.reload( false );">
+                           onclick="javascript::return false;">
                             <li><img src="/images/languages/<?php echo $row['image']; ?>"/><?php echo $row['name']; ?>
                             </li>
                         </a>

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2019-08-27 18:31:53
+<?php /* Smarty version 3.1.24, created on 2019-09-03 16:17:36
          compiled from "E:/workspace/carpass/admin/templates/default/header.html" */ ?>
 <?php
-/*%%SmartyHeaderCode:21461325915d657719589897_64380128%%*/
+/*%%SmartyHeaderCode:11896952755d6e922026c6d8_31743344%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '53101b6c4dd952b0d9d3ba62fcba879718596e6d' => 
     array (
       0 => 'E:/workspace/carpass/admin/templates/default/header.html',
-      1 => 1519198642,
+      1 => 1567332163,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '21461325915d657719589897_64380128',
+  'nocache_hash' => '11896952755d6e922026c6d8_31743344',
   'variables' => 
   array (
     'appearance' => 0,
@@ -30,13 +30,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_5d65771978c7f5_88913801',
+  'unifunc' => 'content_5d6e9220449793_77519368',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5d65771978c7f5_88913801')) {
-function content_5d65771978c7f5_88913801 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5d6e9220449793_77519368')) {
+function content_5d6e9220449793_77519368 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '21461325915d657719589897_64380128';
+$_smarty_tpl->properties['nocache_hash'] = '11896952755d6e922026c6d8_31743344';
 ?>
 <!DOCTYPE html>
 <html>
