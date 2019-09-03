@@ -6,7 +6,7 @@ global $crt_lang_code;
 
 include $root . "/setting/config.php";
 // include "setting/config.php";
-
+session_start();
 // session_start();
  $result = $config->getContentByCode($crt_lang_code);
  $content = $result->fetch_assoc();
