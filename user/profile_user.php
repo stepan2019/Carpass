@@ -3,6 +3,7 @@
     $response2 = "";
 
     $id = $user_info['id'];
+    global $lng;
 
     if(isset($_POST['update'])) {
         $name = $_POST['name'];
@@ -43,21 +44,21 @@
     <form method="post">
         <div class="row col-md-12">
             <div class="col-md-3 text-left mt-4">
-                <label class="control-label">Fullname</label>
+                <label class="control-label"><?php echo $lng['useraccount']['Fullname'];?></label>
                 <div class="agileits-main">
                     <i class="fas fa-signature"></i>
                     <input type="text" value="<?php echo $user_info['name']; ?>" required="" name="name">
                 </div>
             </div>
             <div class="col-md-3 text-left mt-4">
-                <label class="control-label">Address</label>
+                <label class="control-label"><?php echo $lng['useraccount']['Address'];?></label>
                 <div class="agileits-main">
                     <i class="fas fa-map-marker-alt"></i>
                     <input type="text" value="<?php echo $user_info['address']; ?>" required="" name="address">
                 </div>
             </div>
             <div class="col-md-3 text-left mt-4">
-                <label class="control-label">Email</label>
+                <label class="control-label"><?php echo $lng['useraccount']['email'];?></label>
                 <div class="agileits-main">
                     <i class="far fa-envelope"></i>
                     <input type="email" value="<?php echo $user_info['email']; ?>" required="" name="email">

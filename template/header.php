@@ -80,6 +80,9 @@ if ($text_direction == 'rtl') {
                                         href="/template/contact.php"><?php echo $lng['navbar']['contact']; ?></a></li>
             </ul>
 
+
+        </div>
+        <div>
             <ul class="languagepicker">
                 <?php
                 $langSelector = '';

@@ -10,6 +10,14 @@
     left:88%;
     top:20px;
 }
+@media(max-width: 1280px){
+    .languagepicker {
+        left:2%;
+    }
+    .navbar-toggler-right{
+        top:20px;
+    }
+}
 
 .languagepicker:hover {
     /* don't forget the 1px border */
