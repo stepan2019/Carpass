@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7db2e5a1-777a-4b65-b71a-e2d1ad3c3c2f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/db_tools.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/backup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/temp/53101b6c4dd952b0d9d3ba62fcba879718596e6d_0.file.header.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/temp/53101b6c4dd952b0d9d3ba62fcba879718596e6d_0.file.header.html.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/temp/d6cf64460694aca09ad4c2ec1379dc4cbaaa0e9b_0.file.footer.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/temp/d6cf64460694aca09ad4c2ec1379dc4cbaaa0e9b_0.file.footer.html.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/YmFzZV9pbnRlcmZhY2U=eng.CCH" beforeDir="false" afterPath="$PROJECT_DIR$/temp/YmFzZV9pbnRlcmZhY2U=eng.CCH" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/YmFzZV9sYW5ndWFnZXM=.CCH" beforeDir="false" afterPath="$PROJECT_DIR$/temp/YmFzZV9sYW5ndWFnZXM=.CCH" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/template/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/css/style-rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/template/css/style-rtl.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,11 +42,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="94" column="61" selection-start-line="94" selection-start-column="61" selection-end-line="94" selection-end-column="61" />
+            <state relative-caret-position="290">
+              <caret line="100" column="25" lean-forward="true" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/template/css/style-rtl.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="12" selection-start-line="12" selection-end-line="19" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -114,7 +125,6 @@
         <option value="$PROJECT_DIR$/include/include.php" />
         <option value="$PROJECT_DIR$/lang/ku.php" />
         <option value="$PROJECT_DIR$/lang/greek.php" />
-        <option value="$PROJECT_DIR$/template/css/style-rtl.css" />
         <option value="$PROJECT_DIR$/template/price.php" />
         <option value="$PROJECT_DIR$/template/info.php" />
         <option value="$PROJECT_DIR$/admin/mail.php" />
@@ -157,6 +167,7 @@
         <option value="$PROJECT_DIR$/admin/home.php" />
         <option value="$PROJECT_DIR$/admin/templates/default/db_tools.html" />
         <option value="$PROJECT_DIR$/template/header.php" />
+        <option value="$PROJECT_DIR$/template/css/style-rtl.css" />
       </list>
     </option>
   </component>
@@ -191,6 +202,12 @@
               <item name="carpass" type="b2602c69:ProjectViewProjectNode" />
               <item name="carpass" type="462c0819:PsiDirectoryNode" />
               <item name="template" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="carpass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="carpass" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -245,12 +262,12 @@
       <workItem from="1567090847638" duration="2108000" />
       <workItem from="1567126039737" duration="27512000" />
       <workItem from="1567333458192" duration="18048000" />
-      <workItem from="1567427904614" duration="44536000" />
+      <workItem from="1567427904614" duration="44913000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209346000" />
+    <option name="totallyTimeSpent" value="209723000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -285,13 +302,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/css/style-rtl.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -516,13 +526,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vehicle/pdf.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-770">
@@ -637,8 +640,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/template/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="94" column="61" selection-start-line="94" selection-start-column="61" selection-end-line="94" selection-end-column="61" />
+        <state relative-caret-position="290">
+          <caret line="100" column="25" lean-forward="true" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" selection-start-line="12" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/css/style-rtl.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
     </entry>
