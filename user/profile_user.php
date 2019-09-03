@@ -84,21 +84,21 @@
     <form method="post">
         <div class="row col-md-12">
             <div class="col-md-3 text-left mt-4">
-                <label class="control-label">Current Password</label>
+                <label class="control-label"><?php echo $lng['useraccount']['Current_Password'];?></label>
                 <div class="agileits-main">
                     <i class="fas fa-unlock-alt"></i>
                     <input type="password" required="" name="current_password">
                 </div>
             </div>
             <div class="col-md-3 text-left mt-4">
-                <label class="control-label">New Password</label>
+                <label class="control-label"><?php echo $lng['useraccount']['New_password'];?></label>
                 <div class="agileits-main">
                     <i class="fas fa-unlock-alt"></i>
                     <input type="password" required="" name="new_password">
                 </div>
             </div>
             <div class="col-md-3 text-left mt-4">
-                <label class="control-label">Confirm New Password</label>
+                <label class="control-label"><?php echo $lng['useraccount']['Confirm_New_Password'];?></label>
                 <div class="agileits-main">
                     <i class="fas fa-unlock-alt"></i>
                     <input type="password" required="" name="confirm_password">
@@ -106,7 +106,7 @@
             </div>
         </div>
         <div class="text-center submit mt-5">
-            <input type="submit" class="btn btn-primary submit-fs btn-custom" value="Change" name="change">
+            <input type="submit" class="btn btn-primary submit-fs btn-custom" value="<?php echo $lng['useraccount']['change_password'];?>" name="change">
             <?php if($response2 != "") { ?>
                 <p><label class="control-label mt-3"><?php echo $response2; ?></label></p>
             <?php } ?>
