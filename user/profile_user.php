@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="col-md-3 text-left mt-4">
-                <label class="control-label">Phone Number</label>
+                <label class="control-label"><?php echo $lng['useraccount']['Phone_Number'];?></label>
                 <div class="agileits-main">
                     <i class="fas fa-phone"></i>
                     <input type="tel" value="<?php echo $user_info['phone']; ?>" required="" name="phone">
@@ -73,11 +73,11 @@
             </div>
         </div>
         <div class="text-center submit mt-5">
-            <input type="submit" class="btn btn-primary submit-fs btn-custom" value="Update" name="update">
+            <input type="submit" class="btn btn-primary submit-fs btn-custom" value="<?php echo $lng['useraccount']['Update'];?>" name="update">
             <?php if($response != "") { ?>
                 <p><label class="control-label mt-3"><?php echo $response; ?></label></p>
             <?php } ?>
-            <a href="/index.php" class="btn btn-primary submit-fs btn-custom">Cancel</a>
+            <a href="/index.php" class="btn btn-primary submit-fs btn-custom"><?php echo $lng['useraccount']['Cancel'];?></a>
         </div>
         <div class="clearfix"></div>
     </form>

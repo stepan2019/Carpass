@@ -56,7 +56,7 @@ if (isset($_POST['add_car'])) {
         $account = urlencode($_POST['email']);
 
         $mail2send = new mails();
-        $mail2send->init($_POST['email'], $_POST['name']);
+        $mail2send->init($mail_setting['username'], 'Carpass');
         $mail2send->setSubject(cleanStr('<p> Hello admin there is vehicle ADD to carpass database</p>'));
         $msg = nl2br(cleanStr('<div>
                                         <p> with plate number' . $plate . ' and vin number ' . $vin . '</p>
