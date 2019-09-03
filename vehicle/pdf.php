@@ -5,8 +5,8 @@
     }
 	include "../setting/config.php";
 
-	if(isset($_GET['query'])) {
-		$plate = $_GET['query'];
+	if(isset($_POST['vin'])) {
+		$plate = $_POST['vin'];
 
 		$resultByPlate = $config->get_vehicle_by_plate($plate);
         $countByPlate = $resultByPlate->num_rows;

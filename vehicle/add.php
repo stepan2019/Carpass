@@ -51,17 +51,13 @@ if (isset($_POST['add_car'])) {
         global $config_live_site;
         global $mail_setting;
         // add activation code to db record
-        $activation_code = generate_random();
-
-        $account = urlencode($_POST['email']);
-
         $mail2send = new mails();
         $mail2send->init($mail_setting['username'], 'Carpass');
         $mail2send->setSubject(cleanStr('<p> Hello admin there is vehicle ADD to carpass database</p>'));
         $msg = nl2br(cleanStr('<div>
                                         <p> with plate number' . $plate . ' and vin number ' . $vin . '</p>
                                         <p> Please check the vehicle . </p>
-                                    </div>')) . '';
+                                    </div><div>User Email : '.$email.'</div>')) . '';
         $mail2send->setMessage($msg);
         $is_sendMail = $mail2send->send();
         if (!$is_sendMail) {
@@ -111,6 +107,7 @@ if (isset($_POST['add_car'])) {
                 <script src="../js/jquery.min.js"></script>
                 <script>
                     $(function () {
+                        $('#pdf_form > input').val("<?php echo $vin; ?>");
                         $("#historyPDF").modal();
                     });
                 </script>
@@ -130,9 +127,8 @@ if (isset($_POST['add_car'])) {
 
                                 if ($val == 0) {
                                     ?>
-                                    <a href="pdf.php?query=<?php echo $vin; ?>"
-                                       class="btn btn-primary submit-fs btn-custom" target="_blank"
-                                       onclick="modalClose();">Generate Report</a>
+                                    <button class="btn btn-primary submit-fs btn-custom"
+                                       onclick="modalClose()">Generate Report</button>
                                     <?php
                                 } else {
                                     ?>
@@ -156,10 +152,13 @@ if (isset($_POST['add_car'])) {
                                         <input type="button" name="coupon" value="Coupon" id="coupon_btn"
                                                class="btn btn-primary submit-fs btn-custom"/>
                                     </form>
+
                                 <?php } ?>
                                 <script type="text/javascript">
                                     function modalClose() {
                                         $("#historyPDF").modal('hide');
+
+                                        document.forms[1].submit();
                                         return true;
                                     }
                                 </script>
@@ -217,6 +216,16 @@ if (isset($_POST['add_car'])) {
         .modal-dialog {
             max-width: 1450px;
         }
+        #car_plate{
+            background-image: url(/images/Greece-number.png);
+            color:black;
+            background-size: cover;
+            text-align:center;
+            width: 300px;
+            height: 56px;
+            font-size: 30px;
+            font-weight: bolder;
+        }
     </style>
     <script>
         exdate=new Date();
@@ -240,7 +249,7 @@ include "../template/header.php";
                     <div class="agileits-main only-plate">
 					    <!--<i class="fas fa-list-ol"></i>-->
                         <input type="text" required="" pattern="[a-zA-Z]{3}-[0-9]{3,4}" name="plate" id="car_plate"
-						       style="background-image: url(/images/Greece-number.png);color:black;background-size: cover;text-align:center;" maxlength="8" data-mask=""
+                               maxlength="8" data-mask=""
                                onkeyup="this.value = this.value.toUpperCase();" placeholder="KPT-9083">
                     </div>
                 </div>
@@ -375,7 +384,9 @@ include "../template/header.php";
                 <?php } ?>
             </div>
         </form>
-
+        <form action="pdf.php" method="post" id="pdf_form" target="_blank" name="pdf_form">
+            <input type="hidden" name="vin" value=""/>
+        </form>
         <hr>
 
         <div class="extra-field">
