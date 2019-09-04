@@ -46,23 +46,15 @@ if (isset($_POST['Backup'])) {
         $error = "Function disabled in the demo!";
     } else {
         $database->saveToFile();
-//		header("Location: backup.php");
-//		exit(0);
+        ?>
+        <script type="text/javascript">
+            window.location = "/admin/home.php?query=db_tools";
+        </script>
+        <?php
+
     }
 }
-/*
-if(isset($_POST['Backup_download'])) {
 
-	if(isset($_POST['compress']) && $_POST['compress']==1) $compress = 1; else $compress = 0;
-	$database->setCompress($compress);
-
-	$fname = $database->saveToFile();
-
-	$database->downloadFile($fname);
-
-	header("Location: db_tools.php");
-
-}*/
 
 if (isset($_POST['Restore'])) {
 
@@ -86,7 +78,7 @@ if (isset($_POST['Restore'])) {
                 ?>
                 <script type="text/javascript">
                     alert("<?php echo $info ?>");
-                    window.location = "<?php echo $config_live_site ?>/admin/db_tools.php"
+                    window.location = "/admin/home.php?query=db_tools";
                 </script>
                 <?php
             } else $error = $lng['database']['could_not_restore_backup'];
