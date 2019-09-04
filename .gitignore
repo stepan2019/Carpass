@@ -4,3 +4,4 @@ config.php
 /temp
 /admin/temp
 last.php
+/db_backup
