@@ -97,8 +97,11 @@ if (isset($_POST['Save_schedule'])) {
             $error = $database->getError();
             $schedule = $database->getTmp();
         } else {
-//		header("Location: backup.php");
-//		exit(0);
+            ?>
+                <script type="text/javascript">
+                    window.location = "/admin/home.php?query=db_tools";
+                </script>
+            <?php
         }
     }
 }
