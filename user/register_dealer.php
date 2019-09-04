@@ -108,11 +108,19 @@ if (isset($_POST['register'])) {
                 </div>
             </div>
         </div>
-        <div class="submit">
-            <input type="submit" class="btn btn-primary submit-fs btn-custom" value="<?php echo $lng['users']['register'];?>" name="register">
-            <?php if ($response != "") { ?>
-                <p><label class="control-label mt-3"><?php echo $response; ?></label></p>
-            <?php } ?>
+        <div class="row submit col-md-12">
+            <div class="col-md-3 text-left mt-4">
+                <input type="submit" class="btn btn-primary submit-fs btn-custom" value="<?php echo $lng['users']['register'];?>" name="register">
+                <?php if ($response != "") { ?>
+                    <p><label class="control-label mt-3"><?php echo $response; ?></label></p>
+                <?php } ?>
+            </div>
+            <div class="col-md-9 text-left mt-4">
+                <input type="submit" class="btn btn-primary submit-fs btn-custom" value="<?php echo $lng['users']['register'];?>" name="register">
+                <?php if ($response != "") { ?>
+                    <p><label class="control-label mt-3"><?php echo $response; ?></label></p>
+                <?php } ?>
+            </div>
         </div>
         <div class="clearfix"></div>
     </form>

@@ -10,714 +10,760 @@
 class database
 {
 
-	var $file_format = 'd_m_y__H_i_s';
-	var $tables = array();
-	var $drop_tables = true;
-	var $struct_only = false;
-	var $comments = true;
-	var $newline = "\r\n";
-	var $compress = false;
-	var $write = true;
-	var $last_id;
-	var $install;
-	var $error;
+    var $file_format = 'd_m_y__H_i_s';
+    var $tables = array();
+    var $drop_tables = true;
+    var $struct_only = false;
+    var $comments = true;
+    var $newline = "\r\n";
+    var $compress = false;
+    var $write = true;
+    var $last_id;
+    var $install;
+    var $error;
 
-	public function __construct()
-	{
-	
-		$this->install = 0;
-		$this->f = null;
-		global $config_abs_path;
-		$this->backup_dir = $config_abs_path."/db_backup";
-	}
+    public function __construct()
+    {
 
-	function setWrite($write) {
+        $this->install = 0;
+        $this->f = null;
+        global $config_abs_path;
+        $this->backup_dir = $config_abs_path . "/db_backup";
+    }
 
-		$this->write=$write;
+    function setWrite($write)
+    {
 
-	}
+        $this->write = $write;
 
-	function delete($file) {
+    }
 
-		global $lng;
+    function delete($file)
+    {
 
-		if(@unlink($this->backup_dir."/".$file)) return $lng['database']['backup_deleted'];
-		
-		else return $lng['database']['could_not_delete_backup'];
+        global $lng;
 
-	}
+        if (@unlink($this->backup_dir . "/" . $file)) return $lng['database']['backup_deleted'];
+
+        else return $lng['database']['could_not_delete_backup'];
+
+    }
 
 
-	function downloadFile($fname)
-	{
- 		header("Pragma: public");
-		header("Expires: 0");
-		header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
-		header("Content-Type: application/force-download");
-		header("Content-Disposition: attachment; filename=".basename($fname));
-		header("Content-Description: File Transfer");
-		@readfile($this->backup_dir.'/'.$fname);
-		exit;
-	}
+    function downloadFile($fname)
+    {
+        header("Pragma: public");
+        header("Expires: 0");
+        header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+        header("Content-Type: application/force-download");
+        header("Content-Disposition: attachment; filename=" . basename($fname));
+        header("Content-Description: File Transfer");
+        @readfile($this->backup_dir . '/' . $fname);
+        exit;
+    }
 
-	function writeHeader() {
+    function writeHeader()
+    {
 
- 		header("Pragma: public");
-		header("Expires: 0");
-		header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
-		header("Content-Type: application/force-download");
+        header("Pragma: public");
+        header("Expires: 0");
+        header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+        header("Content-Type: application/force-download");
 //		header("Content-Disposition: attachment; filename=".basename($fname));
-		header("Content-Description: File Transfer");
+        header("Content-Description: File Transfer");
 
-	}
+    }
 
-	function openFileToWrite($fname) {
+    function openFileToWrite($fname)
+    {
 
-		global $lng;
+        global $lng;
 
-		if ($this->compress) {
-			if (!($this->f = gzopen($this->backup_dir.'/'.$fname, 'w9'))) {
-        			$this->addError($lng['database']['cant_create_output_file']."<br>");
-				return 0;
-			}
-			return 1;
-		} 
+        if ($this->compress) {
+            if (!($this->f = gzopen($this->backup_dir . '/' . $fname, 'w9'))) {
+                $this->addError($lng['database']['cant_create_output_file'] . "<br>");
+                return 0;
+            }
+            return 1;
+        }
 
-		// without compression
-		if (!($this->f = fopen($this->backup_dir.'/'.$fname, 'w'))) {
-			$this->addError($lng['database']['cant_create_output_file']."<br>");
-			return 0;
-		}
-		return 1;
-	}
+        // without compression
+        if (!($this->f = fopen($this->backup_dir . '/' . $fname, 'w'))) {
+            $this->addError($lng['database']['cant_create_output_file'] . "<br>");
+            return 0;
+        }
+        return 1;
+    }
 
-	function openFileToRead($fname) {
+    function openFileToRead($fname)
+    {
 
-		global $lng;
+        global $lng;
 
-		if ($this->compress) {
-			if (!($this->f = gzopen($fname, 'r'))) {
-        			$this->addError($lng['database']['cant_read_from_file']."<br>");
-				return 0;
-			}
-			return 1;
-		} 
+        if ($this->compress) {
+            if (!($this->f = gzopen($fname, 'r'))) {
+                $this->addError($lng['database']['cant_read_from_file'] . "<br>");
+                return 0;
+            }
+            return 1;
+        }
 
-		// without compression
-		if (!($this->f = fopen($fname, 'r'))) {
-			$this->addError($lng['database']['cant_read_from_file']."<br>");
-			return 0;
-		}
-		return 1;
-	}
+        // without compression
+        if (!($this->f = fopen($fname, 'r'))) {
+            $this->addError($lng['database']['cant_read_from_file'] . "<br>");
+            return 0;
+        }
+        return 1;
+    }
 
-	function setDir($dir) {
+    function setDir($dir)
+    {
 
-		$this->backup_dir = $dir;
+        $this->backup_dir = $dir;
 
-	}
+    }
 
-	function getBackupDir() {
+    function getBackupDir()
+    {
 
-		return $this->backup_dir;
+        return $this->backup_dir;
 
-	}
+    }
 
 
-	function closeFile() {
+    function closeFile()
+    {
 
-		if ($this->f){
-			if($this->compress) { //gzflush($this->f); 
-				gzclose($this->f); 
-			} 
-			else { fflush($this->f); fclose($this->f); }
-		} else return 0;
-		return 1;
-	}
+        if ($this->f) {
+            if ($this->compress) { //gzflush($this->f);
+                gzclose($this->f);
+            } else {
+                fflush($this->f);
+                fclose($this->f);
+            }
+        } else return 0;
+        return 1;
+    }
 
-	function _eof() {
+    function _eof()
+    {
 
-		if($this->compress) { if(gzeof($this->f)) return 1; } 
-		elseif(feof($this->f)) return 1;
-		return 0;
-	}
+        if ($this->compress) {
+            if (gzeof($this->f)) return 1;
+        } elseif (feof($this->f)) return 1;
+        return 0;
+    }
 
-	function _gets() {
+    function _gets()
+    {
 
-		if($this->compress) return gzgets($this->f);
-		else return fgets($this->f);
-		
-	}
+        if ($this->compress) return gzgets($this->f);
+        else return fgets($this->f);
 
-	function saveToFile($fname='')
-	{
+    }
 
-		if(!$fname) $fname = $this->generateFname();
-		else $fname = basename($fname);
-		if($this->compress) $fname.=".sql.gz"; else $fname.=".sql";
+    function saveToFile($fname = '')
+    {
 
-		if(!$this->openFileToWrite($fname)) return 0;
+        if (!$fname) $fname = $this->generateFname();
+        else $fname = basename($fname);
+        if ($this->compress) $fname .= ".sql.gz"; else $fname .= ".sql";
 
-		$this->backupDB();
+        if (!$this->openFileToWrite($fname)) return 0;
 
-		$this->closeFile();
-	
-		return $fname;
-	}
+        $this->backupDB();
 
-	function getError() {
-	
-		return $this->error;
+        $this->closeFile();
 
-	}
+        return $fname;
+    }
 
-	function addError($str) {
+    function getError()
+    {
 
-		$this->error.=	$str;
+        return $this->error;
 
-	}
+    }
 
-	function setError($str) {
+    function addError($str)
+    {
 
-		$this->error=$str;
+        $this->error .= $str;
 
-	}
+    }
 
-	function setCompress($val) {
+    function setError($str)
+    {
 
-		$this->compress = $val;
+        $this->error = $str;
 
-	}
+    }
 
-	function getTables() {
+    function setCompress($val)
+    {
 
-		global $db;
-		if (!($result = $db->fetchRowList('SHOW TABLES'))) return 0;
-		return $result;
+        $this->compress = $val;
 
-	}
+    }
 
-	function writeTableStructure($table) {
+    function getTables()
+    {
 
-		global $db;
+        global $db;
+        if (!($result = $db->fetchRowList('SHOW TABLES'))) return 0;
+        return $result;
 
-		$str = "";
-		if ($this->comments) {
-			$str .= '#' . $this->newline;
-			$str .= '# Table structure for table `' . $table . '`' . $this->newline;
-			$str .= '#' . $this->newline . $this->newline;
-		}
+    }
 
-		if ($this->drop_tables)
-			$str .= 'DROP TABLE IF EXISTS `' . $table . '`;' . $this->newline;
+    function writeTableStructure($table)
+    {
 
-		if (!($result = $db->fetchAssoc('SHOW CREATE TABLE ' . $table)))
-			return 0;
+        global $db;
 
-		$str .= $result['Create Table'].' ;'.$this->newline.$this->newline;
+        $str = "";
+        if ($this->comments) {
+            $str .= '#' . $this->newline;
+            $str .= '# Table structure for table `' . $table . '`' . $this->newline;
+            $str .= '#' . $this->newline . $this->newline;
+        }
 
-		$this->writeSQL($str);
+        if ($this->drop_tables)
+            $str .= 'DROP TABLE IF EXISTS `' . $table . '`;' . $this->newline;
 
-		if (!$this->struct_only) {
+        if (!($result = $db->fetchAssoc('SHOW CREATE TABLE ' . $table)))
+            return 0;
 
-			$this->writeInserts($table);
-		}
+        $str .= $result['Create Table'] . ' ;' . $this->newline . $this->newline;
 
-		return 1;
+        $this->writeSQL($str);
 
-	}
+        if (!$this->struct_only) {
 
-	function writeInserts($table) {
+            $this->writeInserts($table);
+        }
 
-		global $db;
+        return 1;
 
-		$str = "";
-		// write comments
-		if ($this->comments) {
+    }
 
-			$str .= '#' . $this->newline;
-			$str .= '# Dumping data for table `' . $table . '`' . $this->newline;
-			$str .= '#' . $this->newline . $this->newline;
+    function writeInserts($table)
+    {
 
-		}
+        global $db;
 
-		// get each row and write to file once on 1000 registrations or at the end
-		$i=0;
-		if(function_exists('mysqli_connect')) {
-			if(!$res = mysqli_query ($db->link, 'SELECT * FROM ' . $table)) return 0;
-		}	
-		else {
-			if(!$res = mysql_query ('SELECT * FROM ' . $table)) return 0;
-		}
-	
-		if(!$res) return 0;
+        $str = "";
+        // write comments
+        if ($this->comments) {
 
-		if(function_exists('mysqli_connect')) {
-			while ($row = @mysqli_fetch_assoc ($res)) {
-		
-				$values = "";
-				foreach ($row as $val) {
-					$values .='\'' . $this->myAddslashes($val) . '\', ';
-				}
-				$values = substr($values, 0, -2);
-				$str .= 'INSERT INTO ' . $table . ' VALUES (' . $values . ');' . $this->newline;
-				if($i==1000) { $this->writeSQL($str); unset($str); $str=""; $i=0; }
-				$i++;
+            $str .= '#' . $this->newline;
+            $str .= '# Dumping data for table `' . $table . '`' . $this->newline;
+            $str .= '#' . $this->newline . $this->newline;
 
-			}
-		}
-		else {
+        }
 
-			while ($row = @mysql_fetch_assoc ($res)) {
-		
-				$values = "";
-				foreach ($row as $val) {
-					$values .='\'' . $this->myAddslashes($val) . '\', ';
-				}
-				$values = substr($values, 0, -2);
-				$str .= 'INSERT INTO ' . $table . ' VALUES (' . $values . ');' . $this->newline;
-				if($i==1000) { $this->writeSQL($str); unset($str); $str=""; $i=0; }
-				$i++;
+        // get each row and write to file once on 1000 registrations or at the end
+        $i = 0;
+        if (function_exists('mysqli_connect')) {
+            if (!$res = mysqli_query($db->link, 'SELECT * FROM ' . $table)) return 0;
+        } else {
+            if (!$res = mysql_query('SELECT * FROM ' . $table)) return 0;
+        }
 
-			}
-		
-		}
+        if (!$res) return 0;
 
-		$str .= $this->newline . $this->newline;
-		$this->writeSQL($str);
+        if (function_exists('mysqli_connect')) {
+            while ($row = @mysqli_fetch_assoc($res)) {
 
-		return 1;
-	}
+                $values = "";
+                foreach ($row as $val) {
+                    $values .= '\'' . $this->myAddslashes($val) . '\', ';
+                }
+                $values = substr($values, 0, -2);
+                $str .= 'INSERT INTO ' . $table . ' VALUES (' . $values . ');' . $this->newline;
+                if ($i == 1000) {
+                    $this->writeSQL($str);
+                    unset($str);
+                    $str = "";
+                    $i = 0;
+                }
+                $i++;
 
-	function myAddslashes($str){
+            }
+        } else {
 
-		$str = addslashes($str);
-		$str = str_replace("\n", '\n', $str);
-		$str = str_replace("\r", '\r', $str);
-		$str = str_replace("\t", '\t', $str);
-		return $str;
-	}
+            while ($row = @mysql_fetch_assoc($res)) {
 
-	function backupDB() {
+                $values = "";
+                foreach ($row as $val) {
+                    $values .= '\'' . $this->myAddslashes($val) . '\', ';
+                }
+                $values = substr($values, 0, -2);
+                $str .= 'INSERT INTO ' . $table . ' VALUES (' . $values . ');' . $this->newline;
+                if ($i == 1000) {
+                    $this->writeSQL($str);
+                    unset($str);
+                    $str = "";
+                    $i = 0;
+                }
+                $i++;
 
-		$tables  = $this->getTables();
-		global $config_table_prefix;
-		foreach($tables as $tab) {
-			if(preg_match("/^$config_table_prefix/",$tab))
-				$this->writeTableStructure($tab);
-		}
-		return 1;
+            }
 
-	}
+        }
 
-	function generateFname() {
+        $str .= $this->newline . $this->newline;
+        $this->writeSQL($str);
 
-		$name=date($this->file_format);
-		return $name;
-	}
+        return 1;
+    }
 
-	function writeSQL($str) {
+    function myAddslashes($str)
+    {
 
-		if($this->write==false) { echo $str; return; }
-		if (!$this->f) return 0;
-		if($this->compress) gzwrite($this->f, $str);
-		else fwrite($this->f, $str);
-		return 1;
+        $str = addslashes($str);
+        $str = str_replace("\n", '\n', $str);
+        $str = str_replace("\r", '\r', $str);
+        $str = str_replace("\t", '\t', $str);
+        return $str;
+    }
 
-	}
+    function backupDB()
+    {
 
-/* keep !!!!!!!!!!
+        $tables = $this->getTables();
+        global $config_table_prefix;
+        foreach ($tables as $tab) {
+            if (preg_match("/^$config_table_prefix/", $tab))
+                $this->writeTableStructure($tab);
+        }
+        return 1;
 
-	function restoreDB($fname, $replace='') {
+    }
 
-		if(!$this->openFileToRead($fname)) return 0;
-		$no_queries = 0;
-		$max_queries = 1000;
-		$query="";
-		while (!$this->_eof()) {
+    function generateFname()
+    {
 
-			$line = $this->_gets();
+        $name = date($this->file_format);
+        return $name;
+    }
 
-			// check if empty line or comment
-			$first= substr($line, 0,1);
-			if(!empty($line) && $first!="-" && $first!="" && $first!="#" ){
+    function writeSQL($str)
+    {
 
-				if($replace) $line = str_replace("PREFIX", $replace, $line);
+        if ($this->write == false) {
+            echo $str;
+            return;
+        }
+        if (!$this->f) return 0;
+        if ($this->compress) gzwrite($this->f, $str);
+        else fwrite($this->f, $str);
+        return 1;
 
-				if($this->oneQueryStr($line)) {
+    }
 
-					$this->executeQuery($query);
-					$query="";
-					$query.=trim($line);
+    /* keep !!!!!!!!!!
 
-				} else $query.=trim($line);
+        function restoreDB($fname, $replace='') {
 
-				// check if it's the complete query
-				if(substr($query,-1,1)==";"){
+            if(!$this->openFileToRead($fname)) return 0;
+            $no_queries = 0;
+            $max_queries = 1000;
+            $query="";
+            while (!$this->_eof()) {
 
-				if(substr($query , 0 , 6 )    == "INSERT") { // do multiple queries
+                $line = $this->_gets();
 
-					$no_queries++;
-					if($no_queries>=$max_queries) { $this->executeQuery($query); $query = ""; }
+                // check if empty line or comment
+                $first= substr($line, 0,1);
+                if(!empty($line) && $first!="-" && $first!="" && $first!="#" ){
 
-				} else {
+                    if($replace) $line = str_replace("PREFIX", $replace, $line);
 
-					// execute query
-					$this->executeQuery($query);
-					$query = "";
-				}
-				} // end if complete query
-			} 
-		}
-		$this->closeFile();	
-		return 1;
+                    if($this->oneQueryStr($line)) {
 
-	}
-*/
-	function restoreDB($fname, $replace='') {
+                        $this->executeQuery($query);
+                        $query="";
+                        $query.=trim($line);
 
-		global $config_demo;
-		if($config_demo==1) return;
+                    } else $query.=trim($line);
 
-		// checked if compressed or not
-		if(!$fname) return 0;
-		$ext = getExtension($fname);
-		if($ext=="gz") $this->compress=true; else $this->compress=false;
+                    // check if it's the complete query
+                    if(substr($query,-1,1)==";"){
 
-		if(!$this->openFileToRead($fname)) return 0;
-		$query="";
-		$this->setInstall(1);
+                    if(substr($query , 0 , 6 )    == "INSERT") { // do multiple queries
 
-		while (!$this->_eof()) {
+                        $no_queries++;
+                        if($no_queries>=$max_queries) { $this->executeQuery($query); $query = ""; }
 
-			$line = $this->_gets();
+                    } else {
 
-			// check if empty line or comment
-			$first= substr($line, 0,1);
-			if(!empty($line) && $first!="-" && $first!="" && $first!="#" ){
+                        // execute query
+                        $this->executeQuery($query);
+                        $query = "";
+                    }
+                    } // end if complete query
+                }
+            }
+            $this->closeFile();
+            return 1;
 
-				if($replace) $line = str_replace("PREFIX", $replace, $line);
+        }
+    */
+    function restoreDB($fname, $replace = '')
+    {
 
-				if($this->oneQueryStr($line)) {
+        global $config_demo;
+        if ($config_demo == 1) return;
 
-				$this->executeQuery($query);
-				$query="";
-				$query.=trim($line);
+        // checked if compressed or not
+        if (!$fname) return 0;
+        $ext = getExtension($fname);
+        if ($ext == "gz") $this->compress = true; else $this->compress = false;
 
-				} else $query.=trim($line);
+        if (!$this->openFileToRead($fname)) return 0;
+        $query = "";
+        $this->setInstall(1);
 
-				// check if it's the complete query
-				if(substr($query,-1,1)==";"){
-				// execute query
-				$ans = $this->executeQuery($query);
-				$query = "";
-				} // end if complete query
-			} 
-		}
-		$this->closeFile();	
-		return 1;
+        while (!$this->_eof()) {
 
-	}
+            $line = $this->_gets();
 
-	function installDB($fname, $replace, $default_lang='', $charset='', $collation='') {
+            // check if empty line or comment
+            $first = substr($line, 0, 1);
+            if (!empty($line) && $first != "-" && $first != "" && $first != "#") {
 
-		// checked if compressed or not
-		if(!$fname) return 0;
-		$ext = getExtension($fname);
-		if($ext=="gz") $this->compress=true; else $this->compress=false;
+                if ($replace) $line = str_replace("PREFIX", $replace, $line);
 
-		if(!$this->openFileToRead($fname)) return 0;
-		$query="";
-		while (!$this->_eof()) {
+                if ($this->oneQueryStr($line)) {
 
-			$line = $this->_gets();
+                    $this->executeQuery($query);
+                    $query = "";
+                    $query .= trim($line);
 
-			// check if empty line or comment
-			$first= substr($line, 0,1);
-			if(!empty($line) && $first!="-" && $first!="" && $first!="#" ){
+                } else $query .= trim($line);
 
-				$line = str_replace("PREFIX", $replace, $line);
-				if($default_lang) $line = str_replace("DEF_LANG", $default_lang, $line);
-				if($charset) $line = str_replace("::CHARSET::", $charset, $line);
-				if($collation) $line = str_replace("::COLLATE::", $collation, $line);
+                // check if it's the complete query
+                if (substr($query, -1, 1) == ";") {
+                    // execute query
+                    $ans = $this->executeQuery($query);
+                    $query = "";
+                } // end if complete query
+            }
+        }
+        $this->closeFile();
+        return 1;
 
-				if($this->oneQueryStr($line)) {
+    }
 
-				if($query) { 
-					$this->executeQuery($query);
+    function installDB($fname, $replace, $default_lang = '', $charset = '', $collation = '')
+    {
 
-				$query="";
-				}
-				$query.=trim($line);
+        // checked if compressed or not
+        if (!$fname) return 0;
+        $ext = getExtension($fname);
+        if ($ext == "gz") $this->compress = true; else $this->compress = false;
 
-				} else $query.=trim($line);
+        if (!$this->openFileToRead($fname)) return 0;
+        $query = "";
+        while (!$this->_eof()) {
 
-				// check if it's the complete query
-				if(substr($query,-1,1)==";"){
-				// execute query
-				$ans = $this->executeQuery($query);
-				
-				$query = "";
-				} // end if complete query
-			} 
-		}
-		$this->closeFile();	
-		return 1;
+            $line = $this->_gets();
 
-	}
+            // check if empty line or comment
+            $first = substr($line, 0, 1);
+            if (!empty($line) && $first != "-" && $first != "" && $first != "#") {
 
-	function executeBulk($query_str) {
+                $line = str_replace("PREFIX", $replace, $line);
+                if ($default_lang) $line = str_replace("DEF_LANG", $default_lang, $line);
+                if ($charset) $line = str_replace("::CHARSET::", $charset, $line);
+                if ($collation) $line = str_replace("::COLLATE::", $collation, $line);
 
-		global $config_demo;
-		if($config_demo==1) return;
-		global $config_table_prefix, $config_db_charset;
+                if ($this->oneQueryStr($line)) {
 
-		$lines=explode("\n", $query_str);
+                    if ($query) {
+                        $this->executeQuery($query);
 
-		$query="";
-		$last_id = 0;
-		foreach ($lines as $line) {
+                        $query = "";
+                    }
+                    $query .= trim($line);
 
-			$line= trim($line);
-			// check if empty line or comment
-			$first= substr($line, 0,1);
-			if(!empty($line) && $first!="-" && $first!="" && $first!="#" ){
+                } else $query .= trim($line);
 
-				$line = str_replace("PREFIX", $config_table_prefix, $line);
-				$line = str_replace("##CHARSET##", $config_db_charset, $line);
-				$line = str_replace("##COLLATION##", $config_db_collation, $line);
+                // check if it's the complete query
+                if (substr($query, -1, 1) == ";") {
+                    // execute query
+                    $ans = $this->executeQuery($query);
 
-				if($this->oneQueryStr($line)) {
+                    $query = "";
+                } // end if complete query
+            }
+        }
+        $this->closeFile();
+        return 1;
 
-				  $query="";
-				  $query.=trim($line);
+    }
 
-				} else $query.=trim($line);
+    function executeBulk($query_str)
+    {
 
-				// check if it's the complete query
-				if(substr($query,-1,1)==";"){
+        global $config_demo;
+        if ($config_demo == 1) return;
+        global $config_table_prefix, $config_db_charset;
 
-				// check if language replaceable 
-				// for modules install
-				if(strstr($query,"##LANG##")) {
+        $lines = explode("\n", $query_str);
 
-					// replace last id for _lang tables
-					if(strstr($query,"##LAST_ID##"))
-						$query=str_replace("##LAST_ID##", $this->last_id, $query);
+        $query = "";
+        $last_id = 0;
+        foreach ($lines as $line) {
 
-					global $languages;
-					if(empty($languages)) $languages = common::getCachedObject("base_languages");
-					$final_query='';
-					foreach($languages as $lang) {
-						$lang_id = $lang['id'];
-						$final_query=trim(str_replace("##LANG##", $lang_id, $query));
-						$ans = $this->executeQuery($final_query);
-					}
-					$query = "";
+            $line = trim($line);
+            // check if empty line or comment
+            $first = substr($line, 0, 1);
+            if (!empty($line) && $first != "-" && $first != "" && $first != "#") {
 
-				}  
-				else {
+                $line = str_replace("PREFIX", $config_table_prefix, $line);
+                $line = str_replace("##CHARSET##", $config_db_charset, $line);
+                $line = str_replace("##COLLATION##", $config_db_collation, $line);
 
-					// execute query
-					$ans = $this->executeQuery($query);
-					$query = "";
-				}
+                if ($this->oneQueryStr($line)) {
 
-				} // end if complete query
-			} 
-		}
+                    $query = "";
+                    $query .= trim($line);
 
-		return 1;
+                } else $query .= trim($line);
 
-	}
+                // check if it's the complete query
+                if (substr($query, -1, 1) == ";") {
 
-	function executeQuery($query) {
+                    // check if language replaceable
+                    // for modules install
+                    if (strstr($query, "##LANG##")) {
 
-		global $db;
+                        // replace last id for _lang tables
+                        if (strstr($query, "##LAST_ID##"))
+                            $query = str_replace("##LAST_ID##", $this->last_id, $query);
 
-		$db->query($query);
-		$db->setSql("");
-		$this->last_id = $db->insertId();
-		if($db->sql_error($db->link)!="") $this->addError($db->getError());
+                        global $languages;
+                        if (empty($languages)) $languages = common::getCachedObject("base_languages");
+                        $final_query = '';
+                        foreach ($languages as $lang) {
+                            $lang_id = $lang['id'];
+                            $final_query = trim(str_replace("##LANG##", $lang_id, $query));
+                            $ans = $this->executeQuery($final_query);
+                        }
+                        $query = "";
 
-		return 1;
+                    } else {
 
-	}
+                        // execute query
+                        $ans = $this->executeQuery($query);
+                        $query = "";
+                    }
 
-	function oneQueryStr($str) {
+                } // end if complete query
+            }
+        }
 
-		$str = trim($str);
-		if(substr($str , 0 , 13 ) == "DROP DATABASE") return 1;
-		if(substr($str , 0 , 15 ) == "CREATE DATABASE") return 1;
-		if(substr($str , 0 , 10) == "DROP TABLE") return 1;
-		if(substr($str , 0 , 12 ) == "CREATE TABLE") return 1;
-		if(substr($str , 0 , 6 ) == "UPDATE") return 1;
-		if(substr($str , 0 , 3 ) == "USE") return 1;
-		return 0;
+        return 1;
 
-	}
+    }
 
-	function readBackups() {
+    function executeQuery($query)
+    {
 
-		$arr = dir($this->backup_dir);
-		$backups=array();
-		$i=0;
-		while ($file = $arr->read()) {
-			
-			if ($file!='.' && $file!='..' ) {
-				$ext = getExtension($file);
-				if($ext=="sql" || $ext=="gz") {
-					$backups[$i]['file']= $file;
-					$backups[$i]['date']= @filectime($this->backup_dir.'/'.$file);
-					$backups[$i]['size']= @filesize($this->backup_dir.'/'.$file);
-					$backups[$i]['size_formatted']= $this->formatSize($backups[$i]['size']);
-					$i++;
-				}
-			}
+        global $db;
 
-		}
+        $db->query($query);
+        $db->setSql("");
+        $this->last_id = $db->insertId();
+        if ($db->sql_error($db->link) != "") $this->addError($db->getError());
 
-		closedir($arr->handle);
+        return 1;
 
-		$backups = $this->dateSort($backups);
+    }
 
-		return $backups;
+    function oneQueryStr($str)
+    {
 
+        $str = trim($str);
+        if (substr($str, 0, 13) == "DROP DATABASE") return 1;
+        if (substr($str, 0, 15) == "CREATE DATABASE") return 1;
+        if (substr($str, 0, 10) == "DROP TABLE") return 1;
+        if (substr($str, 0, 12) == "CREATE TABLE") return 1;
+        if (substr($str, 0, 6) == "UPDATE") return 1;
+        if (substr($str, 0, 3) == "USE") return 1;
+        return 0;
 
-	}
+    }
 
-	function formatSize ($str) {
+    function readBackups()
+    {
 
-		if(strlen($str)>6) { 
-			$str = (int)$str/1000000;
-			$b = " MB";
-		}
-		elseif(strlen($str)>3) {
-			$str = (int)$str/1000;
-			$b = " KB";
-		} else $b=" B";
+        $arr = dir($this->backup_dir);
+        $backups = array();
+        $i = 0;
+        while ($file = $arr->read()) {
 
-		$str = number_format((double)$str, 1, ',','.');
-		
-		return $str.$b;
-	}
+            if ($file != '.' && $file != '..') {
+                $ext = getExtension($file);
+                if ($ext == "sql" || $ext == "gz") {
+                    $backups[$i]['file'] = $file;
+                    $backups[$i]['date'] = @filectime($this->backup_dir . '/' . $file);
+                    $backups[$i]['size'] = @filesize($this->backup_dir . '/' . $file);
+                    $backups[$i]['size_formatted'] = $this->formatSize($backups[$i]['size']);
+                    $i++;
+                }
+            }
 
-	function check_form() {
+        }
 
-		global $lng;
-		$this->error='';
-		$this->tmp=array();
+        closedir($arr->handle);
 
-		global $config_demo;
-		if($config_demo==1) $this->addError($lng['general']['errors']['demo'].'<br />');
+        $backups = $this->dateSort($backups);
 
-		if($this->getError()!='')
-		{
-			if(isset($_POST['enabled']) && $_POST['enabled']=='on') $this->tmp['enabled']=0; else $this->tmp['enabled']=1; 
+        return $backups;
 
-			if(isset($_POST["backup_freq"])) $this->tmp["backup_freq"]=cleanStr($_POST["backup_freq"]); else $this->tmp["backup_freq"]='';
 
-			if(isset($_POST['keep']) && is_numeric($_POST['keep'])) $this->tmp['keep']=$_POST['keep']; else $this->tmp['keep']=0;
+    }
 
-		}
+    function formatSize($str)
+    {
 
-	}
+        if (strlen($str) > 6) {
+            $str = (int)$str / 1000000;
+            $b = " MB";
+        } elseif (strlen($str) > 3) {
+            $str = (int)$str / 1000;
+            $b = " KB";
+        } else $b = " B";
 
-	function saveSchedule() {
+        $str = number_format((double)$str, 1, ',', '.');
 
-		global $config_demo;
-		if($config_demo==1) return;
+        return $str . $b;
+    }
 
-		global $db;
-		$this->clean=array();
-		$this->check_form();
-		if($this->getError()!='') return 0;
+    function check_form()
+    {
 
-		$this->clean = array();
-		$this->clean['enabled'] = checkbox_value('enabled');
+        global $lng;
+        $this->error = '';
+        $this->tmp = array();
 
-		if(isset($_POST["backup_compress"])) $this->clean["backup_compress"]=escape($_POST["backup_compress"]); else $this->clean["backup_compress"]='0';
+        global $config_demo;
+        if ($config_demo == 1) $this->addError($lng['general']['errors']['demo'] . '<br />');
 
-		if(isset($_POST["backup_freq"])) $this->clean["backup_freq"]=escape($_POST["backup_freq"]); else $this->clean["backup_freq"]='';
+        if ($this->getError() != '') {
+            if (isset($_POST['enabled']) && $_POST['enabled'] == 'on') $this->tmp['enabled'] = 0; else $this->tmp['enabled'] = 1;
 
-		if(isset($_POST['keep']) && is_numeric($_POST['keep'])) $this->clean['keep']=$_POST['keep']; else $this->clean['keep']=0;
+            if (isset($_POST["backup_freq"])) $this->tmp["backup_freq"] = cleanStr($_POST["backup_freq"]); else $this->tmp["backup_freq"] = '';
 
-		$res = $db->query("update ".TABLE_DB_BACKUP." set enabled= ".$this->clean['enabled'].", backup_freq = '".$this->clean['backup_freq']."' , `keep` = ".$this->clean['keep'].", `backup_compress` = ".$this->clean['backup_compress']);
+            if (isset($_POST['keep']) && is_numeric($_POST['keep'])) $this->tmp['keep'] = $_POST['keep']; else $this->tmp['keep'] = 0;
 
-		return 1;
-		
-	}
+        }
 
-	function getSchedule() {
+    }
 
-		global $db;
-		$result = $db->fetchAssoc("select * from ".TABLE_DB_BACKUP);
-		return $result;
+    function saveSchedule()
+    {
 
-	}
+        global $config_demo;
+        if ($config_demo == 1) return;
+        global $db;
+        $this->clean = array();
+        $this->check_form();
+        if ($this->getError() != '') return 0;
 
-	function periodic() {
+        $this->clean = array();
+        $this->clean['enabled'] = checkbox_value('enabled');
 
-		global $db;
-		$settings = $this->getSchedule();
-		if(!$settings['enabled']) return;
-		if($settings['backup_freq']=='daily') $days=1;
-		else if($settings['backup_freq']=='weekly') $days=7;
-		else $days=30;
-		$timestamp = date("Y-m-d H:i:s");
-		$val = $db->fetchAssoc("select (generated_last like '0000-00-00 00:00:00' or date_add(generated_last, interval $days day)<date_add('$timestamp', interval 1 hour)) as go from ".TABLE_DB_BACKUP);
-		if($val['go']) 
-		{ 
-			$this->setCompress($settings['backup_compress']);	
-			$this->saveToFile();
-			$this->updateDate();
-		}
+        if (isset($_POST["backup_compress"])) $this->clean["backup_compress"] = escape($_POST["backup_compress"]); else $this->clean["backup_compress"] = '0';
 
-		// keep only X backups, delete older
-		$no = $settings['keep'];
-		$backups_array = $this->readBackups();
-		$no_crt = count($backups_array);
+        if (isset($_POST["backup_freq"])) $this->clean["backup_freq"] = escape($_POST["backup_freq"]); else $this->clean["backup_freq"] = '';
 
-		if($no_crt>$no) {
-			$diff = $no_crt-$no;
-			for($i=0; $i<$diff; $i++) { 
-				$backup_name = $this->backup_dir.'/'.$backups_array[$i]['file'];
-				@unlink($backup_name);
-			}
-		}
+        if (isset($_POST['keep']) && is_numeric($_POST['keep'])) $this->clean['keep'] = $_POST['keep']; else $this->clean['keep'] = 0;
 
-		return;
-	}
+        $res = $db->query("update " . TABLE_DB_BACKUP . " set enabled= " . $this->clean['enabled'] . ", backup_freq = '" . $this->clean['backup_freq'] . "' , `keep` = " . $this->clean['keep'] . ", `backup_compress` = " . $this->clean['backup_compress']);
+        return 1;
 
-	function updateDate() {
+    }
 
-		global $db;
-		$timestamp = date("Y-m-d H:i:s");
-		$db->query("update ".TABLE_DB_BACKUP." set generated_last = '$timestamp'");
+    function getSchedule()
+    {
 
-	}
+        global $db;
+        $result = $db->fetchAssoc("select * from " . TABLE_DB_BACKUP);
+        return $result;
 
-	function dateSort($a) {
+    }
 
-		$no = count($a);
-		for ($i=0; $i<$no-1; $i++) {
-			for ($j=$i+1; $j<$no; $j++) {
-				// order ascending
-				if((int)$a[$i]['date']>(int)$a[$j]['date']) {
-					$temp = $a[$i];
-					$a[$i] = $a[$j];
-					$a[$j] = $temp;
-				}
-			}
-		}
+    function periodic()
+    {
+        global $db;
+        $settings = $this->getSchedule();
+        if (!$settings['enabled']) return;
+        if ($settings['backup_freq'] == 'daily') $days = 1;
+        else if ($settings['backup_freq'] == 'weekly') $days = 7;
+        else $days = 30;
+        $timestamp = date("Y-m-d H:i:s");
+        $sql = "select (generated_last like '' or date_add(generated_last, interval " . $days . " day ) < date_add('" . $timestamp . "', interval 1 hour)) as go from " . TABLE_DB_BACKUP;
+        exit($sql);
+        $val = $db->fetchAssoc("select (generated_last like '0000-00-00 00:00:00' or date_add(generated_last, interval $days day)<date_add('$timestamp', interval 1 hour)) as go from " . TABLE_DB_BACKUP);
+        print_r($val);
+        exit;
+        if ($val['go']) {
+            $this->setCompress($settings['backup_compress']);
+            $this->saveToFile();
+            $this->updateDate();
+        }
 
-		return $a;
-	}
+        // keep only X backups, delete older
+        $no = $settings['keep'];
+        $backups_array = $this->readBackups();
+        $no_crt = count($backups_array);
 
-    function setInstall($val) {
-    
-	$this->install = $val;
-    
+        if ($no_crt > $no) {
+            $diff = $no_crt - $no;
+            for ($i = 0; $i < $diff; $i++) {
+                $backup_name = $this->backup_dir . '/' . $backups_array[$i]['file'];
+                @unlink($backup_name);
+            }
+        }
+
+        return;
+    }
+
+    function updateDate()
+    {
+
+        global $db;
+        $timestamp = date("Y-m-d H:i:s");
+        $db->query("update " . TABLE_DB_BACKUP . " set generated_last = '$timestamp'");
+
+    }
+
+    function dateSort($a)
+    {
+
+        $no = count($a);
+        for ($i = 0; $i < $no - 1; $i++) {
+            for ($j = $i + 1; $j < $no; $j++) {
+                // order ascending
+                if ((int)$a[$i]['date'] > (int)$a[$j]['date']) {
+                    $temp = $a[$i];
+                    $a[$i] = $a[$j];
+                    $a[$j] = $temp;
+                }
+            }
+        }
+
+        return $a;
+    }
+
+    function setInstall($val)
+    {
+
+        $this->install = $val;
+
     }
 
 }

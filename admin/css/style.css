@@ -173,7 +173,7 @@ ul.navlinkmenu { display: none; }
 .tab2-left a { text-decoration: none; }
 
 /* table  */
-.datatable { color: #333; font-size: 0.9em; margin-top: 10px; width: 100%;}
+.datatable { color: #333; font-size: 0.9em; margin-top: 10px; width: 90%;}
 #theading th {  height: 40px; line-height: 40px; text-align: center; }
 #theading .hleft { } 
 #theading .hright {} 

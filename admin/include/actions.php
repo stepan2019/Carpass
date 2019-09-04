@@ -56,7 +56,6 @@ if ($is_mod) {
 
     $mod_sections = $usr->getSections($mod_id);
 }
-
 switch ($object) {
 
     case 'listing':
@@ -605,7 +604,7 @@ switch ($object) {
 
     case 'db':
 
-        if (!$is_admin) break;
+//        if (!$is_admin) break;
 
         require_once $config_abs_path . "/classes/database.php";
         if (isset($_GET['id'])) $id = escape($_GET['id']); else exit(0);

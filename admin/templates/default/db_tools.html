@@ -1,15 +1,12 @@
-{include file="header.html"}
-
-<div class="page_title">{$lng.panel.tools} > {$lng.panel.database}</div>
-
+<div class="main">
 <div class="p30">
-<form name="db" method="post" action="{$self}" enctype="multipart/form-data">
+<form name="db" method="post" action="home.php?query=db_tools" enctype="multipart/form-data">
 
 
 {if $error != ""} <div class="error">{$error}</div>{/if}
 {if $info != ""} <div class="info">{$info}</div>{/if}
 
-<table cellpadding="0" cellspacing="0" align="center" class="datatable" style="margin: 0 50px 30px 50px; width: 1040px !important;">
+<table cellpadding="0" cellspacing="0" align="center" class="datatable" style="margin: 0 50px 30px 50px;">
 <tr id="theading">
 	<th class="hleft">{$lng.database.date}</th>
 	<th>{$lng.database.file}</th>
@@ -21,12 +18,12 @@
 {foreach from=$backups_array item=v}
 <tr>
 	<td>{$v.date|date_format:"%A, %B %e, %Y"}</td>
-	<td><a href="{$self}?download={$v.file}">{$v.file}</a></td>
+	<td><a href="home.php?query=db_tools&download={$v.file}">{$v.file}</a></td>
 	<td>{$v.size_formatted}</td>
-	<td><a href="{$self}?download={$v.file}" {if $demo}onClick="alert('{$lng.general.errors.demo}'); return false;"{/if}><img src="{$template_path}images/download-db.png" class="tooltip icon" title="{$lng.database.download}"></a></td>
+	<td><a href="home.php?query=db_tools&download={$v.file}" {if $demo}onClick="alert('{$lng.general.errors.demo}'); return false;"{/if}><img src="images/download-db.png" title="{$lng.database.download}"></a></td>
 	<td>
-		<a href="javascript:;" onClick = "onDelete('{$v.file}','{$lng.database.confirm_delete}','db')"><img src="{$template_path}images/delete.png" class="tooltip icon" title="{$lng.general.delete}" alt=""></a>
-		{if !$demo}<a href="{$self}?restore={$v.file}">{/if}<img src="{$template_path}images/restore.png" class="tooltip icon" title="{$lng.database.restore}" alt="" {if $demo}onClick="alert('{$lng.general.errors.demo}');"{/if}>{if !$demo}</a>{/if}
+		<a href="javascript:;" onClick = "onDelete('{$v.file}','{$lng.database.confirm_delete}','db')"><img src="images/delete.png" title="{$lng.general.delete}" alt=""></a>
+		{if !$demo}<a href="home.php?query=db_tools&restore={$v.file}">{/if}<img src="images/restore.png" class="tooltip icon" title="{$lng.database.restore}" alt="" {if $demo}onClick="alert('{$lng.general.errors.demo}');"{/if}>{if !$demo}</a>{/if}
 	</td>
 </tr>
 {/foreach}
@@ -113,5 +110,4 @@
 
 </form>
 </div> {* p30 *}
-
-{include file="footer.html"}
+</div>
