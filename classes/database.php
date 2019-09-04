@@ -705,11 +705,8 @@ class database
         else if ($settings['backup_freq'] == 'weekly') $days = 7;
         else $days = 30;
         $timestamp = date("Y-m-d H:i:s");
-        $sql = "select (generated_last like '' or date_add(generated_last, interval " . $days . " day ) < date_add('" . $timestamp . "', interval 1 hour)) as go from " . TABLE_DB_BACKUP;
-        exit($sql);
-        $val = $db->fetchAssoc("select (generated_last like '0000-00-00 00:00:00' or date_add(generated_last, interval $days day)<date_add('$timestamp', interval 1 hour)) as go from " . TABLE_DB_BACKUP);
-        print_r($val);
-        exit;
+        $sql = "select (generated_last like '0000-00-00 00:00:00' or date_add(generated_last, interval " . $days . " day ) < date_add('" . $timestamp . "', interval 1 hour)) as go from " . TABLE_DB_BACKUP;
+        $val = $db->fetchAssoc($sql);
         if ($val['go']) {
             $this->setCompress($settings['backup_compress']);
             $this->saveToFile();

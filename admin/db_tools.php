@@ -93,8 +93,6 @@ if (isset($_POST['Restore'])) {
         }
     } // end if demo
 }
-$perioDic = $database->periodic();
-print_r($perioDic);exit;
 $schedule = $database->getSchedule();
 
 if (isset($_POST['Save_schedule'])) {
