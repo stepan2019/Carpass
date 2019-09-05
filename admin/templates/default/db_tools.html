@@ -18,9 +18,9 @@
 {foreach from=$backups_array item=v}
 <tr>
 	<td>{$v.date|date_format:"%A, %B %e, %Y"}</td>
-	<td><a href="home.php?query=db_tools&download={$v.file}">{$v.file}</a></td>
+	<td><a href="/db_backup/{$v.file}">{$v.file}</a></td>
 	<td>{$v.size_formatted}</td>
-	<td><a href="home.php?query=db_tools&download={$v.file}" {if $demo}onClick="alert('{$lng.general.errors.demo}'); return false;"{/if}><img src="images/download-db.png" title="{$lng.database.download}"></a></td>
+	<td><a href="download.php?fname={urlencode($v.file)}"><img src="images/download-db.png" title="{$lng.database.download}"></a></td>
 	<td>
 		<a href="javascript:;" onClick = "onDelete('{$v.file}','{$lng.database.confirm_delete}','db')"><img src="images/delete.png" title="{$lng.general.delete}" alt=""></a>
 		{if !$demo}<a href="home.php?query=db_tools&restore={$v.file}">{/if}<img src="images/restore.png" class="tooltip icon" title="{$lng.database.restore}" alt="" {if $demo}onClick="alert('{$lng.general.errors.demo}');"{/if}>{if !$demo}</a>{/if}

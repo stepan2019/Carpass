@@ -1,7 +1,10 @@
-<?php 
+<?php
     session_start();
     if(!@$_SESSION['admin']) {
-        header("location:index.php");
+        ?>
+            <script> location.replace("../index.php"); </script>
+        <?php
+//        header("location:index.php");
     }
     include "../setting/config.php";
 
@@ -36,7 +39,7 @@
     <link href="../css/dataTables.1.9.4.css" rel="stylesheet">
 
     <link type="text/css" rel="stylesheet" href="../css/editor/style.css" />
-    
+
     <link href='../css/select2.min.css' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
@@ -181,9 +184,9 @@
             } else {
                 $(".price-visible").css("display", "none");
             }
-            
+
             $("#select2_make").select2();
-            
+
             $("select#selected_make").change(function() {
                 var selectedMake = this.value;
                 var makeData = {
