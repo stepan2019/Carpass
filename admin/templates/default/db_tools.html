@@ -18,7 +18,7 @@
 {foreach from=$backups_array item=v}
 <tr>
 	<td>{$v.date|date_format:"%A, %B %e, %Y"}</td>
-	<td><a href="/db_backup/{$v.file}">{$v.file}</a></td>
+	<td><a href="download.php?fname={urlencode($v.file)}">{$v.file}</a></td>
 	<td>{$v.size_formatted}</td>
 	<td><a href="download.php?fname={urlencode($v.file)}"><img src="images/download-db.png" title="{$lng.database.download}"></a></td>
 	<td>

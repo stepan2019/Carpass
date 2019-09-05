@@ -56,7 +56,7 @@
 			<button onclick="if (!window.__cfRLUnblockHandlers) return false; getPDF()" id="downloadbtn" data-cf-modified-3041e76d3da1bfb24a107310-=""><b>Download as PDF</b></button>
 			<button onclick="printThis()" ><b> Print</b></button>
 			<button class="button" onclick="closeWindow()" ><b> Close this window</b></button>
-
+			<button onclick="generateInvoice();" id="invoicebtn"><b>Click to generate invoice</b></button>
 		</div>
 	</div>
 	
@@ -243,6 +243,9 @@
             </div>
 		</div>
 	</div>
+    <form action="invoice.php" method="post" id="invoice_form" target="_self" name="invoice_form">
+        <input type="hidden" name="vin" value="<?php echo $_POST['vin']; ?>"/>
+    </form>
 
 	<script src="https://code.jquery.com/jquery-1.11.3.js" type="text/javascript"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js" type="text/javascript"></script>
@@ -297,6 +300,9 @@
 		    $(".btn-field").hide();
 		    window.print();
 		};
+        function generateInvoice(){
+            document.forms[0].submit();
+        }
 	</script>
 	
 	<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js" data-cf-settings="3041e76d3da1bfb24a107310-|49" defer=""></script>
