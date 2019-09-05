@@ -536,7 +536,7 @@ include "../template/footer.php";
             var plate = $('#plate').val();
             var payer_email = $('#payer_email').val();
 
-            var link = "http://car-km.com/vehicle/get-coupon.php?vin=" + vin + "&payer_email=" + payer_email + "&plate=" + plate;
+            var link = "invoice.php?vin=" + vin + "&payer_email=" + payer_email + "&plate=" + plate;
             //var encodedUrl = encodeURIComponent(link);
             window.location.replace(link);
             //alert(vin);

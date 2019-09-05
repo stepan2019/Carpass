@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7db2e5a1-777a-4b65-b71a-e2d1ad3c3c2f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/admin/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle/add.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,20 +24,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="308">
+              <caret line="116" column="22" selection-start-line="116" selection-start-column="22" selection-end-line="116" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vehicle/add.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2357">
-              <caret line="336" column="26" lean-forward="true" selection-start-line="336" selection-start-column="26" selection-end-line="336" selection-end-column="26" />
+            <state relative-caret-position="291">
+              <caret line="538" column="24" selection-start-line="538" selection-start-column="24" selection-end-line="538" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -108,7 +108,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>user</find>
       <find>getcontent</find>
       <find>getfooter</find>
       <find>footer</find>
@@ -138,6 +137,7 @@
       <find>simulateScheduler</find>
       <find>genmsg</find>
       <find>canvas_div_pdf</find>
+      <find>coupon_btn</find>
     </findStrings>
     <replaceStrings>
       <replace>#navbarCollapse1</replace>
@@ -179,7 +179,6 @@
         <option value="$PROJECT_DIR$/user/profile_dealer.php" />
         <option value="$PROJECT_DIR$/user/profile_user.php" />
         <option value="$PROJECT_DIR$/template/header.php" />
-        <option value="$PROJECT_DIR$/vehicle/add.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/template/css/style-rtl.css" />
         <option value="$PROJECT_DIR$/css/custom.css" />
@@ -203,6 +202,7 @@
         <option value="$PROJECT_DIR$/css/invoice.css" />
         <option value="$PROJECT_DIR$/vehicle/invoice.php" />
         <option value="$PROJECT_DIR$/admin/home.php" />
+        <option value="$PROJECT_DIR$/vehicle/add.php" />
       </list>
     </option>
   </component>
@@ -297,18 +297,18 @@
       <workItem from="1567126039737" duration="27512000" />
       <workItem from="1567333458192" duration="18048000" />
       <workItem from="1567427904614" duration="69920000" />
-      <workItem from="1567646270554" duration="19125000" />
+      <workItem from="1567646270554" duration="20203000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253855000" />
+    <option name="totallyTimeSpent" value="254933000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18550107" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18550107" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -321,7 +321,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3261105" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3261105" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -664,13 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vehicle/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2357">
-          <caret line="336" column="26" lean-forward="true" selection-start-line="336" selection-start-column="26" selection-end-line="336" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vehicle/pdf.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
@@ -713,8 +706,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="308">
+          <caret line="116" column="22" selection-start-line="116" selection-start-column="22" selection-end-line="116" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vehicle/add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="538" column="24" selection-start-line="538" selection-start-column="24" selection-end-line="538" selection-end-column="24" />
         </state>
       </provider>
     </entry>
