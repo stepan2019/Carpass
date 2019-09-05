@@ -47,23 +47,23 @@ $resCrash = "";
 if (isset($_POST['add_car'])) {
     $plate = $_POST['plate'];
     $vin = $_POST['vin'];
-    if ($plate && $vin) {
-        global $config_live_site;
-        global $mail_setting;
-        // add activation code to db record
-        $mail2send = new mails();
-        $mail2send->init($mail_setting['username'], 'Carpass');
-        $mail2send->setSubject(cleanStr('<p> Hello admin there is vehicle ADD to carpass database</p>'));
-        $msg = nl2br(cleanStr('<div>
-                                        <p> with plate number' . $plate . ' and vin number ' . $vin . '</p>
-                                        <p> Please check the vehicle . </p>
-                                    </div><div>User Email : '.$email.'</div>')) . '';
-        $mail2send->setMessage($msg);
-        $is_sendMail = $mail2send->send();
-        if (!$is_sendMail) {
-            $response = "Sorry, is failed to register";
-        }
-    }
+//    if ($plate && $vin) {
+//        global $config_live_site;
+//        global $mail_setting;
+//        // add activation code to db record
+//        $mail2send = new mails();
+//        $mail2send->init($mail_setting['username'], 'Carpass');
+//        $mail2send->setSubject(cleanStr('<p> Hello admin there is vehicle ADD to carpass database</p>'));
+//        $msg = nl2br(cleanStr('<div>
+//                                        <p> with plate number' . $plate . ' and vin number ' . $vin . '</p>
+//                                        <p> Please check the vehicle . </p>
+//                                    </div><div>User Email : '.$email.'</div>')) . '';
+//        $mail2send->setMessage($msg);
+//        $is_sendMail = $mail2send->send();
+//        if (!$is_sendMail) {
+//            $response = "Sorry, is failed to register";
+//        }
+//    }
     if (isset($_POST['make']) && isset($_POST['model']) && isset($_POST['year']) && isset($_POST['crash'])) {
         $make = $_POST['make'];
         $model = $_POST['model'];
@@ -387,6 +387,11 @@ include "../template/header.php";
         <form action="pdf.php" method="post" id="pdf_form" target="_blank" name="pdf_form">
             <input type="hidden" name="vin" value=""/>
         </form>
+        <form action="invoice.php" method="post" id="pdf_form" target="_blank" name="invoice_form">
+            <input type="hidden" name="vin" id="cupon_vin" value="<?php echo $vin;?>"/>
+            <input type="hidden" name="plate" value="<?php echo $plate;?>"/>
+            <input type="hidden" name="email" value="<?php echo $user_info['email'];?>"/>
+        </form>
         <hr>
 
         <div class="extra-field">
@@ -447,7 +452,6 @@ include "../template/footer.php";
 
         $("#car_plate").on("input", function () {
             var currentInputPlate = $(this).val();
-            $("#car_vin").val("");
             $("#add_car_make").find('option:eq(0)').prop('selected', true);
 
             $('option', $('#add_car_model')).remove();
@@ -518,7 +522,6 @@ include "../template/footer.php";
                 dataType: 'json',
                 encode: true
             }).done(function (list) {
-                $("#car_vin").val("");
                 $('option', $('#add_car_model')).remove();
                 if (list.length > 0) {
                     for (var i = 0; i < list.length; i++) {
@@ -532,15 +535,7 @@ include "../template/footer.php";
         });
 
         $('#coupon_btn').click(function () {
-            var vin = $('#vin').val();
-            var plate = $('#plate').val();
-            var payer_email = $('#payer_email').val();
-
-            var link = "invoice.php?vin=" + vin + "&payer_email=" + payer_email + "&plate=" + plate;
-            //var encodedUrl = encodeURIComponent(link);
-            window.location.replace(link);
-            //alert(vin);
-            //return;
+            document.forms[3].submit();
         })
     });
 </script>

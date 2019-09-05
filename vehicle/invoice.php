@@ -6,7 +6,9 @@ if (!@$_SESSION['user']) {
 include "../setting/config.php";
 
 if (isset($_POST['vin'])) {
-    $plate = $_POST['vin'];
+    $vin = $_POST['vin'];
+    $plate = $_POST['plate'];
+    $email = $_POST['email'];
 
     $resultByPlate = $config->get_vehicle_by_plate($plate);
     $countByPlate = $resultByPlate->num_rows;
@@ -166,6 +168,8 @@ if (isset($_POST['vin'])) {
 </div>
 <form action="pdf.php" method="post" id="invoice_form" target="_self" name="invoice_form">
     <input type="hidden" name="vin" value="<?php echo $_POST['vin']; ?>"/>
+    <input type="hidden" name="plate" value="<?php echo $_POST['plate']; ?>"/>
+    <input type="hidden" name="email" value="<?php echo $_POST['email']; ?>"/>
 </form>
 <script src="https://code.jquery.com/jquery-1.11.3.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js" type="text/javascript"></script>
