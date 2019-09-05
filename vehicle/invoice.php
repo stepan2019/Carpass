@@ -151,8 +151,16 @@ if (isset($_POST['vin'])) {
             </p>
         </div>
         <hr style="border: 5px solid gray;">
-        <div class="row col-md-12" style="margin-top:50px;background-color:gray;margin-bottom:50px;">
+        <div class="row col-md-12" style="margin-top:150px;background-color:gray;margin-bottom:150px;">
             <p style="font-size:25px;font-weight: bold;">Thanks for Registration of your Vehicle and thanks for your order and payment</p>
+        </div>
+        <hr style="border: 5px solid gray;">
+        <div class="row col-md-12">
+            <div class="col-md-12 text-center">
+                <p style="font-weight:bold;font-size:20px;">
+                    Website : <a href="https://www.carpass.gr">https://www.carpass.gr</a> Email : info@carpass.gr
+                </p>
+            </div>
         </div>
     </div>
 </div>
