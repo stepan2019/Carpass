@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7db2e5a1-777a-4b65-b71a-e2d1ad3c3c2f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle/add.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vehicle/invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle/invoice.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,24 +33,31 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vehicle/add.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="524" selection-start-line="524" selection-end-line="524" />
+            <state relative-caret-position="714">
+              <caret line="486" column="43" selection-start-line="486" selection-start-column="43" selection-end-line="486" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vehicle/invoice.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="148" column="27" selection-start-line="148" selection-start-column="27" selection-end-line="148" selection-end-column="27" />
+              <folding>
+                <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vehicle/invoice.php">
+        <entry file="file://$PROJECT_DIR$/vehicle/payments.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2706">
-              <caret line="171" column="69" selection-start-line="171" selection-start-column="69" selection-end-line="171" selection-end-column="69" />
-              <folding>
-                <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
+            <state relative-caret-position="-594" />
           </provider>
         </entry>
       </file>
@@ -87,7 +92,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getcontent</find>
       <find>getfooter</find>
       <find>footer</find>
       <find>select</find>
@@ -117,6 +121,7 @@
       <find>genmsg</find>
       <find>canvas_div_pdf</find>
       <find>coupon_btn</find>
+      <find>discount</find>
     </findStrings>
     <replaceStrings>
       <replace>#navbarCollapse1</replace>
@@ -180,16 +185,16 @@
         <option value="$PROJECT_DIR$/vehicle/pdf.php" />
         <option value="$PROJECT_DIR$/css/invoice.css" />
         <option value="$PROJECT_DIR$/admin/home.php" />
-        <option value="$PROJECT_DIR$/vehicle/invoice.php" />
         <option value="$PROJECT_DIR$/vehicle/add.php" />
+        <option value="$PROJECT_DIR$/vehicle/invoice.php" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="825" />
-    <option name="y" value="111" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="952" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -267,12 +272,12 @@
       <workItem from="1567333458192" duration="18048000" />
       <workItem from="1567427904614" duration="69920000" />
       <workItem from="1567646270554" duration="21957000" />
-      <workItem from="1567699238573" duration="1606000" />
+      <workItem from="1567699238573" duration="4298000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258293000" />
+    <option name="totallyTimeSpent" value="260985000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -303,13 +308,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/send-mail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/phpmailer/PHPMailerAutoload.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="638">
@@ -627,13 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/about.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/price.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -648,20 +639,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vehicle/invoice.php">
+    <entry file="file://$PROJECT_DIR$/admin/about.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2706">
-          <caret line="171" column="69" selection-start-line="171" selection-start-column="69" selection-end-line="171" selection-end-column="69" />
-          <folding>
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="242">
+          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vehicle/payments.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-594" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vehicle/add.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="524" selection-start-line="524" selection-end-line="524" />
+        <state relative-caret-position="714">
+          <caret line="486" column="43" selection-start-line="486" selection-start-column="43" selection-end-line="486" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vehicle/invoice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="148" column="27" selection-start-line="148" selection-start-column="27" selection-end-line="148" selection-end-column="27" />
+          <folding>
+            <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

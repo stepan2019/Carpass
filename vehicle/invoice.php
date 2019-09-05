@@ -146,7 +146,7 @@ if (isset($_POST['vin'])) {
                 Subtotal : <?php echo $price['price']; ?>
             </p>
             <p style="font-size:20px;">
-                Discount : <?php echo ($price['tax']) ? $price['tax']*$price['price']/100 : '£0.00'; ?>
+                Tax : <?php echo ($price['tax']) ? $price['tax']*$price['price']/100 : '£0.00'; ?>
             </p>
             <p style="font-size:20px;font-weight: bold;font-style: italic;">
                 Total : <?php echo ($price['tax']*$price['price']/100 + $price['price']); ?>CE
