@@ -1,19 +1,9 @@
 <?php
     session_start();
     if(!@$_SESSION['admin']) {
-        ?>
-            <script> location.replace("../index.php"); </script>
-        <?php
-//        header("location:index.php");
+        header("location:index.php");
     }
     include "../setting/config.php";
-
-//    include "../setting/languages.php";
-//
-//    $defaultLanguage = $language->getDefault()[0];
-//
-//    include "lang/".$defaultLanguage.'.php';
-
 ?>
 
 <!DOCTYPE html>
