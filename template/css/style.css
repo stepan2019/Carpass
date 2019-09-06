@@ -2,7 +2,7 @@
     background-color: #fe7500;
     display: inline-block;
     padding: 0;
-    height: 40px;
+    height: 38px;
     overflow: hidden;
     transition: all .3s ease;
     vertical-align: top;
@@ -12,13 +12,21 @@
 }
 @media(max-width: 1280px){
     .languagepicker {
-        left:2%;
+        left:92%;
     }
     .navbar-toggler-right{
         top:20px;
     }
 }
-
+@media(max-width: 992px){
+    .languagepicker {
+        left:80%;
+    }
+    .navbar-toggler-right{
+        top:20px;
+        left:50%;
+    }
+}
 .languagepicker:hover {
     /* don't forget the 1px border */
     height: auto;

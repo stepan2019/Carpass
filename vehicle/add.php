@@ -109,6 +109,11 @@ if (isset($_POST['add_car'])) {
                     $(function () {
                         $('#pdf_form > input').val("<?php echo $vin; ?>");
                         $("#historyPDF").modal();
+                        $('#paySubBtn').click(function(e){
+                            e.preventDefault();
+                            document.forms[0].submit();
+                            document.forms[2].submit();
+                        });
                     });
                 </script>
 
@@ -133,7 +138,7 @@ if (isset($_POST['add_car'])) {
                                 } else {
                                     ?>
                                     <form class="paypal" action="payments.php" method="post" id="paypal_form"
-                                          target="_blank">
+                                          target="_self">
                                         <input type="hidden" name="vin" id="vin" value="<?php echo $vin; ?>"/>
                                         <input type="hidden" name="plate" id="plate" value="<?php echo $plate; ?>"/>
                                         <input type="hidden" name="payer_email" id="payer_email"
@@ -147,8 +152,8 @@ if (isset($_POST['add_car'])) {
                                         <input type="hidden" name="first_name" value="Customer's First Name"/>
                                         <input type="hidden" name="last_name" value="Customer's Last Name"/>
                                         <input type="hidden" name="item_number" value="123456" / >
-                                        <input type="submit" name="submit" value="PayPal"
-                                               class="btn btn-primary submit-fs btn-custom" onclick="modalClose();"/>
+                                        <input type="button" name="paySubBtn" value="PayPal" id="paySubBtn"
+                                               class="btn btn-primary submit-fs btn-custom"/>
                                         <input type="button" name="coupon" value="Coupon" id="coupon_btn"
                                                class="btn btn-primary submit-fs btn-custom"/>
                                     </form>
@@ -161,6 +166,7 @@ if (isset($_POST['add_car'])) {
                                         document.forms[1].submit();
                                         return true;
                                     }
+
                                 </script>
                                 <p class="dashboard-txt">After that you get Full Information about vehicle KM.</p>
                             </div>
@@ -385,9 +391,11 @@ include "../template/header.php";
             </div>
         </form>
         <form action="pdf.php" method="post" id="pdf_form" target="_blank" name="pdf_form">
-            <input type="hidden" name="vin" value=""/>
+            <input type="hidden" name="vin" value="<?php echo $_POST['vin']; ?>"/>
+            <input type="hidden" name="plate" value="<?php echo $_POST['plate']; ?>"/>
+            <input type="hidden" name="email" value="<?php echo $_POST['email']; ?>"/>
         </form>
-        <form action="invoice.php" method="post" id="pdf_form" target="_blank" name="invoice_form">
+        <form action="invoice.php" method="post" id="invoice_form" target="_blank" name="invoice_form">
             <input type="hidden" name="vin" id="cupon_vin" value="<?php echo $vin;?>"/>
             <input type="hidden" name="plate" value="<?php echo $plate;?>"/>
             <input type="hidden" name="email" value="<?php echo $user_info['email'];?>"/>
@@ -449,7 +457,6 @@ include "../template/footer.php";
         for (var i = 0; i < obj.length; i++) {
             dbArrayPlateDate.push(obj[i].plate);
         }
-
         $("#car_plate").on("input", function () {
             var currentInputPlate = $(this).val();
             $("#add_car_make").find('option:eq(0)').prop('selected', true);
@@ -458,7 +465,6 @@ include "../template/footer.php";
             $('#add_car_model').append("<option disabled selected>Select Car Model</option>");
 
             $("#car_year").find('option:eq(0)').prop('selected', true);
-
             isInArray = dbArrayPlateDate.includes(currentInputPlate);
             if (isInArray) {
                 var indexMatched = dbArrayPlateDate.indexOf(currentInputPlate);

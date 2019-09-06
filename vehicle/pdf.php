@@ -245,6 +245,8 @@
 	</div>
     <form action="invoice.php" method="post" id="invoice_form" target="_self" name="invoice_form">
         <input type="hidden" name="vin" value="<?php echo $_POST['vin']; ?>"/>
+        <input type="hidden" name="plate" value="<?php echo $_POST['plate']; ?>"/>
+        <input type="hidden" name="email" value="<?php echo $_POST['email']; ?>"/>
     </form>
 
 	<script src="https://code.jquery.com/jquery-1.11.3.js" type="text/javascript"></script>

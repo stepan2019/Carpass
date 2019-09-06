@@ -31,8 +31,6 @@ if (isset($_POST['vin'])) {
 
     $user_info = $result->fetch_assoc();
 
-
-
     $result = $config->reportCount();
 }
 ?>
@@ -71,11 +69,13 @@ if (isset($_POST['vin'])) {
 
     <div class="top_map_section clearfix">
         <div class="row col-md-12 text-left mt-4">
-            <div class="col-md-4" style="margin-top:20px;">
+            <div class="col-md-7" style="margin-top:20px;">
                 <p><b>Invoice from:</b></p>
                 <p style="font-size:50px;font-weight: bold;">Carpass</p>
             </div>
-            <div class="col-md-8 logo-img"></div>
+            <div class="col-md-5 logo-img">
+                <img src="/img/logo.png" style="padding-top:50px;">
+            </div>
         </div>
         <div class="row col-md-12">
             <p style="font-size:40px;font-weight: bold;">Athene, Greece</p>
@@ -85,6 +85,8 @@ if (isset($_POST['vin'])) {
             <p><b>Invoice to:</b></p>
         </div>
         <?php
+        $result = $config->getPrice();
+        $price = $result->fetch_assoc();
         if ($user_type == "user") {
             ?>
             <div class="row col-md-12">
@@ -96,7 +98,9 @@ if (isset($_POST['vin'])) {
                     <p style="font-size: 20px; font-weight:bold;">INVOICE : 10</p>
                     <p style="font-size: 20px; font-weight:bold;">Invoice date : <?php echo date('Y-m-d');?></p>
                     <p style="font-size: 20px; font-weight:bold;">Order Amount :
-                        <span style="font-size:30px;font-style: italic;" ><?php echo '5CE';?></span>
+                        <span style="font-size:30px;font-style: italic;" >
+                            £<?php echo ($price['tax']*$price['price']/100 + $price['price']); ?>
+                        </span>
                     </p>
                 </div>
             </div>
@@ -110,16 +114,15 @@ if (isset($_POST['vin'])) {
                 <p style="font-size: 20px; font-weight:bold;">INVOICE : 10</p>
                 <p style="font-size: 20px; font-weight:bold;">Invoice date : <?php echo date('d/m/Y');?></p>
                 <p style="font-size: 20px; font-weight:bold;">Order Amount : 
-                    <span style="font-size:30px;font-style: italic;" ><?php echo '5CE';?></span>
+                    <span style="font-size:30px;font-style: italic;" >
+                        £<?php echo ($price['tax']*$price['price']/100 + $price['price']); ?>
+                    </span>
                 </p>
             </div>
         </div>
         <?php } ?>
 
-            <?php
-                $result = $config->getPrice();
-                $price = $result->fetch_assoc();
-            ?>
+
 
         <table class="table table-bordered">
             <thead style="background-color:#619DDB;">
@@ -135,21 +138,21 @@ if (isset($_POST['vin'])) {
             <tr>
                 <td class="text-center">Car Km registration</td>
                 <td class="text-center">1</td>
-                <td class="text-center" style="font-style: italic;"><?php echo $price['price']; ?>CE</td>
+                <td class="text-center" style="font-style: italic;">£<?php echo $price['price']; ?></td>
                 <td class="text-center"><?php echo ''; ?></td>
                 <td class="text-center"><?php echo $price['tax']; ?> %</td>
             </tr>
             </tbody>
         </table>
-        <div class="offset-md-9 col-md-3">
+        <div class="offset-md-10 col-md-2">
             <p style="font-size:20px;">
-                Subtotal : <?php echo $price['price']; ?>
+                Subtotal : £<?php echo $price['price']; ?>
             </p>
             <p style="font-size:20px;">
-                Tax : <?php echo ($price['tax']) ? $price['tax']*$price['price']/100 : '£0.00'; ?>
+                Tax : £<?php echo ($price['tax']) ? $price['tax']*$price['price']/100 : '£0.00'; ?>
             </p>
             <p style="font-size:20px;font-weight: bold;font-style: italic;">
-                Total : <?php echo ($price['tax']*$price['price']/100 + $price['price']); ?>CE
+                Total : £<?php echo ($price['tax']*$price['price']/100 + $price['price']); ?>
             </p>
         </div>
         <hr style="border: 5px solid gray;">
