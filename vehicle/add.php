@@ -540,8 +540,16 @@ include "../template/footer.php";
             });
         });
 
-        $('#coupon_btn').click(function () {
-            document.forms[0].submit();
+        $('#coupon_btn').click(function(){
+            var vin = $('#vin').val();
+            var plate = $('#plate').val();
+            var payer_email = $('#payer_email').val();
+
+            var link = "/vehicle/get-coupon.php?vin="+vin+"&payer_email="+payer_email+"&plate="+plate;
+            //var encodedUrl = encodeURIComponent(link);
+            window.location.replace(link);
+            //alert(vin);
+            //return;
         })
     });
 </script>

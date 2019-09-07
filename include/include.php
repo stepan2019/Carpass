@@ -145,7 +145,6 @@ function setGetLanguage()
 
 function simulateScheduler()
 {
-
     // run once a day, first time when the script is accessed
     // and the value of LAST_DAY in last.php is not today date.
     //
@@ -155,9 +154,8 @@ function simulateScheduler()
         global $config_abs_path;
         require_once($config_abs_path . '/last.php');
         $day = date('d');
-
         if ((int)LAST_DAY != (int)$day) {
-            write_last($day);
+//            write_last($day);
             require_once($config_abs_path . '/periodic.php');
         }
     }

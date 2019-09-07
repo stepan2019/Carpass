@@ -24,11 +24,11 @@ class mail_templates {
 		$html_mails=$mail_settings["html_mails"];
 
 		// clean slashes
-		foreach($result as $key=>$value) {
-			$result[$key] = cleanStr($result[$key]);
+//		foreach($result as $key=>$value) {
+//			$result[$key] = cleanStr($result[$key]);
 			//if($html_mails) $result[$key] = str_replace("\n", "",$result[$key]);
 			//if($html_mails) $result[$key] = str_replace("\r", "",$result[$key]);
-		}
+//		}
 
 		return $result;
 	}
