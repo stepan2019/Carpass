@@ -12,6 +12,8 @@ global $mail_setting;
 global $crt_lang_code;
 $setting = new settings();
 $mail_setting = $setting->getMailSettings();
+$paypal_result = $config->getPaypalSetting();
+$paypal_setting = $paypal_result->fetch_assoc();
 
 global $lng;
 
@@ -152,8 +154,12 @@ if (isset($_POST['add_car'])) {
                                         <input type="hidden" name="first_name" value="Customer's First Name"/>
                                         <input type="hidden" name="last_name" value="Customer's Last Name"/>
                                         <input type="hidden" name="item_number" value="123456" / >
+                                        <?php
+                                            if($paypal_setting['allow_paypal'] == 'yes'){
+                                        ?>
                                         <input type="button" name="paySubBtn" value="PayPal" id="paySubBtn"
                                                class="btn btn-primary submit-fs btn-custom"/>
+                                        <?php } ?>
                                         <input type="button" name="coupon" value="Coupon" id="coupon_btn"
                                                class="btn btn-primary submit-fs btn-custom"/>
                                     </form>
@@ -331,7 +337,7 @@ include "../template/header.php";
                     <label class="control-label"><?php echo $lng['general']['KM'];?></label>
                     <div class="agileits-main">
                         <i class="fas fa-running"></i>
-                        <input type="number" name="km" step="any" required="" id="car_km">
+                        <input type="number" name="km" step="any" required="" id="car_km" min="1" max="1000" maxlength="7">
                     </div>
                 </div>
                 <div class="col-md-5 text-left mt-4">
@@ -450,6 +456,11 @@ include "../template/footer.php";
     $(document).ready(function () {
         $('#car_plate').mask('AAA-YYYY', {'translation': {
                 A: {pattern: /[A-Za-z]/},
+                Y: {pattern: /[0-9]/}
+            }
+        });
+        $('#car_km').mask('AAA.YYY', {'translation': {
+                A: {pattern: /[0-9]/},
                 Y: {pattern: /[0-9]/}
             }
         });
