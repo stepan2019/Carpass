@@ -2,6 +2,7 @@
 
 require_once "include/include.php";
 require_once '../classes/database.php';
+require_once $config_abs_path.'/admin/include/util.php';
 
 global $lng;
 $smarty = new Smarty;
