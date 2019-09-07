@@ -10,12 +10,12 @@ require_once $config_abs_path . "/classes/mail_templates.php";
 
 global $mail_setting;
 global $crt_lang_code;
+global $lng;
 $setting = new settings();
 $mail_setting = $setting->getMailSettings();
 $paypal_result = $config->getPaypalSetting();
 $paypal_setting = $paypal_result->fetch_assoc();
 
-global $lng;
 
 session_start();
 
@@ -221,8 +221,7 @@ if (isset($_POST['add_car'])) {
     <link href="../css/nivo_themes/default/default.css" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/all.css" crossorigin="anonymous">
 
     <style type="text/css">
         .modal-dialog {

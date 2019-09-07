@@ -3,6 +3,9 @@
     if(!@$_SESSION['user']) {
         header("location:/index.php");
     }
+    include "../include/include.php";
+    global $crt_lang_code;
+    global $lng;
 	include "../setting/config.php";
 
 	if(isset($_POST['vin'])) {
@@ -53,10 +56,10 @@
 <body class="container">
 	<div class="row">
 		<div class="col-md-12 text-center btn-field">
-			<button onclick="if (!window.__cfRLUnblockHandlers) return false; getPDF()" id="downloadbtn" data-cf-modified-3041e76d3da1bfb24a107310-=""><b>Download as PDF</b></button>
-			<button onclick="printThis()" ><b> Print</b></button>
-			<button class="button" onclick="window.open('../index.php', '_self')" ><b> Close this window</b></button>
-			<button onclick="generateInvoice();" id="invoicebtn"><b>Click to generate invoice</b></button>
+			<button onclick="if (!window.__cfRLUnblockHandlers) return false; getPDF()" id="downloadbtn" data-cf-modified-3041e76d3da1bfb24a107310-=""><b><?php echo $lng['invoice']['download_as_pdf'];?></b></button>
+			<button onclick="printThis()" ><b> <?php echo $lng['invoice']['print'];?></b></button>
+			<button class="button" onclick="window.open('../index.php', '_self')" ><b> <?php echo $lng['invoice']['close_this_window'];?></b></button>
+			<button onclick="generateInvoice();" id="invoicebtn"><b><?php echo $lng['invoice']['Click_to_generate_invoice'];?></b></button>
 		</div>
 	</div>
 	
@@ -232,12 +235,12 @@
                     </tbody>
                 </table>
                 <div class="col-md-12">
-                    <p style="font-size: 24px;"><u>Explanation</u></p>
-                    <p>Registration of the car KM in Greece is From 2019, we cannot JUDGEMENT about the Km before this year.<br>
-                        You see in the report Logical, Not Logical, No JUDGEMENT that means:<br>
-                        1 - Logical that means the KM is Logical as we have Registered by Carpass.<br>
-                        2 - Not Logical, That means the km is change after registration by Carpass.<br>
-                        3 - No Judgment, that mean we have no any data of this vehicle, that is first Registration by Carpass.
+                    <p style="font-size: 24px;"><u><?php echo $lng['invoice']['explanation'];?></u></p>
+                    <p><?php echo $lng['invoice']['explanation'];?><br>
+                        <?php echo $lng['invoice']['you_see_report'];?><br>
+                        <?php echo $lng['invoice']['explanation_1'];?><br>
+                        <?php echo $lng['invoice']['explanation_2'];?><br>
+                        <?php echo $lng['invoice']['explanation_3'];?><br>
                     </p>
                 </div>
             </div>

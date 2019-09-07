@@ -170,6 +170,28 @@ $lng['footer']['Contact'] = 'Contact';
 $lng['footer']['Address'] = 'Address';
 $lng['footer']['Phone'] = 'Phone';
 
-
-
-
+//---------------------invoice-------------------
+$lng['invoice']['download_as_pdf'] = 'Download as PDF';
+$lng['invoice']['print'] = 'Print';
+$lng['invoice']['close_this_window'] = 'Close this window';
+$lng['invoice']['Click_to_generate_invoice'] = 'Click to generate invoice';
+$lng['invoice']['back_to_report'] = 'Back to report';
+$lng['invoice']['invoice'] = 'Invoice';
+$lng['invoice']['invoice_from'] = 'Invoice from';
+$lng['invoice']['invoice_to'] = 'Invoice to';
+$lng['invoice']['invoice_date'] = 'Invoice date';
+$lng['invoice']['order_amount'] = 'Order Amount';
+$lng['invoice']['product'] = 'Product';
+$lng['invoice']['qty'] = 'Qty';
+$lng['invoice']['Price'] = 'price';
+$lng['invoice']['line_total'] = 'Line total';
+$lng['invoice']['tax'] = 'Tax';
+$lng['invoice']['subtotal'] = 'Subtotal';
+$lng['invoice']['total'] = 'Total';
+$lng['invoice']['thanks_register'] = 'Thanks for Registration of your Vehicle and thanks for your order and payment';
+$lng['invoice']['registration_of_car_greece'] = 'Registration of the car KM in Greece is From 2019, we cannot JUDGEMENT about the Km before this year.';
+$lng['invoice']['explanation'] = 'Explanation';
+$lng['invoice']['you_see_report'] = 'You see in the report Logical, Not Logical, No JUDGEMENT that means:';
+$lng['invoice']['explanation_1'] = '1 - Logical that means the KM is Logical as we have Registered by Carpass.';
+$lng['invoice']['explanation_2'] = '2 - Not Logical, That means the km is change after registration by Carpass.';
+$lng['invoice']['explanation_3'] = '3 - No Judgment, that mean we have no any data of this vehicle, that is first Registration by Carpass.';

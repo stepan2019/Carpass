@@ -4,7 +4,9 @@ if (!@$_SESSION['user']) {
     header("location:/index.php");
 }
 include "../setting/config.php";
-
+include "../include/include.php";
+global $crt_lang_code;
+global $lng;
 if (isset($_POST['vin'])) {
     $vin = $_POST['vin'];
     $plate = $_POST['plate'];
@@ -58,10 +60,10 @@ if (isset($_POST['vin'])) {
 <div class="row">
     <div class="col-md-12 text-center btn-field">
         <button onclick="if (!window.__cfRLUnblockHandlers) return false; getPDF()" id="downloadbtn"
-                data-cf-modified-3041e76d3da1bfb24a107310-=""><b>Download as PDF</b></button>
-        <button onclick="printThis()"><b> Print</b></button>
-        <button class="button" onclick="window.open('../index.php', '_self')"><b> Close this window</b></button>
-        <button onclick="reportPage()" id="pdf_btn"><b>Back to report</b></button>
+                data-cf-modified-3041e76d3da1bfb24a107310-=""><b><?php echo $lng['invoice']['download_as_pdf'];?></b></button>
+        <button onclick="printThis()"><b> <?php echo $lng['invoice']['print'];?></b></button>
+        <button class="button" onclick="window.open('../index.php', '_self')"><b> <?php echo $lng['invoice']['close_this_window'];?></b></button>
+        <button onclick="reportPage()" id="pdf_btn"><b><?php echo $lng['invoice']['back_to_report'];?></b></button>
     </div>
 </div>
 
@@ -70,7 +72,7 @@ if (isset($_POST['vin'])) {
     <div class="top_map_section clearfix">
         <div class="row col-md-12 text-left mt-4">
             <div class="col-md-7" style="margin-top:20px;">
-                <p><b>Invoice from:</b></p>
+                <p><b><?php echo $lng['invoice']['invoice_from'];?> : </b></p>
                 <p style="font-size:50px;font-weight: bold;">Carpass</p>
             </div>
             <div class="col-md-5 logo-img">
@@ -82,7 +84,7 @@ if (isset($_POST['vin'])) {
         </div>
         <hr style="border: 5px solid gray;">
         <div class="row col-md-12">
-            <p><b>Invoice to:</b></p>
+            <p><b><?php echo $lng['invoice']['invoice_to'];?>:</b></p>
         </div>
         <?php
         $result = $config->getPrice();
@@ -95,9 +97,9 @@ if (isset($_POST['vin'])) {
                     <p style="font-size: 30px; font-weight:bold;"><?php echo $user_info['address']; ?></p>
                 </div>
                 <div class="offset-md-4 col-md-4" style="">
-                    <p style="font-size: 20px; font-weight:bold;">INVOICE : 10</p>
-                    <p style="font-size: 20px; font-weight:bold;">Invoice date : <?php echo date('Y-m-d');?></p>
-                    <p style="font-size: 20px; font-weight:bold;">Order Amount :
+                    <p style="font-size: 20px; font-weight:bold;"><?php echo $lng['invoice']['invoice'];?> : 10</p>
+                    <p style="font-size: 20px; font-weight:bold;"><?php echo $lng['invoice']['invoice_date'];?> : <?php echo date('Y-m-d');?></p>
+                    <p style="font-size: 20px; font-weight:bold;"><?php echo $lng['invoice']['order_amount'];?> :
                         <span style="font-size:30px;font-style: italic;" >
                             €<?php echo ($price['tax']*$price['price']/100 + $price['price']); ?>
                         </span>
@@ -111,9 +113,9 @@ if (isset($_POST['vin'])) {
                 <p style="font-size: 24px; margin-bottom: 0px;"><?php echo $user_info['address']; ?></p>
             </div>
             <div class="offset-md-4 col-md-4" style="">
-                <p style="font-size: 20px; font-weight:bold;">INVOICE : 10</p>
-                <p style="font-size: 20px; font-weight:bold;">Invoice date : <?php echo date('d/m/Y');?></p>
-                <p style="font-size: 20px; font-weight:bold;">Order Amount : 
+                <p style="font-size: 20px; font-weight:bold;"><?php echo $lng['invoice']['invoice'];?> : 10</p>
+                <p style="font-size: 20px; font-weight:bold;"><?php echo $lng['invoice']['invoice_date'];?> : <?php echo date('d/m/Y');?></p>
+                <p style="font-size: 20px; font-weight:bold;"><?php echo $lng['invoice']['order_amount'];?> :
                     <span style="font-size:30px;font-style: italic;" >
                         €<?php echo ($price['tax']*$price['price']/100 + $price['price']); ?>
                     </span>
@@ -127,11 +129,11 @@ if (isset($_POST['vin'])) {
         <table class="table table-bordered">
             <thead style="background-color:#619DDB;">
             <tr>
-                <th class="text-center" width="200px">Product</th>
-                <th class="text-center" width="50px">Qty</th>
-                <th class="text-center" width="50px">Price</th>
-                <th class="text-center" width="100px">Line total</th>
-                <th class="text-center" width="100px">Tax</th>
+                <th class="text-center" width="200px"><?php echo $lng['invoice']['product'];?></th>
+                <th class="text-center" width="50px"><?php echo $lng['invoice']['qty'];?></th>
+                <th class="text-center" width="50px"><?php echo $lng['invoice']['Price'];?></th>
+                <th class="text-center" width="100px"><?php echo $lng['invoice']['line_total'];?></th>
+                <th class="text-center" width="100px"><?php echo $lng['invoice']['tax'];?></th>
             </tr>
             </thead>
             <tbody>
@@ -146,18 +148,18 @@ if (isset($_POST['vin'])) {
         </table>
         <div class="offset-md-10 col-md-2">
             <p style="font-size:20px;">
-                Subtotal : €<?php echo $price['price']; ?>
+                <?php echo $lng['invoice']['subtotal'];?> : €<?php echo $price['price']; ?>
             </p>
             <p style="font-size:20px;">
-                Tax : €<?php echo ($price['tax']) ? $price['tax']*$price['price']/100 : '€0.00'; ?>
+                <?php echo $lng['invoice']['tax'];?> : €<?php echo ($price['tax']) ? $price['tax']*$price['price']/100 : '€0.00'; ?>
             </p>
             <p style="font-size:20px;font-weight: bold;font-style: italic;">
-                Total : €<?php echo ($price['tax']*$price['price']/100 + $price['price']); ?>
+                <?php echo $lng['invoice']['total'];?> : €<?php echo ($price['tax']*$price['price']/100 + $price['price']); ?>
             </p>
         </div>
         <hr style="border: 5px solid gray;">
         <div class="row col-md-12" style="margin-top:150px;background-color:gray;margin-bottom:150px;">
-            <p style="font-size:25px;font-weight: bold;">Thanks for Registration of your Vehicle and thanks for your order and payment</p>
+            <p style="font-size:25px;font-weight: bold;"><?php echo $lng['invoice']['thanks_register'];?></p>
         </div>
         <hr style="border: 5px solid gray;">
         <div class="row col-md-12">

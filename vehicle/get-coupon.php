@@ -61,8 +61,7 @@ if (isset($_POST['save_code'])) {
 
     <link href="../css/dataTables.1.9.4.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/all.css" crossorigin="anonymous">
 
     <style type="text/css">
         .modal-dialog {
