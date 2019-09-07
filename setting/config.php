@@ -60,12 +60,14 @@ class Car
         $result = $this->connectdb->query($query);
         return $result;
     }
+
     public function compareActivationCode($email, $activationCode)
     {
         $query = "select * from user where `email`='$email' and `activation`='$activationCode'";
         $result = $this->connectdb->query($query);
         return $result;
     }
+
     public function setActivation($email, $activationCode)
     {
         $query = "update user set `active` = 1 where `email`='$email' and `activation`='$activationCode'";
@@ -484,9 +486,9 @@ class Car
     }
 
     public
-    function updateUser($id, $name, $address, $email, $phone)
+    function updateUser($id, $name, $address, $email, $phone, $password)
     {
-        $query = "update user set name = '$name', address = '$address', email = '$email', phone = '$phone' where id = '$id'";
+        $query = "update user set name = '$name', address = '$address', email = '$email', phone = '$phone', password = '$password' where id = '$id'";
         $result = $this->connectdb->query($query);
         return $result;
     }
@@ -500,9 +502,9 @@ class Car
     }
 
     public
-    function updateDealer($id, $name, $address, $email, $phone, $company, $website)
+    function updateDealer($id, $name, $address, $email, $phone, $company, $website, $password)
     {
-        $query = "update dealer set name = '$name', address = '$address', email = '$email', phone = '$phone', company = '$company', website = '$website' where id = '$id'";
+        $query = "update dealer set name = '$name', password = '$password', address = '$address', email = '$email', phone = '$phone', company = '$company', website = '$website' where id = '$id'";
         $result = $this->connectdb->query($query);
         return $result;
     }
