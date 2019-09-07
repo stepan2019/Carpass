@@ -2,10 +2,15 @@
 
 $result = '';
 include "../include/include.php";
+global $crt_lang_code;
+if (isset($_GET['lang_id'])) {
+    $lang_id = $_GET['lang_id'];
+} else {
+    $lang_id = $crt_lang_code;
+}
 require_once '../classes/validator.php';
 require_once '../classes/mails.php';
 require_once '../classes/settings.php';
-require_once $config_abs_path . "/classes/mail_templates.php";
 $setting = new settings();
 $mail_setting = $setting->getMailSettings();
 function smtpmailer($to, $from_name, $subject, $body)
@@ -179,9 +184,9 @@ if (isset($_POST['email_str'])) {
     </form>
 </div>
 <script src="../js/jquery.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
+<!--<script src="../js/bootstrap.min.js"></script>-->
 <script src="../js/dataTables.1.9.4.js"></script>
-<script src='../js/select2/select2.min.js' type='text/javascript'></script>
+<!--<script src='../js/select2/select2.min.js' type='text/javascript'></script>-->
 
 <script type="text/javascript">
     $(function () {

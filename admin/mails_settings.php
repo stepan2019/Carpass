@@ -11,7 +11,7 @@ require_once '../classes/validator.php';
 require_once '../classes/config/settings_config.php';
 require_once '../classes/mails.php';
 require_once '../classes/settings.php';
-
+require_once $config_abs_path.'/admin/include/util.php';
 global $db;
 global $lng;
 $smarty = new Smarty;

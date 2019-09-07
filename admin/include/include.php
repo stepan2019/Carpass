@@ -11,7 +11,6 @@ $path=dirname(__FILE__);
 require_once($path.'/../../config.php');
 
 // page load start time 
-make_startload();
 
 global $config_abs_path;
 require_once($config_abs_path.'/include/tables.php');
@@ -34,7 +33,7 @@ global $self, $self_noext;
 $self = getScriptName();
 $self_noext = getScriptNameNoExt();
 
-require_once $config_abs_path.'/admin/include/util.php';
+
 require_once $config_abs_path.'/classes/auth.php';
 
 global $db;
@@ -74,15 +73,5 @@ $extra_fields_types = array();
 // do include actions
 do_action("include", array());
 
-function make_startload() {
-	global $config_debug;
-	if($config_debug) {
-		$time = microtime();
-		$time = explode(" ", $time);
-		$time = $time[1] + $time[0];
-		global $startload;
-		$startload = $time;
-	}
-}
 
 ?>
