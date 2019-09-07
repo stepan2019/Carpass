@@ -99,7 +99,7 @@ if (isset($_POST['vin'])) {
                     <p style="font-size: 20px; font-weight:bold;">Invoice date : <?php echo date('Y-m-d');?></p>
                     <p style="font-size: 20px; font-weight:bold;">Order Amount :
                         <span style="font-size:30px;font-style: italic;" >
-                            £<?php echo ($price['tax']*$price['price']/100 + $price['price']); ?>
+                            €<?php echo ($price['tax']*$price['price']/100 + $price['price']); ?>
                         </span>
                     </p>
                 </div>
@@ -115,7 +115,7 @@ if (isset($_POST['vin'])) {
                 <p style="font-size: 20px; font-weight:bold;">Invoice date : <?php echo date('d/m/Y');?></p>
                 <p style="font-size: 20px; font-weight:bold;">Order Amount : 
                     <span style="font-size:30px;font-style: italic;" >
-                        £<?php echo ($price['tax']*$price['price']/100 + $price['price']); ?>
+                        €<?php echo ($price['tax']*$price['price']/100 + $price['price']); ?>
                     </span>
                 </p>
             </div>
@@ -136,9 +136,9 @@ if (isset($_POST['vin'])) {
             </thead>
             <tbody>
             <tr>
-                <td class="text-center">Car Km registration</td>
+                <td class="text-center">Car Km registration(<?php echo $plate?>)</td>
                 <td class="text-center">1</td>
-                <td class="text-center" style="font-style: italic;">£<?php echo $price['price']; ?></td>
+                <td class="text-center" style="font-style: italic;">€<?php echo $price['price']; ?></td>
                 <td class="text-center"><?php echo ''; ?></td>
                 <td class="text-center"><?php echo $price['tax']; ?> %</td>
             </tr>
@@ -146,13 +146,13 @@ if (isset($_POST['vin'])) {
         </table>
         <div class="offset-md-10 col-md-2">
             <p style="font-size:20px;">
-                Subtotal : £<?php echo $price['price']; ?>
+                Subtotal : €<?php echo $price['price']; ?>
             </p>
             <p style="font-size:20px;">
-                Tax : £<?php echo ($price['tax']) ? $price['tax']*$price['price']/100 : '£0.00'; ?>
+                Tax : €<?php echo ($price['tax']) ? $price['tax']*$price['price']/100 : '€0.00'; ?>
             </p>
             <p style="font-size:20px;font-weight: bold;font-style: italic;">
-                Total : £<?php echo ($price['tax']*$price['price']/100 + $price['price']); ?>
+                Total : €<?php echo ($price['tax']*$price['price']/100 + $price['price']); ?>
             </p>
         </div>
         <hr style="border: 5px solid gray;">

@@ -112,7 +112,7 @@ if (isset($_POST['add_car'])) {
                         $('#paySubBtn').click(function(e){
                             e.preventDefault();
                             document.forms[0].submit();
-                            document.forms[2].submit();
+                            // document.forms[2].submit();
                         });
                     });
                 </script>
