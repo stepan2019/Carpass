@@ -390,7 +390,7 @@ include "../template/header.php";
                 <?php } ?>
             </div>
         </form>
-        <form action="pdf.php" method="post" id="pdf_form" target="_blank" name="pdf_form">
+        <form action="pdf.php" method="post" id="pdf_form" target="_self" name="pdf_form">
             <input type="hidden" name="vin" value="<?php echo $_POST['vin']; ?>"/>
             <input type="hidden" name="plate" value="<?php echo $_POST['plate']; ?>"/>
             <input type="hidden" name="email" value="<?php echo $_POST['email']; ?>"/>
@@ -400,7 +400,7 @@ include "../template/header.php";
             <input type="hidden" name="plate" value="<?php echo $plate;?>"/>
             <input type="hidden" name="email" value="<?php echo $user_info['email'];?>"/>
         </form>
-        <form action="get-coupon.php" method="post" id="coupon_form" target="_blank" name="coupon_form">
+        <form action="get-coupon.php" method="post" id="coupon_form" target="_self" name="coupon_form">
             <input type="hidden" name="vin" id="cupon_vin" value="<?php echo $vin;?>"/>
             <input type="hidden" name="plate" value="<?php echo $plate;?>"/>
             <input type="hidden" name="email" value="<?php echo $user_info['email'];?>"/>
