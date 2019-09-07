@@ -12,7 +12,7 @@ require_once "../classes/images.php";
 require_once "../classes/languages.php";
 require_once "../classes/config/languages_config.php";
 require_once "../classes/config/depending_fields_config.php";
-
+require_once $config_abs_path.'/admin/include/util.php';
 global $db;
 global $lng;
 $smarty = new Smarty;

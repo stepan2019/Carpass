@@ -9,7 +9,7 @@
 
 require_once "include/include.php";
 require_once $config_abs_path."/classes/languages.php";
-
+require_once $config_abs_path.'/admin/include/util.php';
 global $db;
 global $lng;
 $smarty = new Smarty;
