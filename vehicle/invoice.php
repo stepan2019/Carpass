@@ -60,7 +60,7 @@ if (isset($_POST['vin'])) {
         <button onclick="if (!window.__cfRLUnblockHandlers) return false; getPDF()" id="downloadbtn"
                 data-cf-modified-3041e76d3da1bfb24a107310-=""><b>Download as PDF</b></button>
         <button onclick="printThis()"><b> Print</b></button>
-        <button class="button" onclick="closeWindow()"><b> Close this window</b></button>
+        <button class="button" onclick="window.open('../index.php', '_self')"><b> Close this window</b></button>
         <button onclick="reportPage()" id="pdf_btn"><b>Back to report</b></button>
     </div>
 </div>

@@ -161,18 +161,6 @@ function simulateScheduler()
     }
 }
 
-function make_startload()
-{
-    global $config_debug;
-    if ($config_debug) {
-        $time = microtime();
-        $time = explode(" ", $time);
-        $time = $time[1] + $time[0];
-        global $startload;
-        $startload = $time;
-    }
-}
-
 // used in files which don't run the common() function from util.php but need auth information
 function checkAuth()
 {
