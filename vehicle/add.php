@@ -541,7 +541,7 @@ include "../template/footer.php";
         });
 
         $('#coupon_btn').click(function () {
-            document.forms[3].submit();
+            document.forms[0].submit();
         })
     });
 </script>

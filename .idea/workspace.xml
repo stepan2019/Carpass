@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7db2e5a1-777a-4b65-b71a-e2d1ad3c3c2f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/admin/paypal.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/paypal.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/last.php" beforeDir="false" afterPath="$PROJECT_DIR$/last.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vehicle/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle/add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle/invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle/invoice.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,11 +25,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vehicle/add.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="111" column="41" selection-start-line="111" selection-start-column="41" selection-end-line="111" selection-end-column="41" />
+            <state relative-caret-position="355">
+              <caret line="548" column="7" lean-forward="true" selection-start-line="548" selection-start-column="7" selection-end-line="548" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -39,8 +37,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vehicle/payments.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="2134">
+              <caret line="97" column="16" selection-start-line="97" selection-start-column="16" selection-end-line="97" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vehicle/functions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -63,12 +70,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/paypal.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
+            <state relative-caret-position="318">
               <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vehicle/get-coupon.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-132" />
           </provider>
         </entry>
       </file>
@@ -118,8 +132,8 @@
       <find>simulateScheduler</find>
       <find>genmsg</find>
       <find>canvas_div_pdf</find>
-      <find>coupon_btn</find>
       <find>discount</find>
+      <find>coupon_btn</find>
     </findStrings>
     <replaceStrings>
       <replace>#navbarCollapse1</replace>
@@ -182,9 +196,9 @@
         <option value="$PROJECT_DIR$/vehicle/pdf.php" />
         <option value="$PROJECT_DIR$/css/invoice.css" />
         <option value="$PROJECT_DIR$/template/css/style.css" />
-        <option value="$PROJECT_DIR$/vehicle/add.php" />
         <option value="$PROJECT_DIR$/vehicle/invoice.php" />
         <option value="$PROJECT_DIR$/admin/paypal.php" />
+        <option value="$PROJECT_DIR$/vehicle/add.php" />
       </list>
     </option>
   </component>
@@ -275,12 +289,12 @@
       <workItem from="1567333458192" duration="18048000" />
       <workItem from="1567427904614" duration="69920000" />
       <workItem from="1567646270554" duration="21957000" />
-      <workItem from="1567699238573" duration="22249000" />
+      <workItem from="1567699238573" duration="23921000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278936000" />
+    <option name="totallyTimeSpent" value="280608000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -311,20 +325,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/phpmailer/class.phpmailer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="1234" column="13" lean-forward="true" selection-start-line="1234" selection-start-column="13" selection-end-line="1234" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user/register_user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2266">
-          <caret line="106" column="132" selection-start-line="106" selection-start-column="132" selection-end-line="106" selection-end-column="132" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user/register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="593">
@@ -638,20 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vehicle/payments.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vehicle/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="111" column="41" selection-start-line="111" selection-start-column="41" selection-end-line="111" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vehicle/invoice.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -670,8 +656,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/paypal.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
+        <state relative-caret-position="318">
           <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vehicle/get-coupon.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-132" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vehicle/payments.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2134">
+          <caret line="97" column="16" selection-start-line="97" selection-start-column="16" selection-end-line="97" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vehicle/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vehicle/add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="548" column="7" lean-forward="true" selection-start-line="548" selection-start-column="7" selection-end-line="548" selection-end-column="7" />
         </state>
       </provider>
     </entry>
