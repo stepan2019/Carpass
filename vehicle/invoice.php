@@ -7,6 +7,7 @@ include "../setting/config.php";
 include "../include/include.php";
 global $crt_lang_code;
 global $lng;
+global $text_direction;
 if (isset($_POST['vin'])) {
     $vin = $_POST['vin'];
     $plate = $_POST['plate'];
@@ -37,14 +38,22 @@ if (isset($_POST['vin'])) {
 }
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="<?php echo $crt_lang_code;?>">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Car pass - Report Generate</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/invoice.css" rel="stylesheet">
-
+    <?php
+    if ($text_direction == 'rtl') {
+        ?>
+        <link href="/css/invoice_rtl.css" rel="stylesheet">
+        <?php
+    } else {
+        ?>
+        <link href="/css/invoice.css" rel="stylesheet">
+    <?php } ?>
     <style type="text/css">
         .table-bordered {
             border: 2px solid #fe7500;
@@ -71,7 +80,7 @@ if (isset($_POST['vin'])) {
 
     <div class="top_map_section clearfix">
         <div class="row col-md-12 text-left mt-4">
-            <div class="col-md-7" style="margin-top:20px;">
+            <div class="col-md-7 from-div" style="margin-top:20px;">
                 <p><b><?php echo $lng['invoice']['invoice_from'];?> : </b></p>
                 <p style="font-size:50px;font-weight: bold;">Carpass</p>
             </div>
@@ -138,7 +147,7 @@ if (isset($_POST['vin'])) {
             </thead>
             <tbody>
             <tr>
-                <td class="text-center">Car Km registration(<?php echo $plate?>)</td>
+                <td class="text-center">Carpass <?php echo $lng['invoice']['registration'];?>(<?php echo $plate?>)</td>
                 <td class="text-center">1</td>
                 <td class="text-center" style="font-style: italic;">€<?php echo $price['price']; ?></td>
                 <td class="text-center"><?php echo ''; ?></td>

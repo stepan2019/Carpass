@@ -5,6 +5,8 @@ $plate = $_POST['plate'];
 $payer_email = $_POST['email'];
 include "../include/include.php";
 global $crt_lang_code;
+global $text_direction;
+global $lng;
 //echo $vin;exit;
 
 
@@ -41,7 +43,7 @@ if (isset($_POST['save_code'])) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="<?php echo $crt_lang_code;?>">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -62,7 +64,15 @@ if (isset($_POST['save_code'])) {
     <link href="../css/dataTables.1.9.4.css" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/all.css" crossorigin="anonymous">
-
+    <?php
+    if ($text_direction == 'rtl') {
+        ?>
+        <link href="/template/css/style-rtl.css" rel="stylesheet">
+        <?php
+    } else {
+        ?>
+        <link href="/template/css/style.css" rel="stylesheet">
+    <?php } ?>
     <style type="text/css">
         .modal-dialog {
             max-width: 1450px;
@@ -80,6 +90,11 @@ if (isset($_POST['save_code'])) {
             margin-top: 0.5rem !important;
         }
     </style>
+    <script>
+        exdate=new Date();
+        exdate.setDate(exdate.getDate() + 365);
+
+    </script>
 </head>
 <body style="background-color: #ece4b7;" <?php if (isset($_POST['save_code'])) { ?> onload="document.forms['pdf_form'].submit();" <?php } ?>>
 
@@ -91,9 +106,9 @@ include "../template/header.php";
 
         <form method="post" class="form-horizontal" role="form">
             <div class="row col-md-12">
-
+                <div class="col-md-3"></div>
                 <div class="col-md-2">
-                    <label class="control-label" style="font-size:20px">Coupon Code</label>
+                    <label class="control-label" style="font-size:20px"><?php echo $lng['Payment']['Copun_code'];?></label>
                 </div>
                 <div class="col-md-3 text-left mt-1">
                     <div class="agileits-main">
@@ -116,7 +131,7 @@ include "../template/header.php";
                 <div class="col-md-2">
                     <!--<div class="text-center submit mt-5">-->
                     <button type="submit" class="btn btn-primary submit-fs btn-custom" name="save_code" id="save_code">
-                        submit
+                        <?php echo $lng['Payment']['Submit'];?>
                     </button>
                     <!--</div>-->
                 </div>

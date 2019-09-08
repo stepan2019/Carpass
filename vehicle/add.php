@@ -282,7 +282,7 @@ include "../template/header.php";
                     <div class="agileits-main">
                         <i class="far fa-building"></i>
                         <select name="make" required="" id="add_car_make">
-                            <option disabled selected>Select Car Make</option>
+                            <option disabled selected><?php echo $lng['general']['Make'];?></option>
 
                             <?php
                             $getMakeList = $config->getMakeList();
@@ -305,7 +305,7 @@ include "../template/header.php";
                     <div class="agileits-main">
                         <i class="fas fa-cogs"></i>
                         <select name="model" required="" id="add_car_model">
-                            <option disabled selected>Select Car Model</option>
+                            <option disabled selected><?php echo $lng['general']['Model'];?></option>
                         </select>
                     </div>
                     <?php if ($resModel != "") { ?>
@@ -317,7 +317,7 @@ include "../template/header.php";
                     <div class="agileits-main">
                         <i class="far fa-clock"></i>
                         <select name="year" required="" id="car_year">
-                            <option disabled selected>Build Year</option>
+                            <option disabled selected><?php echo $lng['general']['Build_Year'];?></option>
                             <?php
                             $start_year = 1950;
                             foreach (range(date('Y'), $start_year) as $x) {

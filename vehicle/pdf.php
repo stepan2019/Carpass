@@ -6,6 +6,7 @@
     include "../include/include.php";
     global $crt_lang_code;
     global $lng;
+    global $text_direction;
 	include "../setting/config.php";
 
 	if(isset($_POST['vin'])) {
@@ -36,13 +37,21 @@
 	}
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="<?php echo $crt_lang_code;?>">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Car pass - Report Generate</title>
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
-	
+    <?php
+    if ($text_direction == 'rtl') {
+        ?>
+        <link href="/css/invoice_rtl.css" rel="stylesheet">
+        <?php
+    } else {
+        ?>
+        <link href="/css/invoice.css" rel="stylesheet">
+    <?php } ?>
 	<style type="text/css">
 	    .table-bordered {
             border: 2px solid #fe7500;
@@ -56,9 +65,9 @@
 <body class="container">
 	<div class="row">
 		<div class="col-md-12 text-center btn-field">
-			<button onclick="if (!window.__cfRLUnblockHandlers) return false; getPDF()" id="downloadbtn" data-cf-modified-3041e76d3da1bfb24a107310-=""><b><?php echo $lng['invoice']['download_as_pdf'];?></b></button>
-			<button onclick="printThis()" ><b> <?php echo $lng['invoice']['print'];?></b></button>
-			<button class="button" onclick="window.open('../index.php', '_self')" ><b> <?php echo $lng['invoice']['close_this_window'];?></b></button>
+			<button onclick="if (!window.__cfRLUnblockHandlers) return false; getPDF()" id="downloadbtn" data-cf-modified-3041e76d3da1bfb24a107310-=""><b><?php echo $lng['Pdf']['Download_pdf'];?></b></button>
+			<button onclick="printThis()" ><b> <?php echo $lng['Pdf']['Print'];?></b></button>
+			<button class="button" onclick="window.open('../index.php', '_self')" ><b> <?php echo $lng['Pdf']['Close'];?></b></button>
 			<button onclick="generateInvoice();" id="invoicebtn"><b><?php echo $lng['invoice']['Click_to_generate_invoice'];?></b></button>
 		</div>
 	</div>
@@ -71,7 +80,7 @@
 					<img src="/img/logo.png" style="width: 150px;">
 				</div>
 				<div class="col-md-6" style="margin-top:20px;">
-                    <h2 style="color: #fe7500;font-weight: bold;">Tellerrapport</h2>
+                    <h2 style="color: #fe7500;font-weight: bold;"><?php echo $lng['Pdf']['Tellerrapport'];?></h2>
                     <p><b><?php echo date('d-m-Y'); ?></b></p>
                 </div>
             <?php
@@ -99,12 +108,12 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th class="text-center">License Plate</th>
-                            <th class="text-center">VIN</th>
-                            <th class="text-center">Make / Model</th>
-                            <th class="text-center">Year Build</th>
-                            <th class="text-center">Current KM reading</th>
-                            <th class="text-center">Car Crashed ?</th>
+                            <th class="text-center"><?php echo $lng['Pdf']['License_Plate'];?></th>
+                            <th class="text-center"><?php echo $lng['Pdf']['Vin'];?></th>
+                            <th class="text-center"><?php echo $lng['Pdf']['Make_Model'];?></th>
+                            <th class="text-center"><?php echo $lng['Pdf']['Year_Build'];?></th>
+                            <th class="text-center"><?php echo $lng['Pdf']['Current_km_reading'];?></th>
+                            <th class="text-center"><?php echo $lng['Pdf']['Car_Crashed'];?>?</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -141,17 +150,17 @@
                         <?php
                             if($km_last_info['logic'] == "true") {
                         ?>
-                                <span class="mr-4" style="font-size: 40px; color: #000;font-weight: bold;">Logical</span>
+                                <span class="mr-4" style="font-size: 40px; color: #000;font-weight: bold;"><?php echo $lng['Pdf']['Logical'];?></span>
                                 <img src="/img/Logical.png" alt="record">
                         <?php
                             } else if($km_last_info['logic'] == "false") {
                         ?>
-                                <span class="mr-4" style="font-size: 40px; color: #000;font-weight: bold;">Not Logical</span>
+                                <span class="mr-4" style="font-size: 40px; color: #000;font-weight: bold;"><?php echo $lng['Pdf']['Not_Logical'];?></span>
                                 <img src="/img/Not-Logical.png" alt="record">
                         <?php
                             } else {
                         ?>
-                                <span class="mr-4" style="font-size: 40px; color: #000;font-weight: bold;">No Judgement</span>
+                                <span class="mr-4" style="font-size: 40px; color: #000;font-weight: bold;"><?php echo $lng['Pdf']['No-Judgement'];?></span>
                                 <img src="/img/No-Jurgment.png" alt="record">
                         <?php
                             }
@@ -159,7 +168,7 @@
                     </p>
                 </div>
 
-                <p class="col-md-12" style="font-size: 24px;font-weight: bold;">Km Records</p>
+                <p class="col-md-12" style="font-size: 24px;font-weight: bold;"><?php echo $lng['Pdf']['KM_records'];?></p>
             
             <?php
                 $result = $config->get_vehicle_km_by_car_id($car_id);
@@ -170,8 +179,8 @@
                 <table class="table table-bordered" style="width: 33%;">
                     <thead>
                         <tr>
-                            <th class="text-center" style="width: 16%;">km</th>
-                            <th class="text-center" style="width: 16%;">add_date</th>
+                            <th class="text-center" style="width: 16%;"><?php echo $lng['Pdf']['KM'];?></th>
+                            <th class="text-center" style="width: 16%;"><?php echo $lng['Pdf']['add_date'];?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -193,8 +202,8 @@
                 <table class="table table-bordered" style="width: 33%;">
                     <thead>
                         <tr>
-                            <th class="text-center" style="width: 16%;">km</th>
-                            <th class="text-center" style="width: 16%;">add_date</th>
+                            <th class="text-center" style="width: 16%;"><?php echo $lng['Pdf']['KM'];?></th>
+                            <th class="text-center" style="width: 16%;"><?php echo $lng['Pdf']['add_date'];?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -216,8 +225,8 @@
                 <table class="table table-bordered" style="width: 33%;">
                     <thead>
                         <tr>
-                            <th class="text-center" style="width: 16%;">km</th>
-                            <th class="text-center" style="width: 16%;">add_date</th>
+                            <th class="text-center" style="width: 16%;"><?php echo $lng['Pdf']['KM'];?></th>
+                            <th class="text-center" style="width: 16%;"><?php echo $lng['Pdf']['add_date'];?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -234,13 +243,12 @@
 		
                     </tbody>
                 </table>
-                <div class="col-md-12">
-                    <p style="font-size: 24px;"><u><?php echo $lng['invoice']['explanation'];?></u></p>
-                    <p><?php echo $lng['invoice']['explanation'];?><br>
-                        <?php echo $lng['invoice']['you_see_report'];?><br>
-                        <?php echo $lng['invoice']['explanation_1'];?><br>
-                        <?php echo $lng['invoice']['explanation_2'];?><br>
-                        <?php echo $lng['invoice']['explanation_3'];?><br>
+                <div class="col-md-12 explain_div">
+                    <p style="font-size: 24px;"><u><?php echo $lng['Pdf']['Explamation'];?></u></p>
+                    <p><?php echo $lng['Pdf']['registration_text'];?><br>
+                        <?php echo $lng['Pdf']['1'];?><br>
+                        <?php echo $lng['Pdf']['2'];?><br>
+                        <?php echo $lng['Pdf']['3'];?><br>
                     </p>
                 </div>
             </div>

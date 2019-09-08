@@ -3,6 +3,7 @@
 include "include/include.php";
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 global $crt_lang_code;
+global $lng;
 
 include $root . "/setting/config.php";
 // include "setting/config.php";
@@ -130,7 +131,7 @@ $header_one = $header->fetch_assoc();
                 } else {
                     echo '/user/login.php?query=goVehicle';
                 }
-                ?>" class="btn btn-primary submit-fs mt-5 ml-5 btn-custom">Add Vehicle KM</a>
+                ?>" class="btn btn-primary submit-fs mt-5 ml-5 btn-custom"><?php echo $lng['navbar']['add_vehicle_km'];?></a>
             </div>
         </div>
     </div>

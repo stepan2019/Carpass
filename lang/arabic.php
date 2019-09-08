@@ -1,11 +1,4 @@
 <?php
-/*
-	*	
-	* Carpass.gr 
-	* version 1
-	* (c) 2019 Carpass.gr 
-	*
-*/
 
 // ------------------ NAVBAR Index.php -------------------
 $lng['navbar']['home'] = 'الرئیسیة';
@@ -57,7 +50,7 @@ $lng['login']['Email'] = 'البريد الإلكتروني';
 $lng['login']['password'] = 'كلمه السر';
 $lng['login']['forgot_pass'] = 'نسيت رقمك السري؟';
 $lng['login']['click_here'] = 'انقر هنا لإعادة ضبطها!';
-$lng['login']['Select_type_to_login'] = 'Please select user type to login.';
+$lng['login']['Select_type_to_login'] = 'يرجى اختيار نوع المستخدم لتسجيل الدخول.';
 
 
 // -------------------------- LOGOUT -----------------------
@@ -65,7 +58,7 @@ $lng['logout']['logout'] = 'خروج';
 $lng['logout']['loggedout'] = 'لقد تم تسجيل خروجك!';
 
 // --------------------------User REGISTER -----------------------
-$lng['users']['Select_type_to_register'] = 'Please select user type to register.';
+$lng['users']['Select_type_to_register'] = 'يرجى اختيار نوع المستخدم للتسجيل.';
 $lng['users']['register'] = 'تسجیل';
 $lng['users']['User'] = 'المستعمل';
 $lng['users']['Delaer'] = 'معرض السیارات';
@@ -99,15 +92,15 @@ $lng['useraccount']['Cancel'] = 'إلغاء';
 
 
 // ------------------- CONTACT -----------------
-$lng['contact']['Contact_us'] = 'Contact Us';
-$lng['contact']['fill_all_field'] = 'Please fill all fields and submit';
+$lng['contact']['Contact_us'] = 'اتصل بنا';
+$lng['contact']['fill_all_field'] = 'يرجى ملء جميع الحقول وتقديم';
 $lng['contact']['name'] = 'اسم';
 $lng['contact']['Phone Number'] = 'رقم هاتف';
 $lng['contact']['email'] = 'البريد الإلكتروني';
 $lng['contact']['Enter_Your_Massage'] = 'أدخل التدليك الخاص بك';
-$lng['contact']['your_mail_address'] = 'Your Email address';
-$lng['contact']['never_share_mail'] = 'We will never share your email with anyone else.';
-$lng['contact']['Enter_Your_Massage'] = 'Enter Your Massage';
+$lng['contact']['your_mail_address'] = 'عنوان بريدك الإلكتروني';
+$lng['contact']['never_share_mail'] = 'لن نشارك بريدك الإلكتروني مع أي شخص آخر.';
+$lng['contact']['Enter_Your_Massage'] = 'أدخل التدليك الخاص بك';
 $lng['contact']['message_sent'] = 'تم إرسال رسالتك!';
 $lng['contact']['Submit'] = 'خضع';
 
@@ -154,8 +147,7 @@ $lng['Pdf']['KM_records'] = 'كم السجلات';
 $lng['Pdf']['KM'] = 'کم';
 $lng['Pdf']['add_date'] = 'تآریخ';
 $lng['Pdf']['Explamation'] = 'شرح';
-$lng['Pdf']['registration_text'] = '
-تسجيل کم السيارات في عراق هو من 2019 ، لا يمكننا الحكم على الكيلومتر قبل هذا العام.ترى في التقرير منطقيًا ، وليس منطقيًا ، ولا حكم يعني ذلك:';
+$lng['Pdf']['registration_text'] = 'تسجيل کم السيارات في عراق هو من 2019 ، لا يمكننا الحكم على الكيلومتر قبل هذا العام.ترى في التقرير منطقيًا ، وليس منطقيًا ، ولا حكم يعني ذلك:';
 $lng['Pdf']['1'] = '1 - المنطقي يعني أن الكيلومتر منطقي كما سجلنا في كم السيارة.';
 $lng['Pdf']['2'] = '2 - غير منطقي ، وهذا يعني أن كم هو تغيير بعد التسجيل بواسطة سيارة كم.';
 $lng['Pdf']['3'] = '3 - لا حكم ، وهذا يعني أنه ليس لدينا أي بيانات لهذه السيارة ، وهذا هو التسجيل الأول بواسطة السيارة كم.';
@@ -170,3 +162,29 @@ $lng['footer']['Term-and-Service'] = 'مصطلح والخدمة';
 $lng['footer']['Contact'] = 'اتصال';
 $lng['footer']['Address'] = 'عنوان';
 $lng['footer']['Phone'] = 'هاتف';
+
+//---------------------invoice-------------------
+$lng['invoice']['download_as_pdf'] = 'تحميل بصيغة PDF';
+$lng['invoice']['print'] = 'طباعة';
+$lng['invoice']['close_this_window'] = 'أغلق هذه النافذة';
+$lng['invoice']['Click_to_generate_invoice'] = 'انقر لتوليد الفاتورة';
+$lng['invoice']['back_to_report'] = 'العودة إلى التقرير';
+$lng['invoice']['invoice'] = 'ورة من';
+$lng['invoice']['invoice_from'] = 'فاتورة من';
+$lng['invoice']['invoice_to'] = 'فاتورة إلى';
+$lng['invoice']['invoice_date'] = 'تاريخ الفاتورة';
+$lng['invoice']['order_amount'] = 'كمية الطلب';
+$lng['invoice']['product'] = 'المنتج';
+$lng['invoice']['qty'] = 'الكمية';
+$lng['invoice']['Price'] = 'السعر';
+$lng['invoice']['line_total'] = 'مجموع';
+$lng['invoice']['tax'] = 'ضريبة';
+$lng['invoice']['subtotal'] = 'حاصل الجمع';
+$lng['invoice']['total'] = 'مجموع';
+$lng['invoice']['thanks_register'] = 'شكرا لتسجيل سيارتك وشكرا لطلبك والدفع';
+$lng['invoice']['registration_of_car_greece'] = 'تسجيل کم السيارة  في العراق هو من 2019 ، لا يمكننا الحكم على الكيلومتر قبلاعام.';
+$lng['invoice']['explanation'] = 'تفسير';
+$lng['invoice']['you_see_report'] = 'تشاهد في التقرير منطقية ، غير منطقية ، الآن ترى في التقرير منطقية ، غير منطقية ، لا حكم يعني:';
+$lng['invoice']['explanation_1'] = 'المنطقي يعني أن الكيلومتر منطقي كما سجلنا في كم السيارة.';
+$lng['invoice']['explanation_2'] = 'غير منطقي ، وهذا يعني أن كم هو تغيير بعد التسجيل بواسطة سيارة كم.';
+$lng['invoice']['explanation_3'] = 'لا حكم ، وهذا يعني أنه ليس لدينا أي بيانات لهذه السيارة ، وهذا هو التسجيل الأول بواسطة السيارة كم.';
