@@ -21,7 +21,7 @@ $invoiceData = $result->fetch_All();
 		$s_sn = 1;
 		foreach($invoiceData as $row){
 			$user = $config->getUserById($row[1]);
-			$user_info = $result->fetch_assoc();
+			$user_info = $user->fetch_assoc();
 			?>
 			<tr>
 				<td class="text-center"><?php echo $s_sn; ?></td>
