@@ -46,6 +46,13 @@ class Car
         $result = $this->connectdb->query($query);
         return $result;
     }
+    public
+    function deleteInvoiceHistory($id)
+    {
+        $query = "delete from invoices where id = '$id'";
+        $result = $this->connectdb->query($query);
+        return $result;
+    }
     public function getLanguages()
     {
         $query = "select * from languages order by `order_no`";

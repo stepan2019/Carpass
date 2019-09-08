@@ -30,7 +30,7 @@ $invoiceData = $result->fetch_All();
 				<td><?php echo $row[7]; ?></td>
 				<td><?php echo $row[2]; ?></td>
 				<td class="text-center">
-					<a href="home.php?query=deletecouponhistory&id=<?php echo $row[0]; ?>">
+					<a href="home.php?query=deleteinvoicehistory&id=<?php echo $row[0]; ?>">
 						<i class="far fa-trash-alt" style="float:right;"></i>
 					</a>
 				</td>
