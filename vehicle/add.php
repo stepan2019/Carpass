@@ -336,7 +336,7 @@ include "../template/header.php";
                     <label class="control-label"><?php echo $lng['general']['KM'];?></label>
                     <div class="agileits-main">
                         <i class="fas fa-running"></i>
-                        <input type="number" name="km" step="any" required="" id="car_km" min="1" max="1000" maxlength="7">
+                        <input type="text" name="km" step="any" required="" id="car_km" min="1" max="1000" maxlength="7">
                     </div>
                 </div>
                 <div class="col-md-5 text-left mt-4">
@@ -449,6 +449,7 @@ include "../template/footer.php";
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/scrollPosStyler.js"></script>
 <script type="text/javascript" src="../js/jquery.mask.js"></script>
+<script type="text/javascript" src="../js/jquery.masknumber.js"></script>
 
 <script type="text/javascript">
 
@@ -458,11 +459,8 @@ include "../template/footer.php";
                 Y: {pattern: /[0-9]/}
             }
         });
-        $('#car_km').mask('AAA.YYY', {'translation': {
-                A: {pattern: /[0-9]/},
-                Y: {pattern: /[0-9]/}
-            }
-        });
+        $('#car_km').maskNumber({integer: true});
+        // $('#car_km').mask("#.##0,00", {reverse: true});
 
         var dbArrayPlateDate = [];
 
