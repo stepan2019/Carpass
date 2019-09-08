@@ -49,23 +49,23 @@ $resCrash = "";
 if (isset($_POST['add_car'])) {
     $plate = $_POST['plate'];
     $vin = $_POST['vin'];
-    if ($plate && $vin) {
-        global $config_live_site;
-        global $mail_setting;
-        // add activation code to db record
-        $mail2send = new mails();
-        $mail2send->init($mail_setting['username'], 'Carpass');
-        $mail2send->setSubject(cleanStr('<p> Hello admin there is vehicle ADD to carpass database</p>'));
-        $msg = nl2br(cleanStr('<div>
-                                        <p> with plate number' . $plate . ' and vin number ' . $vin . '</p>
-                                        <p> Please check the vehicle . </p>
-                                    </div><div>User Email : '.$email.'</div>')) . '';
-        $mail2send->setMessage($msg);
-        $is_sendMail = $mail2send->send();
-        if (!$is_sendMail) {
-            $response = "Sorry, is failed to register";
-        }
-    }
+//    if ($plate && $vin) {
+//        global $config_live_site;
+//        global $mail_setting;
+//        // add activation code to db record
+//        $mail2send = new mails();
+//        $mail2send->init($mail_setting['username'], 'Carpass');
+//        $mail2send->setSubject(cleanStr('<p> Hello admin there is vehicle ADD to carpass database</p>'));
+//        $msg = nl2br(cleanStr('<div>
+//                                        <p> with plate number' . $plate . ' and vin number ' . $vin . '</p>
+//                                        <p> Please check the vehicle . </p>
+//                                    </div><div>User Email : '.$email.'</div>')) . '';
+//        $mail2send->setMessage($msg);
+//        $is_sendMail = $mail2send->send();
+//        if (!$is_sendMail) {
+//            $response = "Sorry, is failed to register";
+//        }
+//    }
     if (isset($_POST['make']) && isset($_POST['model']) && isset($_POST['year']) && isset($_POST['crash'])) {
         $make = $_POST['make'];
         $model = $_POST['model'];

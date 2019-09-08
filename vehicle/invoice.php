@@ -35,6 +35,11 @@ if (isset($_POST['vin'])) {
     $user_info = $result->fetch_assoc();
 
     $result = $config->reportCount();
+
+    $priceResult = $config->getPrice();
+    $price = $priceResult->fetch_assoc();
+    //set invoice history
+    $is_history = $config->setInoviceHistory($user_id, $user_type, $plate, $price['price'], $price['tax']);
 }
 ?>
 <!doctype html>
@@ -96,8 +101,7 @@ if (isset($_POST['vin'])) {
             <p><b><?php echo $lng['invoice']['invoice_to'];?>:</b></p>
         </div>
         <?php
-        $result = $config->getPrice();
-        $price = $result->fetch_assoc();
+
         if ($user_type == "user") {
             ?>
             <div class="row col-md-12">
@@ -147,7 +151,7 @@ if (isset($_POST['vin'])) {
             </thead>
             <tbody>
             <tr>
-                <td class="text-center">Carpass <?php echo $lng['invoice']['registration'];?>(<?php echo $plate?>)</td>
+                <td class="text-center">Carpass <?php echo $lng['invoice']['registration'];?> <?php echo $plate?></td>
                 <td class="text-center">1</td>
                 <td class="text-center" style="font-style: italic;">€<?php echo $price['price']; ?></td>
                 <td class="text-center"><?php echo ''; ?></td>

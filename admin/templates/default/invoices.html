@@ -1,9 +1,3 @@
-{include file="header.html"}
-{include file="data/fancybox.html"}
-{include file="data/ui.html"}
-
-<div class="page_title">{$lng.panel.orders} > {$lng.settings.invoices}</div>
-
 <div class="p30">
 <form name="search" id="search" method="post" action="invoices.php?no_per_page={$no_per_page}{if $page}&page={$page}{/if}">
 
@@ -125,10 +119,6 @@
 </tr>
 {/foreach}
 
-{if $no_invoices==0}
-	<tr><td colspan="10">{$lng.no_items}</td></tr>
-{/if}
-
 </table>
 </form>
 
@@ -239,5 +229,3 @@ $("a.ordinfo").click(function(event){
 
 {/literal}
 </script>
-
-{include file="footer.html"}

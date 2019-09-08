@@ -127,17 +127,17 @@
                                 <?php
                                     if($crash_info['crash'] == "yes") {
                                         if($crash_info['front'] != "")
-                                            echo "*front<br>";
+                                            echo "*".$lng['Pdf']['front']."<br>";
                                         if($crash_info['back'] != "")
-                                            echo "*back<br>";
+                                            echo "*".$lng['Pdf']['back']."<br>";
                                         if($crash_info['lefty'] != "")
-                                            echo "*left<br>";
+                                            echo "*".$lng['Pdf']['left']."<br>";
                                         if($crash_info['righty'] != "")
-                                            echo "*right<br>";
+                                            echo "*".$lng['Pdf']['right']."<br>";
                                         if($crash_info['total'] != "")
                                             echo "*total less";
                                     } else {
-                                        echo $crash_info['crash'];   
+                                        echo $lng['Pdf'][$crash_info['crash']];
                                     }
                                 ?>    
                             </td>

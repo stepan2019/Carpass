@@ -67,6 +67,7 @@
 					<li><a class="nav-link" href="home.php?query=coupons">Add Coupon</a></li>
 					<li><a class="nav-link" href="home.php?query=coupons_list">Coupon Lists</a></li>
 					<li><a class="nav-link" href="home.php?query=coupons_history">Coupon History</a></li>
+					<li><a class="nav-link" href="home.php?query=invoices">Invoice History</a></li>
 					</ul>
 
                     <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Language<span class="caret"></span></a>

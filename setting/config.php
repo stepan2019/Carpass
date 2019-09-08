@@ -27,7 +27,25 @@ class Car
         return $result;
 
     }
+    public function getInvoiceHistory()
+    {
+        $query = "select * from invoices";
+        $result = $this->connectdb->query($query);
+        return $result;
 
+    }
+    public function setInoviceHistory($user_id, $user_type, $plate, $price, $tax)
+    {
+//        $settingResult = $this->getEmailSetting();
+//        $setting = $settingResult->fetch_assoc();
+//        if ($setting) {
+//            $this->deleteEmailSetting();
+//        }
+        $date = date('Y-m-d');
+        $query = "insert into invoices(user_id, date, payment_action, currency, amount, tax, plate_number)value('$user_id', '$date', 'paypal', '$price', '1','$tax','$plate')";
+        $result = $this->connectdb->query($query);
+        return $result;
+    }
     public function getLanguages()
     {
         $query = "select * from languages order by `order_no`";
