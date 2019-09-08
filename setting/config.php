@@ -27,6 +27,7 @@ class Car
         return $result;
 
     }
+
     public function getInvoiceHistory()
     {
         $query = "select * from invoices";
@@ -34,18 +35,29 @@ class Car
         return $result;
 
     }
-    public function setInoviceHistory($user_id, $user_type, $plate, $price, $tax)
+
+    public function getCurrentInvoiceId()
+    {
+        $query = "select MAX(id) as id from invoices";
+        $result = $this->connectdb->query($query);
+        return $result->fetch_assoc();
+
+    }
+
+    public function setInoviceHistory($user_id, $user_type, $plate, $vin, $price, $tax)
     {
 //        $settingResult = $this->getEmailSetting();
 //        $setting = $settingResult->fetch_assoc();
 //        if ($setting) {
 //            $this->deleteEmailSetting();
 //        }
+        $currentId = $this->getCurrentInvoiceId();
         $date = date('Y-m-d');
-        $query = "insert into invoices(user_id, date, payment_action, currency, amount, tax, plate_number)value('$user_id', '$date', 'paypal', '$price', '1','$tax','$plate')";
-        $result = $this->connectdb->query($query);
-        return $result;
+        $query = "insert into invoices(user_id,user_type, date, payment_action, currency, amount, tax, plate_number, vin)value('$user_id','$user_type', '$date', 'paypal', '$price', '1','$tax','$plate','$vin')";
+        $this->connectdb->query($query);
+        return $currentId;
     }
+
     public
     function deleteInvoiceHistory($id)
     {
@@ -53,7 +65,9 @@ class Car
         $result = $this->connectdb->query($query);
         return $result;
     }
-    public function getLanguages()
+
+    public
+    function getLanguages()
     {
         $query = "select * from languages order by `order_no`";
         $result = $this->connectdb->query($query);
@@ -61,7 +75,8 @@ class Car
 
     }
 
-    public function getEnableLanguages()
+    public
+    function getEnableLanguages()
     {
         $query = "select * from languages where `enabled`=1 order by `order_no`";
         $result = $this->connectdb->query($query);
@@ -69,7 +84,8 @@ class Car
 
     }
 
-    public function getEnableLanguagesWithoutDefault()
+    public
+    function getEnableLanguagesWithoutDefault()
     {
         $query = "select * from languages where `enabled`=1 and `default` <> 1 order by `order_no`";
         $result = $this->connectdb->query($query);
@@ -77,8 +93,9 @@ class Car
 
     }
 
-    // register
-    public function register_user($name, $address, $email, $phone, $password)
+// register
+    public
+    function register_user($name, $address, $email, $phone, $password)
     {
         $block = "False";
         $query = "insert into user(name, address, email, phone, password, block) value('$name', '$address', '$email', '$phone', '$password', '$block')";
@@ -86,21 +103,24 @@ class Car
         return $result;
     }
 
-    public function compareActivationCode($email, $activationCode)
+    public
+    function compareActivationCode($email, $activationCode)
     {
         $query = "select * from user where `email`='$email' and `activation`='$activationCode'";
         $result = $this->connectdb->query($query);
         return $result;
     }
 
-    public function setActivation($email, $activationCode)
+    public
+    function setActivation($email, $activationCode)
     {
         $query = "update user set `active` = 1 where `email`='$email' and `activation`='$activationCode'";
         $result = $this->connectdb->query($query);
         return $result;
     }
 
-    public function register_dealer($name, $address, $email, $phone, $company, $website, $password)
+    public
+    function register_dealer($name, $address, $email, $phone, $company, $website, $password)
     {
         $block = "False";
         $query = "insert into dealer(name, address, email, phone, company, website, password, block) value('$name', '$address', '$email', '$phone', '$company', '$website', '$password', '$block')";
@@ -108,38 +128,43 @@ class Car
         return $result;
     }
 
-    // register paypal
-    public function update_paypal($allow_paypal, $api_username, $api_password, $api_signature, $paypal_sandbox, $note)
+// register paypal
+    public
+    function update_paypal($allow_paypal, $api_username, $api_password, $api_signature, $paypal_sandbox, $note)
     {
         $query = "insert into paypal_setting(allow_paypal, api_username, api_password, api_signature, paypal_sandbox, note) value('$allow_paypal', '$api_username', '$api_password', '$api_signature', '$paypal_sandbox', '$note')";
         $result = $this->connectdb->query($query);
         return $result;
     }
 
-    public function getPaypalSetting()
+    public
+    function getPaypalSetting()
     {
         $query = "select * from paypal_setting order by id DESC LIMIT 1";
         $result = $this->connectdb->query($query);
         return $result;
     }
 
-    // E-mail Option
+// E-mail Option
 
-    public function getEmailSetting()
+    public
+    function getEmailSetting()
     {
         $query = "select * from email_option order by id DESC LIMIT 1";
         $result = $this->connectdb->query($query);
         return $result;
     }
 
-    public function deleteEmailSetting()
+    public
+    function deleteEmailSetting()
     {
         $query = "delete from email_option";
         $result = $this->connectdb->query($query);
         return $result;
     }
 
-    public function update_email_option($html_email, $smtp_auth, $smtp_server, $encryption, $port, $username, $password, $bcc_email, $admin_email)
+    public
+    function update_email_option($html_email, $smtp_auth, $smtp_server, $encryption, $port, $username, $password, $bcc_email, $admin_email)
     {
         $settingResult = $this->getEmailSetting();
         $setting = $settingResult->fetch_assoc();

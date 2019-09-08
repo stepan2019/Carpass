@@ -140,7 +140,7 @@ include "../template/header.php";
             <input type="hidden" name="plate" value="<?php echo $_POST['plate']; ?>"/>
             <input type="hidden" name="email" value="<?php echo $_POST['email']; ?>"/>
         </form>
-        <form action="pdf.php" method="post" id="pdf_form" target="_blank" name="pdf_form">
+        <form action="pdf.php" method="post" id="pdf_form" target="_self" name="pdf_form">
             <input type="hidden" name="vin" value="<?php echo $_POST['vin']; ?>"/>
             <input type="hidden" name="plate" value="<?php echo $_POST['plate']; ?>"/>
             <input type="hidden" name="email" value="<?php echo $_POST['email']; ?>"/>

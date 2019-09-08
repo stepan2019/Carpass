@@ -42,6 +42,14 @@
     <script type="text/javascript" src="js/functions.js"></script>
     <script type="text/javascript" src="../libs/jQuery/plugins/powertip/jquery.powertip.min.js"></script>
     <link rel="stylesheet" href="../libs/jQuery/plugins/powertip/css/jquery.powertip.min.css"/>
+    <script>
+        function gotoInvoice(plate, vin, email){
+            $('#plate').val(plate);
+            $('#vin').val(vin);
+            $('#email').val(email);
+            document.forms[0].submit();
+        }
+    </script>
 </head>
 <body style="background-color: #ece4b7;">
     <nav class="navbar navbar-toggleable-md mb-4 top-bar navbar-static-top sps sps--abv">
@@ -218,6 +226,7 @@
             });
         })(jQuery, window);
     </script>
+
 </body>
 
 </html>
