@@ -63,7 +63,7 @@ if (isset($_POST['add_car'])) {
         $mail2send->setMessage($msg);
         $is_sendMail = $mail2send->send();
         if (!$is_sendMail) {
-            $response = "Sorry, is failed to register";
+            $response = "Sorry, is failed to send mail";
         }
     }
     if (isset($_POST['make']) && isset($_POST['model']) && isset($_POST['year']) && isset($_POST['crash'])) {
