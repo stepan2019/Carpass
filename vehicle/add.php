@@ -54,10 +54,12 @@ if (isset($_POST['add_car'])) {
         global $mail_setting;
         // add activation code to db record
         $mail2send = new mails();
-        $mail2send->init($mail_setting['username'], 'Carpass');
+        $mail2send->init($email, 'Carpass');
+        $mail2send->to = $mail_setting['username'];
+        $mail2send->to_name = 'Car register';
         $mail2send->setSubject(cleanStr('<p> Hello admin there is vehicle ADD to carpass database</p>'));
         $msg = nl2br(cleanStr('<div>
-                                        <p> with plate number' . $plate . ' and vin number ' . $vin . '</p>
+                                        <p> with plate number : ' . $plate . ' and vin number : ' . $vin . '</p>
                                         <p> Please check the vehicle . </p>
                                     </div><div>User Email : '.$email.'</div>')) . '';
         $mail2send->setMessage($msg);
