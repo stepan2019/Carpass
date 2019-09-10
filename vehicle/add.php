@@ -64,6 +64,7 @@ if (isset($_POST['add_car'])) {
                                     </div><div>User Email : '.$email.'</div>')) . '';
         $mail2send->setMessage($msg);
         $is_sendMail = $mail2send->send();
+        print_r($is_sendMail);exit;
         if (!$is_sendMail) {
             $response = "Sorry, is failed to send mail";
         }
