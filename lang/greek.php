@@ -57,7 +57,7 @@ $lng['login']['Email'] = 'Email';
 $lng['login']['password'] = 'Κωδικός πρόσβασης';
 $lng['login']['forgot_pass'] = 'Ξεχάσατε τον κωδικό σας;';
 $lng['login']['click_here'] = 'Κάντε κλικ εδώ για να το επαναφέρετε!';
-$lng['login']['Select_type_to_login'] = 'Please select user type to login.';
+$lng['login']['Select_type_to_login'] = 'Επιλέξτε τύπο χρήστη για σύνδεση.';
 
 
 // -------------------------- LOGOUT -----------------------
@@ -65,7 +65,7 @@ $lng['logout']['logout'] = 'Αποσύνδεση';
 $lng['logout']['loggedout'] = 'Έχετε αποσυνδεθεί!';
 
 // --------------------------User REGISTER -----------------------
-$lng['users']['Select_type_to_register'] = 'Please select user type to register.';
+$lng['users']['Select_type_to_register'] = 'Επιλέξτε τύπο χρήστη για να εγγραφείτε.';
 $lng['users']['register'] = 'Κανω ΕΓΓΡΑΦΗ';
 $lng['users']['User'] = 'Χρήστης';
 $lng['users']['Delaer'] = 'Εμπορος';
@@ -85,7 +85,7 @@ $lng['listings']['recommend_this'] = 'Share';
 
 // ------------------- USER Profile-----------------
 
-$lng['useraccount']['Profile'] = 'Profile';
+$lng['useraccount']['Profile'] = 'Προφίλ';
 $lng['useraccount']['Fullname'] = 'Πλήρες όνομα';
 $lng['useraccount']['Address'] = 'Διεύθυνση';
 $lng['useraccount']['Phone_Number'] = 'Τηλεφωνικό νούμερο';
@@ -99,15 +99,17 @@ $lng['useraccount']['Cancel'] = 'Ματαίωση';
 
 
 // ------------------- CONTACT -----------------
-$lng['contact']['Contact_us'] = 'Contact Us';
-$lng['contact']['fill_all_field'] = 'Please fill all fields and submit';
+$lng['contact']['Contact_us'] = 'Επικοινωνήστε μαζί μας';
+$lng['contact']['fill_all_field'] = 'Συμπληρώστε όλα τα πεδία και υποβάλετε';
 $lng['contact']['name'] = 'Ονομα';
 $lng['contact']['Phone Number'] = 'Τηλεφωνικό νούμερο';
 $lng['contact']['email'] = 'Email';
 $lng['contact']['Enter_Your_Massage'] = 'Εισάγετε το Μασάζ σας';
+$lng['contact']['your_mail_address'] = 'Η ηλεκτρονική σου διεύθυνση';
+$lng['contact']['never_share_mail'] = 'Ποτέ δεν θα μοιραζόμαστε το email σας με κανέναν άλλο.';
 $lng['contact']['message_sent'] = 'Το μήνυμά σας εστάλη!';
-$lng['contact']['Enter_Your_Massage'] = 'Enter Your Massage';
-$lng['contact']['message_sent'] = 'Your message was sent!';
+$lng['contact']['Enter_Your_Massage'] = 'Εισάγετε το Μασάζ σας';
+$lng['contact']['message_sent'] = 'Το μήνυμά σας εστάλη!';
 $lng['contact']['Submit'] = 'υποβάλλουν';
 
 
@@ -151,8 +153,13 @@ $lng['Pdf']['Logical'] = 'Λογικός';
 $lng['Pdf']['Not_Logical'] = 'δεν είναι λογικό';
 $lng['Pdf']['KM_records'] = 'Εγγραφές χιλιομέτρων';
 $lng['Pdf']['KM'] = 'Απόσταση σε μίλια';
+$lng['Pdf']['no'] = 'όχι';
+$lng['Pdf']['front'] = 'εμπρός';
+$lng['Pdf']['left'] = 'αριστερά';
+$lng['Pdf']['right'] = 'Δεξιά πλευρά';
+$lng['Pdf']['yes'] = 'Ναί';
 $lng['Pdf']['add_date'] = 'Προσθήκη ημερομηνίας';
-$lng['Pdf']['Explamation'] = 'Explanation';
+$lng['Pdf']['Explamation'] = 'Εξήγηση';
 $lng['Pdf']['registration_text'] = 'Η εγγραφή του αυτοκινήτου KM στην Ελλάδα είναι από το 2019, δεν μπορούμε να ΑΠΟΦΑΣΙΣΗ για το χιλιόμετρο πριν από αυτό το έτος.
 Βλέπετε στην έκθεση Logical, Not Logical, No JUDGMENT ότι σημαίνει:';
 $lng['Pdf']['1'] = '1 - Λογική σημαίνει ότι το KM είναι λογικό, όπως έχουμε καταχωρίσει από το Carpass.';
@@ -169,3 +176,29 @@ $lng['footer']['Term-and-Service'] = 'Όρος και Υπηρεσία';
 $lng['footer']['Contact'] = 'Επικοινωνία';
 $lng['footer']['Address'] = 'Διεύθυνση';
 $lng['footer']['Phone'] = 'Τηλέφωνο';
+
+//---------------------invoice-------------------
+$lng['invoice']['download_as_pdf'] = 'Λήψη ως PDF';
+$lng['invoice']['print'] = 'Τυπώνω';
+$lng['invoice']['close_this_window'] = 'Κλείστε αυτό το παράθυρο';
+$lng['invoice']['Click_to_generate_invoice'] = 'Κάντε κλικ για να δημιουργήσετε τιμολόγιο';
+$lng['invoice']['back_to_report'] = 'Επιστροφή στην αναφορά';
+$lng['invoice']['invoice'] = 'Τιμολόγιο';
+$lng['invoice']['invoice_from'] = 'Τιμολόγιο από';
+$lng['invoice']['invoice_to'] = 'Τιμολόγιο στο';
+$lng['invoice']['invoice_date'] = 'Την ημερομηνία του τιμολογίου';
+$lng['invoice']['order_amount'] = 'Ποσό παραγγελίας';
+$lng['invoice']['product'] = 'Προϊόν';
+$lng['invoice']['qty'] = 'Ποσότητα';
+$lng['invoice']['Price'] = 'τιμή';
+$lng['invoice']['line_total'] = 'σύνολο';
+$lng['invoice']['tax'] = 'Φόρος';
+$lng['invoice']['subtotal'] = 'ΜΕΡΙΚΟ ΣΥΝΟΛΟ';
+$lng['invoice']['total'] = 'Σύνολο';
+$lng['invoice']['thanks_register'] = 'Ευχαριστώ για την εγγραφή του οχήματος σας και ευχαριστώ για την παραγγελία σας και την πληρωμή';
+$lng['invoice']['registration_of_car_greece'] = 'Η εγγραφή του αυτοκινήτου KM στην Ελλάδα είναι από το 2019, δεν μπορούμε να ΑΠΟΦΑΣΙΣΗ για το χιλιόμετρο πριν από αυτό το έτος.';
+$lng['invoice']['explanation'] = 'Εξήγηση';
+$lng['invoice']['you_see_report'] = 'Βλέπετε στην έκθεση Λογική, όχι Λογική, Τώρα βλέπετε στην αναφορά Λογική, Μη Λογική, Χωρίς ΑΠΟΦΑΣΗ σημαίνει:';
+$lng['invoice']['explanation_1'] = '1 - Λογική σημαίνει ότι το KM είναι λογικό, όπως έχουμε καταχωρίσει από το Carpass..';
+$lng['invoice']['explanation_2'] = '2 - Δεν είναι λογικό, Αυτό σημαίνει ότι το χιλιόμετρο αλλάζει μετά την εγγραφή από το Carpass.';
+$lng['invoice']['explanation_3'] = '3 - Δεν υπάρχει κρίση, που σημαίνει ότι δεν έχουμε κανένα στοιχείο αυτού του οχήματος, που είναι η πρώτη εγγραφή από το Carpass.';

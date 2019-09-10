@@ -14,7 +14,7 @@ $lng['navbar']['logout'] = 'چونەدەرەوە';
 $lng['navbar']['information'] = 'زانیاری';
 $lng['navbar']['price'] = 'نرخ';
 $lng['navbar']['register'] = 'خۆتۆمارکردن';
-$lng['navbar']['add_vehicle_km'] = 'کیلۆمەتریت داخڵ بکە';
+$lng['navbar']['add_vehicle_km'] = 'کیلۆمەتر داخڵ بکە';
 $lng['navbar']['my_account'] = 'حسابەکەم';
 $lng['navbar']['contact'] = 'پەیوەندی';
 $lng['navbar']['password_recovery'] = 'وشە نهێنیەکەت وەرگرەوە';
@@ -57,7 +57,7 @@ $lng['login']['Email'] = 'ئی مەیل';
 $lng['login']['password'] = 'وشەی نهێنی';
 $lng['login']['forgot_pass'] = 'وشەی هێنیت لەیاد کردوە؟';
 $lng['login']['click_here'] = 'کرتەی ئێرە بکە تا بیگۆڕیت!';
-$lng['login']['Select_type_to_login'] = 'Please select user type to login.';
+$lng['login']['Select_type_to_login'] = 'تکایە جۆری بەکارهێنەر هەڵبژێرەو بچۆژورەوە';
 
 
 // -------------------------- LOGOUT -----------------------
@@ -65,7 +65,7 @@ $lng['logout']['logout'] = 'چونە دەرەوە';
 $lng['logout']['loggedout'] = 'تۆ چویتە دەرەوە';
 
 // --------------------------User REGISTER -----------------------
-$lng['users']['Select_type_to_register'] = 'Please select user type to register.';
+$lng['users']['Select_type_to_register'] = 'تکایە جۆری بەکارهێنەر هەڵبژێرەو خۆت تۆمار بکە';
 $lng['users']['register'] = 'خۆ تۆمارکردن';
 $lng['users']['User'] = 'بەکار هێنەر';
 $lng['users']['Delaer'] = 'پێشانگا';
@@ -99,13 +99,13 @@ $lng['useraccount']['Cancel'] = 'هەڵوەشاندنەوە';
 
 
 // ------------------- CONTACT -----------------
-$lng['contact']['Contact_us'] = 'Contact Us';
-$lng['contact']['fill_all_field'] = 'Please fill all fields and submit';
+$lng['contact']['Contact_us'] = 'پەیوەندیمان پیوە بکە';
+$lng['contact']['fill_all_field'] = 'تکایە هەموو خانەکان پڕبکەوەو بینێرە';
 $lng['contact']['name'] = 'ناو';
 $lng['contact']['Phone Number'] = 'ژمارەی تەلەفۆن';
 $lng['contact']['email'] = 'ئی مەیل';
-$lng['contact']['your_mail_address'] = 'Your Email address';
-$lng['contact']['never_share_mail'] = 'We will never share your email with anyone else.';
+$lng['contact']['your_mail_address'] = 'ئیمەیلەکەت';
+$lng['contact']['never_share_mail'] = 'مەیلەکەی لای ئێمە پارێزراوە';
 $lng['contact']['Enter_Your_Massage'] = 'نامەکەت بنوسە';
 $lng['contact']['message_sent'] = 'نامەکەت نێردرا!';
 $lng['contact']['Submit'] = 'بینێرە';
@@ -151,6 +151,11 @@ $lng['Pdf']['Logical'] = 'لجیکە';
 $lng['Pdf']['Not_Logical'] = 'لۆجیک نیە';
 $lng['Pdf']['KM_records'] = 'تۆماری کیلۆمەتر';
 $lng['Pdf']['KM'] = 'کم';
+$lng['Pdf']['no'] = 'نەخێر';
+$lng['Pdf']['front'] = 'پێشەوە';
+$lng['Pdf']['left'] = 'لای چەپ';
+$lng['Pdf']['right'] = 'لای ڕاست';
+$lng['Pdf']['yes'] = 'بەڵێ';
 $lng['Pdf']['add_date'] = 'بەرواری داخڵ کردن';
 $lng['Pdf']['Explamation'] = 'ڕوونکردنەوە';
 $lng['Pdf']['registration_text'] = 'تۆمار کردنی کیلۆمەتری ئۆتۆمۆبیل لە عراق لە ساڵی ٢٠١٩ وە، ئێمە ناتوانین بڕیار لەسەر کم بدەین پێش ئەم بەروارە. تۆ لە ڕیپۆرتەکەدا دەبینیت،لۆجیکە، لۆجیک نیە، ناتوانین بڕیار بدەین ئەمەش مانای:، ';
@@ -164,7 +169,33 @@ $lng['footer']['Information'] = 'زانیاری';
 $lng['footer']['Add-vehicle-km'] = 'تۆمارکەڵکە';
 $lng['footer']['Price'] = 'نرخ';
 $lng['footer']['Privacy-Policy'] = 'مەرجەکان';
-$lng['footer']['Term-and-Service'] = 'خزمەتکاریەکان';
+$lng['footer']['Term-and-Service'] = 'خزمەتگوزاریەکان';
 $lng['footer']['Contact'] = 'پەیوەندی';
 $lng['footer']['Address'] = 'عنوان';
 $lng['footer']['Phone'] = 'تەلەفۆن';
+
+//---------------------invoice-------------------
+$lng['invoice']['download_as_pdf'] = 'دایگرە وەک PDF';
+$lng['invoice']['print'] = 'پرینت';
+$lng['invoice']['close_this_window'] = 'پەنجەرەکە دابخە';
+$lng['invoice']['Click_to_generate_invoice'] = 'کرتە بکە تا فاتورە دروستبکەیت';
+$lng['invoice']['back_to_report'] = 'بگەڕێوە بۆ ڕاپۆرتەکە';
+$lng['invoice']['invoice'] = 'فاتورە';
+$lng['invoice']['invoice_from'] = 'فاتورە لە';
+$lng['invoice']['invoice_to'] = 'فاتورە بۆ';
+$lng['invoice']['invoice_date'] = 'بەروااری فاتورە';
+$lng['invoice']['order_amount'] = 'چەندە دانە';
+$lng['invoice']['product'] = 'شتومەک';
+$lng['invoice']['qty'] = 'چەندانە';
+$lng['invoice']['Price'] = 'نرخ';
+$lng['invoice']['line_total'] = 'کۆی گشتی';
+$lng['invoice']['tax'] = 'باج';
+$lng['invoice']['subtotal'] = 'کۆ';
+$lng['invoice']['total'] = 'کۆی گشتی';
+$lng['invoice']['thanks_register'] = 'سوپاس بۆ تۆمارکردنی ئۆتۆمۆبیلەکەت وە سوپاس بۆ کڕینی ڕاپۆرتەکە';
+$lng['invoice']['registration_of_car_greece'] = 'تۆمار کردنی کیلۆمەتری ئۆتۆمۆبیل لە عراق ٢٠١٩ دەستی پێ کردوە، ئێمە ناتوانین بڕیار بدەین لەسەر کیلۆمەتری پێش ئەو بەروارە';
+$lng['invoice']['explanation'] = 'ڕوونکردنەوە';
+$lng['invoice']['you_see_report'] = 'تۆلە ناو ڕاپۆرتەکە دەبینیت، لۆجیک، لۆجیک نیە،بڕیارنادەین ئەمەی لای خوارەوە ڕوونکردنەوەکەیەتی';
+$lng['invoice']['explanation_1'] = ' لۆجیک واتە ئەو کم لەسەر ڕیپۆرتەکە هەیە تەواوەو لای کار کم تۆمار کراوە';
+$lng['invoice']['explanation_2'] = 'لۆجیک نیە واتە ئەو کم لای کار ک تۆمار کراوە زیاترە وەک لەوەی دەیبینیت';
+$lng['invoice']['explanation_3'] = 'ناتوانین بڕیار بدەین واتە ئەم ئۆتۆمبیلە یەکەم جارە تۆمار کراوە و مێژوەکەی لای ئێمە زانراو نیە';
