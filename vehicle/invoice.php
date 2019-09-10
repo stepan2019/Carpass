@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!@$_SESSION['user']) {
+if (!@$_SESSION['user'] || !@$_SESSION['admin']) {
     header("location:/index.php");
 }
 include "../setting/config.php";
