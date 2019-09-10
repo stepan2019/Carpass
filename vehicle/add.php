@@ -55,18 +55,17 @@ if (isset($_POST['add_car'])) {
         // add activation code to db record
         $mail2send = new mails();
         $mail2send->init($email, 'Carpass');
-        $mail2send->to = 'eric9178vadim@gmail.com';
+        $mail2send->to = $mail_setting['username'];
         $mail2send->to_name = 'Car register';
-        $mail2send->setSubject(cleanStr('<p> Hello admin there is vehicle ADD to carpass database</p>'));
+        $mail2send->setSubject(cleanStr('Hello admin there is vehicle ADD to carpass database'));
         $msg = nl2br(cleanStr('<div>
                                         <p> with plate number : ' . $plate . ' and vin number : ' . $vin . '</p>
                                         <p> Please check the vehicle . </p>
                                     </div><div>User Email : '.$email.'</div>')) . '';
         $mail2send->setMessage($msg);
         $is_sendMail = $mail2send->send();
-        print_r($is_sendMail);exit;
         if (!$is_sendMail) {
-            $response = "Sorry, is failed to send mail";
+            $response = $mail2send->send_error;
         }
     }
     if (isset($_POST['make']) && isset($_POST['model']) && isset($_POST['year']) && isset($_POST['crash'])) {

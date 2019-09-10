@@ -1,5 +1,5 @@
 <?php
-
+$response = "";
 $result = '';
 include "../include/include.php";
 global $crt_lang_code;
@@ -19,13 +19,15 @@ function smtpmailer($to, $from_name, $subject, $body)
     global $mail_setting;
     // add activation code to db record
     $mail2send = new mails();
-    $mail2send->init($to, $from_name);
+    $mail2send->init($mail_setting['username'], $from_name);
+    $mail2send->to = $to;
+    $mail2send->to_name = 'You';
     $mail2send->setSubject(cleanStr($subject));
     $msg = nl2br(cleanStr($body)) . '';
     $mail2send->setMessage($msg);
     $is_sendMail = $mail2send->send();
     if (!$is_sendMail) {
-        $response = "Sorry, is failed to register";
+        $response = $mail2send->send_error;
     }
 }
 
