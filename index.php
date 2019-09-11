@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors','1');
 $root = $_SERVER["DOCUMENT_ROOT"];
-include $root."include/include.php";
+include $root."/include/include.php";
 global $crt_lang_code;
 global $lng;
 
