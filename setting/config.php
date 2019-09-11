@@ -92,7 +92,11 @@ class Car
         return $result;
 
     }
-
+    public function userEmailCheck($email){
+        $query = "select email from user where email='$email'";
+        $result = $this->connectdb->query($query);
+        return $result->num_rows;
+    }
 // register
     public
     function register_user($name, $address, $email, $phone, $password)
@@ -125,6 +129,12 @@ class Car
         }
         $result = $this->connectdb->query($query);
         return $result;
+    }
+
+    public function dealerEmailCheck($email){
+        $query = "select email from dealer where email='$email'";
+        $result = $this->connectdb->query($query);
+        return $result->num_rows;
     }
 
     public
