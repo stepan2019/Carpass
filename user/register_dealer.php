@@ -30,7 +30,7 @@ if (isset($_POST['register'])) {
     global $config_live_site;
     // add activation code to db record
     $activation_code = generate_random();
-    $res_act = $db->query("update dealder set activation='$activation_code' where `email` = '$email'");
+    $res_act = $db->query("update dealer set activation='$activation_code' where `email` = '$email'");
     $type = "dealder";
     $account = urlencode($_POST['email']);
     if (!$mail_setting['html_mails'])

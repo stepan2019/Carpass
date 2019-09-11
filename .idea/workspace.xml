@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7db2e5a1-777a-4b65-b71a-e2d1ad3c3c2f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/setting/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/setting/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/register_dealer.php" beforeDir="false" afterPath="$PROJECT_DIR$/user/register_dealer.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +74,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/setting/config.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="301">
@@ -83,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/user/register_dealer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2464">
-              <caret line="130" column="18" selection-start-line="130" selection-start-column="18" selection-end-line="130" selection-end-column="18" />
+            <state relative-caret-position="308">
+              <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -207,9 +207,9 @@
         <option value="$PROJECT_DIR$/admin/edit_language.php" />
         <option value="$PROJECT_DIR$/admin/send-mail.php" />
         <option value="$PROJECT_DIR$/user/register_user.php" />
-        <option value="$PROJECT_DIR$/user/register_dealer.php" />
         <option value="$PROJECT_DIR$/activate_account.php" />
         <option value="$PROJECT_DIR$/setting/config.php" />
+        <option value="$PROJECT_DIR$/user/register_dealer.php" />
       </list>
     </option>
   </component>
@@ -297,12 +297,12 @@
       <workItem from="1567646270554" duration="21957000" />
       <workItem from="1567699238573" duration="46487000" />
       <workItem from="1567928952421" duration="27665000" />
-      <workItem from="1568106527031" duration="16283000" />
+      <workItem from="1568106527031" duration="16412000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="347122000" />
+    <option name="totallyTimeSpent" value="347251000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -670,13 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user/register_dealer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2464">
-          <caret line="130" column="18" selection-start-line="130" selection-start-column="18" selection-end-line="130" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/activate_account.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -688,6 +681,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
           <caret line="111" column="40" selection-start-line="111" selection-start-column="40" selection-end-line="111" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/register_dealer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
         </state>
       </provider>
     </entry>
