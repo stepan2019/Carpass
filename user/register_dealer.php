@@ -79,6 +79,9 @@ if (isset($_POST['register'])) {
 </style>
 
 <div class="register-div">
+    <?php if ($response != "") { ?>
+        <p><label class="control-label mt-3"><?php echo $response; ?></label></p>
+    <?php } ?>
     <form method="post">
         <div class="row col-md-12">
             <div class="col-md-3 text-left mt-4">
@@ -135,9 +138,7 @@ if (isset($_POST['register'])) {
             <div class="col-md-3 text-left mt-4">
                 <input type="submit" class="btn btn-primary submit-fs btn-custom"
                        value="<?php echo $lng['users']['register']; ?>" name="register">
-                <?php if ($response != "") { ?>
-                    <p><label class="control-label mt-3"><?php echo $response; ?></label></p>
-                <?php } ?>
+
             </div>
         </div>
         <div class="clearfix"></div>
