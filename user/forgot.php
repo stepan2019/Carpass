@@ -46,7 +46,7 @@ if(isset($_POST["email"]) && (!empty($_POST["email"]))) {
             $output.='<p>Please click on the following link to reset your password.</p>';
             $output.='<p>-------------------------------------------------------------</p>';
             $output.='<p><a href="https://carpass.gr/user/reset-password.php?key='.$key.'&email='.$email.'&type='.$type.'&action=reset" target="_blank">
-               https://www.test.com.carpass.gr/user/reset-password.php?key='.$key.'&email='.$email.'&type='.$type.'&action=reset</a></p>';
+               https://carpass.gr/user/reset-password.php?key='.$key.'&email='.$email.'&type='.$type.'&action=reset</a></p>';
             $output.='<p>-------------------------------------------------------------</p>';
             $output.='<p>Please be sure to copy the entire link into your browser.
                The link will expire after 1 day for security reason.</p>';
