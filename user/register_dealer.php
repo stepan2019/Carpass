@@ -10,7 +10,6 @@ global $lng;
 global $mail_setting;
 $setting = new settings();
 $mail_setting = $setting->getMailSettings();
-global $lng;
 if (isset($_POST['register'])) {
 
     $name = $_POST['name'];

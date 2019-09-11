@@ -6,9 +6,14 @@ session_start();
 $response = "";
 $type = "";
 include "../include/include.php";
-
+require_once '../classes/validator.php';
+require_once '../classes/mails.php';
+require_once '../classes/settings.php';
+require_once $config_abs_path . "/classes/mail_templates.php";
 global $lng;
-
+global $mail_setting;
+$setting = new settings();
+$mail_setting = $setting->getMailSettings();
 if(isset($_GET["type"])) {
     $type = $_GET["type"];
 }
@@ -16,7 +21,6 @@ if(isset($_GET["type"])) {
 if(isset($_POST["email"]) && (!empty($_POST["email"]))) {
     $email = $_POST["email"];
     $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-    $email = filter_var($email, FILTER_VALIDATE_EMAIL);
     if (!$email) {
         $response .="<p>Invalid email address please type a valid email address!</p>";
     } else {
@@ -41,7 +45,7 @@ if(isset($_POST["email"]) && (!empty($_POST["email"]))) {
             $output='<p>Dear user,</p>';
             $output.='<p>Please click on the following link to reset your password.</p>';
             $output.='<p>-------------------------------------------------------------</p>';
-            $output.='<p><a href="https://www.test.com.carpass.gr/user/reset-password.php?key='.$key.'&email='.$email.'&type='.$type.'&action=reset" target="_blank">
+            $output.='<p><a href="https://carpass.gr/user/reset-password.php?key='.$key.'&email='.$email.'&type='.$type.'&action=reset" target="_blank">
                https://www.test.com.carpass.gr/user/reset-password.php?key='.$key.'&email='.$email.'&type='.$type.'&action=reset</a></p>';
             $output.='<p>-------------------------------------------------------------</p>';
             $output.='<p>Please be sure to copy the entire link into your browser.
@@ -51,19 +55,16 @@ if(isset($_POST["email"]) && (!empty($_POST["email"]))) {
             $body = $output;
             $subject = "Password Recovery";
 
-            $email_to = $email;
+            $mail2send = new mails();
+            $mail2send->init($mail_setting['username'], 'Carpass');
+            $mail2send->to = $email;
+            $mail2send->to_name = 'You';
+            $mail2send->setSubject(cleanStr($subject));
+            $msg = nl2br(cleanStr($body)) . '';
+            $mail2send->setMessage($msg);
+            $is_sendMail = $mail2send->send();
 
-            $mailFrom = '"Carpass Registration" <carpass.gr@gmail.com>';
-            $subject    = 'Carpass Contact Us';
-
-            $headers = "From: " . strip_tags($email) . "\r\n";
-            $headers .= "Reply-To: ". strip_tags($email_to) . "\r\n";
-            $headers .= "MIME-Version: 1.0\r\n";
-            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
-            $result = @mail($email_to, $subject, $body, $headers);
-
-            if($result)
+            if($is_sendMail)
                 $response = "An email has been sent to you with instructions on how to reset your password.";
             else
                 $response = "Failed to send.";
