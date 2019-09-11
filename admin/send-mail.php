@@ -11,8 +11,10 @@ if (isset($_GET['lang_id'])) {
 require_once '../classes/validator.php';
 require_once '../classes/mails.php';
 require_once '../classes/settings.php';
+
 $setting = new settings();
 $mail_setting = $setting->getMailSettings();
+
 function smtpmailer($to, $from_name, $subject, $body)
 {
     global $config_live_site;
