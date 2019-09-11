@@ -25,11 +25,12 @@ if (isset($_POST['register'])) {
         // add activation code to db record
         $activation_code = generate_random();
         $res_act = $db->query("update user set activation='$activation_code' where `email` = '$email'");
+        $type = "user";
         $account = urlencode($_POST['email']);
         if (!$mail_setting['html_mails'])
-            $act_link = $config_live_site . '/activate_account.php?account=' . $account . '&activation=' . $activation_code;
+            $act_link = $config_live_site . '/activate_account.php?account=' . $account . '&activation=' . $activation_code . '&type=' . $type;
         else {
-            $lnk = $config_live_site . '/activate_account.php?account=' . $account . '&amp;activation=' . $activation_code;
+            $lnk = $config_live_site . '/activate_account.php?account=' . $account . '&activation=' . $activation_code . '&type=' . $type;
             $act_link = '<a href="' . $lnk . '">' . $lnk . '</a>';
         }
 

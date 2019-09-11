@@ -104,17 +104,25 @@ class Car
     }
 
     public
-    function compareActivationCode($email, $activationCode)
+    function compareActivationCode($email, $activationCode, $type)
     {
-        $query = "select * from user where `email`='$email' and `activation`='$activationCode'";
+        if($type == 'user'){
+            $query = "select * from user where `email`='$email' and `activation`='$activationCode'";
+        }else{
+            $query = "select * from dealder where `email`='$email' and `activation`='$activationCode'";
+        }
         $result = $this->connectdb->query($query);
         return $result;
     }
 
     public
-    function setActivation($email, $activationCode)
+    function setActivation($email, $activationCode, $type)
     {
-        $query = "update user set `active` = 1 where `email`='$email' and `activation`='$activationCode'";
+        if($type == 'user'){
+            $query = "update user set `active` = 1 where `email`='$email' and `activation`='$activationCode'";
+        }else{
+            $query = "update dealer set `active` = 1 where `email`='$email' and `activation`='$activationCode'";
+        }
         $result = $this->connectdb->query($query);
         return $result;
     }
