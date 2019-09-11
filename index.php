@@ -1,6 +1,6 @@
 <?php
 include "include/include.php";
-$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+ini_set('display_errors','1');
 global $crt_lang_code;
 global $lng;
 
