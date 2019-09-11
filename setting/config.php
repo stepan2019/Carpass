@@ -111,6 +111,7 @@ class Car
         }else{
             $query = "select * from dealder where `email`='$email' and `activation`='$activationCode'";
         }
+        exit($query);
         $result = $this->connectdb->query($query);
         return $result;
     }
