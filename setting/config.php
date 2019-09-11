@@ -109,9 +109,8 @@ class Car
         if($type == 'user'){
             $query = "select * from user where `email`='$email' and `activation`='$activationCode'";
         }else{
-            $query = "select * from dealder where `email`='$email' and `activation`='$activationCode'";
+            $query = "select * from dealer where `email`='$email' and `activation`='$activationCode'";
         }
-        exit($query);
         $result = $this->connectdb->query($query);
         return $result;
     }
