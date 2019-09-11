@@ -1,9 +1,17 @@
 <?php
+
 $response = "";
+require_once "../include/include.php";
+require_once '../classes/validator.php';
+require_once '../classes/mails.php';
+require_once '../classes/settings.php';
+require_once $config_abs_path . "/classes/mail_templates.php";
+global $lng;
+global $mail_setting;
+$setting = new settings();
+$mail_setting =$setting->getMailSettings();
 global $lng;
 if (isset($_POST['register'])) {
-
-    require '../phpmailer/PHPMailerAutoload.php';
 
     $name = $_POST['name'];
     $address = $_POST['address'];
@@ -17,29 +25,34 @@ if (isset($_POST['register'])) {
 
     $setting = $settingResult->fetch_assoc();
 
-    $mail = new PHPMailer;
-
-    $mail->isSendmail();
-
-//    $mail->setFrom('from@example.com', 'Carpass');
-    $mail->addAddress($_POST['email'], $_POST['name']);
-    $mail->addReplyTo($_POST['email'], 'Carpass');
-
-    $mail->Subject = 'PHPMailer sendmail test';
-
-    $mail->msgHTML(file_get_contents('../phpmailer/contents.html'), dirname(__FILE__));
-    $mail->AltBody = 'This is a plain-text message body';
-    $mail->addAttachment('images/phpmailer_mini.png');
-//    print_r($mail);exit;
-
-//send the message, check for errors
-    if (!$mail->send()) {
-        echo "Mailer Error: " . $mail->ErrorInfo;
-    } else {
-        echo "Message sent!";
-    }
-    exit();
     $result = $config->register_dealer($name, $address, $email, $phone, $company, $website, $password);
+
+    global $config_live_site;
+    // add activation code to db record
+    $activation_code = generate_random();
+    $res_act = $db->query("update dealder set activation='$activation_code' where `email` = '$email'");
+
+    $account = urlencode($_POST['email']);
+    if (!$mail_setting['html_mails'])
+        $act_link = $config_live_site . '/activate_account.php?account=' . $account . '&activation=' . $activation_code;
+    else {
+        $lnk = $config_live_site . '/activate_account.php?account=' . $account . '&amp;activation=' . $activation_code;
+        $act_link = '<a href="' . $lnk . '">' . $lnk . '</a>';
+    }
+    $mail2send = new mails();
+    $mail2send->init($_POST['email'], $_POST['name']);
+    $mail2send->to = $email;
+    $mail2send->to_name = $name;
+    $mail2send->setSubject(cleanStr('Thank you for registration on carpass'));
+    $msg = nl2br(cleanStr('<div><p>After activation you can ADD your vehicle,</p><p> please click on this link to activate your account. </p><p>Then link to activate</p>
+                <p>' . $act_link . '</p></div>')) . '';
+    $mail2send->setMessage($msg);
+    $is_sendMail = $mail2send->send();
+    if ($is_sendMail) {
+        header("location:/user/login.php?type=login_dealer");
+    } else {
+        $response = $mail2send->send_error;
+    }
     if ($result) {
         header("location:/user/login.php?type=login_dealer");
     } else {
