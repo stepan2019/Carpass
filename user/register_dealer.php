@@ -39,6 +39,7 @@ if (isset($_POST['register'])) {
         $lnk = $config_live_site . '/activate_account.php?account=' . $account . '&activation=' . $activation_code . '&type=' . $type;
         $act_link = '<a href="' . $lnk . '">' . $lnk . '</a>';
     }
+    //send Active mail to dealer
     $mail2send = new mails();
     $mail2send->init($_POST['email'], $_POST['name']);
     $mail2send->to = $email;
@@ -48,6 +49,15 @@ if (isset($_POST['register'])) {
                 <p>' . $act_link . '</p></div>')) . '';
     $mail2send->setMessage($msg);
     $is_sendMail = $mail2send->send();
+    $mail2admin = new mails();
+    $mail2admin->init($mail_setting['username'], $_POST['name']);
+    $mail2admin->to = $mail_setting['username'];
+    $mail2admin->to_name = 'Carpass Admin';
+    $mail2admin->setSubject(cleanStr('Dealer Registration'));
+    $msg = nl2br(cleanStr('<div><p>Dealer email address : '.$email.',</p><p> Dealer name : '.$name.'. </p><p>Please check this user</p>
+                </div>')) . '';
+    $mail2admin->setMessage($msg);
+    $is_sendMail = $mail2admin->send();
     if ($is_sendMail) {
         header("location:/user/login.php?type=login_dealer");
     } else {
