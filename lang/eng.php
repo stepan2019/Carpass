@@ -109,6 +109,8 @@ $lng['contact']['never_share_mail'] = 'We will never share your email with anyon
 $lng['contact']['Enter_Your_Massage'] = 'Enter Your Massage';
 $lng['contact']['message_sent'] = 'Your message was sent!';
 $lng['contact']['Submit'] = 'Submit';
+$lng['contact']['sent_mail'] = 'Mail has been sent successfully.';
+$lng['contact']['failed'] = 'Failed.';
 
 
 // -------------------------- PASSWORD RECOVERY -------------------
