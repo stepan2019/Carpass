@@ -30,7 +30,7 @@ class Car
 
     public function getInvoiceHistory()
     {
-        $query = "select * from invoices";
+        $query = "select * from invoices order by `id` DESC";
         $result = $this->connectdb->query($query);
         return $result;
 
@@ -528,7 +528,7 @@ class Car
     public
     function getUserList()
     {
-        $query = "select * from user order by name ASC";
+        $query = "select * from user order by `id` DESC";
         $result = $this->connectdb->query($query);
         return $result;
     }
@@ -536,7 +536,7 @@ class Car
     public
     function getDealerList()
     {
-        $query = "select * from dealer order by name ASC";
+        $query = "select * from dealer order by `id` DESC";
         $result = $this->connectdb->query($query);
         return $result;
     }
@@ -634,7 +634,7 @@ class Car
     public
     function getVehicleList()
     {
-        $query = "select * from vehicle";
+        $query = "select * from vehicle order by `id` DESC";
         $result = $this->connectdb->query($query);
         return $result;
     }
