@@ -270,6 +270,18 @@ class Car
         else
             return false;
     }
+    function activeCheck($email, $type)
+    {
+        if ($type == "user")
+            $query = "select * from user where email = '$email'";
+        else
+            $query = "select * from dealer where email = '$email'";
+        $result = $this->connectdb->query($query);
+
+        $obj = $result->fetch_assoc();
+        $isActive = $obj['active'];
+        return $isActive;
+    }
 
 // add vehicle
     public
