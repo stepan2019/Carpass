@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7db2e5a1-777a-4b65-b71a-e2d1ad3c3c2f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/invoice.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/invoice.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/invoice_rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/invoice_rtl.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lang/eng.php" beforeDir="false" afterPath="$PROJECT_DIR$/lang/eng.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/template/contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/info.php" beforeDir="false" afterPath="$PROJECT_DIR$/template/info.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/price.php" beforeDir="false" afterPath="$PROJECT_DIR$/template/price.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vehicle/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle/add.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -130,7 +124,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/css/style.css" />
         <option value="$PROJECT_DIR$/admin/backup.php" />
         <option value="$PROJECT_DIR$/js/common.js" />
         <option value="$PROJECT_DIR$/include/actions.php" />
@@ -181,6 +174,7 @@
         <option value="$PROJECT_DIR$/lang/eng.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/user/register.php" />
+        <option value="$PROJECT_DIR$/css/custom_rtl.css" />
       </list>
     </option>
   </component>
@@ -276,16 +270,15 @@
       <workItem from="1568106527031" duration="30999000" />
       <workItem from="1568276835923" duration="27000" />
       <workItem from="1568283726104" duration="6308000" />
-      <workItem from="1568306830413" duration="743000" />
+      <workItem from="1568306830413" duration="1372000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="368916000" />
+    <option name="totallyTimeSpent" value="369545000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19829424" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

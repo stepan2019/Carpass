@@ -136,7 +136,8 @@ if (isset($_POST['add_car'])) {
                                 if ($val == 0) {
                                     ?>
                                     <button class="btn btn-primary submit-fs btn-custom"
-                                       onclick="modalClose()">Generate Report</button>
+                                            onclick="modalClose()"><?php echo $lng['Payment']['generate_report']; ?>
+                                    </button>
                                     <?php
                                 } else {
                                     ?>
@@ -161,7 +162,7 @@ if (isset($_POST['add_car'])) {
                                         <input type="button" name="paySubBtn" value="PayPal" id="paySubBtn"
                                                class="btn btn-primary submit-fs btn-custom"/>
                                         <?php } ?>
-                                        <input type="button" name="coupon" value="Coupon" id="coupon_btn"
+                                        <input type="button" name="coupon" value="<?php echo $lng['Payment']['coupon'];?>" id="coupon_btn"
                                                class="btn btn-primary submit-fs btn-custom"/>
                                     </form>
 
@@ -175,10 +176,11 @@ if (isset($_POST['add_car'])) {
                                     }
 
                                 </script>
-                                <p class="dashboard-txt">After that you get Full Information about vehicle KM.</p>
+                                <p class="dashboard-txt"><?php echo $lng['Payment']['after']; ?></p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary btn-custom" data-dismiss="modal">Close
+                                <button type="button" class="btn btn-primary btn-custom"
+                                        data-dismiss="modal"><?php echo $lng['Payment']['Close']; ?>
                                 </button>
                             </div>
                         </div>
@@ -213,7 +215,15 @@ if (isset($_POST['add_car'])) {
     <title>Car Registration - Add Vehicle Km</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/custom.css" rel="stylesheet">
+    <?php
+    if ($text_direction == 'rtl') {
+        ?>
+        <link href="/css/custom_rtl.css" rel="stylesheet">
+        <?php
+    } else {
+        ?>
+        <link href="/css/custom.css" rel="stylesheet">
+    <?php } ?>
 
     <link href="../css/loaders.css" rel="stylesheet">
     <link href="../css/swiper.min.css" rel="stylesheet">
