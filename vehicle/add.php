@@ -102,7 +102,7 @@ if (isset($_POST['add_car'])) {
         }
 
         if ($crash == "yes" && $front == "" && $back == "" && $lefty == "" && $righty == "" && $total == "") {
-            $resCrash = "You must select the Car Crashed Status if car has been crashed.";
+            $resCrash = $lng['general']['select_crashed_car'];
         } else {
             $result = $config->add_vehicle($user_id, $type, $plate, $vin, $make, $model, $year, $km, $date, $crash, $front, $back, $lefty, $righty, $total);
             if ($result) {

@@ -1,20 +1,20 @@
 <?php
     include "../setting/config.php";
 
-    session_start();
+session_start();
+include "../include/include.php";
+if (@$_SESSION['user']) {
+    $email = @$_SESSION['user'];
+}
 
-    if(@$_SESSION['user']) {
-        $email = @$_SESSION['user'];
-    }
-    include "../include/include.php";
-
-    global $lng;
-    global $crt_lang_code;
-    if (isset($_GET['lang_id'])) {
-        $lang_id = $_GET['lang_id'];
-    } else {
-        $lang_id = $crt_lang_code;
-    }
+global $lng;
+global $crt_lang_code;
+global $text_direction;
+if (isset($_GET['lang_id'])) {
+    $lang_id = $_GET['lang_id'];
+} else {
+    $lang_id = $crt_lang_code;
+}
 
     $result = $config->getInformationContent();
     $information = $result->fetch_assoc();
@@ -33,18 +33,18 @@
         $mailFrom = '"Carpass Registration" <carpass.gr@gmail.com>';
         $subject    = 'Carpass Contact Us';
 
-        $headers = "From: " . strip_tags($email) . "\r\n";
-        $headers .= "Reply-To: ". strip_tags($mailTofirma) . "\r\n";
-        $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+    $headers = "From: " . strip_tags($email) . "\r\n";
+    $headers .= "Reply-To: " . strip_tags($mailTofirma) . "\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=utf-8\r\n";
 
         $result = @mail($mailTofirma, $subject, $message, $headers);
 
-        if($result)
-            $response = "Mail has been sent successfully.";
-        else
-            $response = "Failed.";
-    }
+    if ($result)
+        $response = $lng['contact']['sent_mail'];
+    else
+        $response = $lng['contact']['failed'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,46 +85,54 @@
         include "header.php";
     ?>
 
-    <div class="contact-sec dashboard-panel parallax-section" style="background-size: cover; background-repeat: no-repeat; min-height: 700px;">
-        <form id="contactForm" method="post" name="contactForm">
-            <div class="container mt-5">
-                <h2><?php echo $lng['contact']['Contact_us'];?><small><?php echo $lng['contact']['fill_all_field'];?></small> </h2>
-                <div class="row pt-5">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="fullname"><?php echo $lng['contact']['name'];?></label>
-                            <input type="text" name="fullname" class="form-control" id="fullname" required="" aria-describedby="emailHelp">
-                        </div>
+<div class="contact-sec dashboard-panel parallax-section"
+     style="background-size: cover; background-repeat: no-repeat; min-height: 700px;">
+    <form id="contactForm" method="post" name="contactForm">
+        <div class="container mt-5">
+            <h2><?php echo $lng['contact']['Contact_us']; ?>
+                <small><?php echo $lng['contact']['fill_all_field']; ?></small>
+            </h2>
+            <div class="row pt-5">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="fullname"><?php echo $lng['contact']['name']; ?></label>
+                        <input type="text" name="fullname" class="form-control" id="fullname" required=""
+                               aria-describedby="emailHelp">
                     </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="examplePhone"><?php echo $lng['contact']['Phone Number'];?></label>
-                            <input type="tel" name="phonenumber" class="form-control" id="examplePhone" required="" aria-describedby="emailHelp">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1"><?php echo $lng['contact']['your_mail_address'];?></label>
-                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" required="" value="<?php if(isset($email)) echo $email; ?>" aria-describedby="emailHelp">
-                            <small id="emailHelp" class="form-text text-muted"><?php echo $lng['contact']['never_share_mail'];?></small>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <label for="exampleTextarea"><?php echo $lng['contact']['Enter_Your_Massage'];?></label>
-                        <textarea class="form-control" name="message" id="exampleTextarea" required="" rows="3"></textarea>
-                    </div>
-                    <div class="col-md-12 text-center text-xs-center action-block">
-                        <button type="submit" name="contactSubmit" id="contactSubmit" class="btn btn-capsul btn-aqua submit-fs btn-custom"><?php echo $lng['contact']['Submit'];?></button>
-                    </div>
-                    <?php if($response != "") { ?>
-                        <div class="col-md-12 text-center">
-                            <p><label class="control-label mt-3"><?php echo $response; ?></label></p>
-                        </div>
-                    <?php } ?>
                 </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="examplePhone"><?php echo $lng['contact']['Phone Number']; ?></label>
+                        <input type="tel" name="phonenumber" class="form-control" id="examplePhone" required=""
+                               aria-describedby="emailHelp">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"><?php echo $lng['contact']['your_mail_address']; ?></label>
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" required=""
+                               value="<?php if (isset($email)) echo $email; ?>" aria-describedby="emailHelp">
+                        <small id="emailHelp"
+                               class="form-text text-muted"><?php echo $lng['contact']['never_share_mail']; ?></small>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label for="exampleTextarea"><?php echo $lng['contact']['Enter_Your_Massage']; ?></label>
+                    <textarea class="form-control" name="message" id="exampleTextarea" required="" rows="3"></textarea>
+                </div>
+                <div class="col-md-12 text-center text-xs-center action-block">
+                    <button type="submit" name="contactSubmit" id="contactSubmit"
+                            class="btn btn-capsul btn-aqua submit-fs btn-custom"><?php echo $lng['contact']['Submit']; ?></button>
+                </div>
+                <?php if ($response != "") { ?>
+                    <div class="col-md-12 text-center">
+                        <p><label class="control-label mt-3"><?php echo $response; ?></label></p>
+                    </div>
+                <?php } ?>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 
     <?php
         include "information.php";
