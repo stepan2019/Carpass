@@ -1,7 +1,6 @@
 <?php
 
 $result = $config->getInvoiceHistory();
-$invoiceData = $result->fetch_All();
 ?>
 
 <div>
@@ -20,21 +19,21 @@ $invoiceData = $result->fetch_All();
         <tbody>
         <?php
         $s_sn = 1;
-        foreach ($invoiceData as $row) {
-            $user = $config->getUserById($row[1]);
+        while ($row = $result->fetch_assoc()) {
+            $user = $config->getUserById($row['user_id']);
             $user_info = $user->fetch_assoc();
             ?>
             <tr>
-                <td class="text-center"><?php echo $row[0]; ?></td>
-                <td><?php echo $row[5]; ?></td>
+                <td class="text-center"><?php echo $s_sn; ?></td>
+                <td><?php echo $row['currency']; ?></td>
                 <td><?php echo $user_info['name']; ?></td>
-                <td><?php echo $row[8]; ?></td>
-                <td><?php echo date('Y-m-d', strtotime($row[3])); ?></td>
+                <td><?php echo $row['plate_number']; ?></td>
+                <td><?php echo date('Y-m-d', strtotime($row['date'])); ?></td>
                 <td class="text-center">
-                    <a href="javascript:gotoInvoice(<?php echo "'".$row[8]."'".','."'".$row[9]."'".','."'".$user_info['email']."'";?>)">
+                    <a href="javascript:gotoInvoice(<?php echo "'".$row['plate_number']."'".','."'".$row['vin']."'".','."'".$user_info['email']."'";?>)">
                         <i class="far fa-edit"></i>
                     </a>
-                    <a href="home.php?query=deleteinvoicehistory&id=<?php echo $row[0]; ?>">
+                    <a href="home.php?query=deleteinvoicehistory&id=<?php echo $row['id']; ?>">
                         <i class="far fa-trash-alt pl-3" style=""></i>
                     </a>
                 </td>
