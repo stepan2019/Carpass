@@ -147,6 +147,28 @@
                 }).done(function(result) {
                 });
             });
+            $("input[name=user_active]").on("change", function(e) {
+                var userId = $(e.target).data('id');
+                var isChecked = $(e.target).val();
+                if(this.checked){
+                    isChecked = 1;
+                }else{
+                    isChecked = 0;
+                }
+                var activeData = {
+                    'activeItem' : userId,
+                    'checkItem' : isChecked
+                };
+
+                $.ajax({
+                    type     : 'POST',
+                    url      : 'useractive.php',
+                    data     : activeData,
+                    dataType : 'json',
+                    encode   : true
+                }).done(function(result) {
+                });
+            });
 
             $("input[name=dealer_block]").on("change", function(e) {
                 var userId = $(e.target).data('id');
@@ -161,6 +183,28 @@
                     type     : 'POST',
                     url      : 'dealerblock.php',
                     data     : blockData,
+                    dataType : 'json',
+                    encode   : true
+                }).done(function(result) {
+                });
+            });
+            $("input[name=dealer_active]").on("change", function(e) {
+                var userId = $(e.target).data('id');
+                var isChecked = $(e.target).val();
+                if(this.checked){
+                    isChecked = 1;
+                }else{
+                    isChecked = 0;
+                }
+                var activeData = {
+                    'activeItem' : userId,
+                    'checkItem' : isChecked
+                };
+
+                $.ajax({
+                    type     : 'POST',
+                    url      : 'dealeractive.php',
+                    data     : activeData,
                     dataType : 'json',
                     encode   : true
                 }).done(function(result) {

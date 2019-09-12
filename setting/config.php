@@ -597,11 +597,24 @@ class Car
         $result = $this->connectdb->query($query);
         return $result;
     }
+    function userActive($id, $isChecked)
+    {
+        $query = "update user set active = '$isChecked' where id = '$id'";
+        $result = $this->connectdb->query($query);
+        return $result;
+    }
 
     public
     function dealerBlock($id, $isChecked)
     {
         $query = "update dealer set block = '$isChecked' where id = '$id'";
+        $result = $this->connectdb->query($query);
+        return $result;
+    }
+    public
+    function dealerActive($id, $isChecked)
+    {
+        $query = "update dealer set active = '$isChecked' where id = '$id'";
         $result = $this->connectdb->query($query);
         return $result;
     }
