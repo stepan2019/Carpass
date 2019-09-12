@@ -183,6 +183,9 @@ if (isset($_POST['email_str'])) {
             <button type="submit" class="btn btn-primary submit-fs btn-custom" name="send_email" id="send_eamil_btn">
                 Send
             </button>
+            <?php if($response != "") { ?>
+                <p><label class="control-label mt-3"><?php echo $response; ?></label></p>
+            <?php } ?>
         </div>
         <input type="hidden" name="email_str" id="email_str"/>
     </form>

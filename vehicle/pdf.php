@@ -8,7 +8,8 @@
     global $lng;
     global $text_direction;
 	include "../setting/config.php";
-
+$paypal_result = $config->getPaypalSetting();
+$paypal_setting = $paypal_result->fetch_assoc();
 	if(isset($_POST['vin'])) {
 		$plate = $_POST['vin'];
 
@@ -63,26 +64,31 @@
 </head>
 
 <body class="container">
-	<div class="row">
-		<div class="col-md-12 text-center btn-field">
-			<button onclick="if (!window.__cfRLUnblockHandlers) return false; getPDF()" id="downloadbtn" data-cf-modified-3041e76d3da1bfb24a107310-=""><b><?php echo $lng['Pdf']['Download_pdf'];?></b></button>
-			<button onclick="printThis()" ><b> <?php echo $lng['Pdf']['Print'];?></b></button>
-			<button class="button" onclick="window.open('../index.php', '_self')" ><b> <?php echo $lng['Pdf']['Close'];?></b></button>
-			<button onclick="generateInvoice();" id="invoicebtn"><b><?php echo $lng['invoice']['Click_to_generate_invoice'];?></b></button>
-		</div>
-	</div>
-	
-	<div class="canvas_div_pdf mt-2" style="display: block;">
-	
-		<div class="top_map_section clearfix">
-			<div class="row col-md-12 text-left mt-4">
-				<div class="col-md-6">
-					<img src="/img/logo.png" style="width: 150px;">
-				</div>
-				<div class="col-md-6" style="margin-top:20px;">
-                    <h2 style="color: #fe7500;font-weight: bold;"><?php echo $lng['Pdf']['Tellerrapport'];?></h2>
-                    <p><b><?php echo date('d-m-Y'); ?></b></p>
-                </div>
+<div class="row">
+    <div class="col-md-12 text-center btn-field">
+        <button onclick="if (!window.__cfRLUnblockHandlers) return false; getPDF()" id="downloadbtn"
+                data-cf-modified-3041e76d3da1bfb24a107310-=""><b><?php echo $lng['Pdf']['Download_pdf']; ?></b></button>
+        <button onclick="printThis()"><b> <?php echo $lng['Pdf']['Print']; ?></b></button>
+        <button class="button" onclick="window.open('../index.php', '_self')">
+            <b> <?php echo $lng['Pdf']['Close']; ?></b></button>
+        <?php if ($paypal_setting['allow_paypal'] == 'yes') { ?>
+        <button onclick="generateInvoice();" id="invoicebtn">
+            <b><?php echo $lng['invoice']['Click_to_generate_invoice']; ?></b></button>
+        <?php } ?>
+    </div>
+</div>
+
+<div class="canvas_div_pdf mt-2" style="display: block;">
+
+    <div class="top_map_section clearfix">
+        <div class="row col-md-12 text-left mt-4">
+            <div class="col-md-6">
+                <img src="/img/logo.png" style="width: 150px;">
+            </div>
+            <div class="col-md-6" style="margin-top:20px;">
+                <h2 style="color: #fe7500;font-weight: bold;"><?php echo $lng['Pdf']['Tellerrapport']; ?></h2>
+                <p><b><?php echo date('d-m-Y'); ?></b></p>
+            </div>
             <?php
                 if($user_type == "user") {
             ?>

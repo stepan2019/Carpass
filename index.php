@@ -1,7 +1,6 @@
 <?php
-ini_set('display_errors','1');
-$root = $_SERVER["DOCUMENT_ROOT"];
-include $root."/include/include.php";
+include "include/include.php";
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
 global $crt_lang_code;
 global $lng;
 
@@ -31,8 +30,6 @@ session_start();
     <title>Carpass Greece national KM Registration</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
-
 
     <link href="css/loaders.css" rel="stylesheet">
     <link href="css/swiper.min.css" rel="stylesheet">
