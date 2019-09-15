@@ -102,7 +102,7 @@ include "template/header.php";
 $header_one = $header->fetch_assoc();
 ?>
 <div class="dashboard-panel parallax-section"
-     style="background:url('img/<?php echo $header_one["file_name"]; ?>'); background-size: cover; background-repeat: no-repeat; min-height: 700px; height: 1200px;">
+     style="background:url('img/<?php echo $header_one["file_name"]; ?>'); background-size: cover; background-repeat: no-repeat; min-height: 700px; height: auto;">
     <div class="dashboard-ab">
         <div style="position: relative;">
             <div class="container text-center">
